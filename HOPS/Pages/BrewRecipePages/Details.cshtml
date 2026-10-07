@@ -1,0 +1,91 @@
+@page
+@model HOPS.Pages.BrewRecipePages.DetailsModel
+@using HOPS.Component
+@{
+    ViewData["Title"] = Model.BrewRecipe.Name;
+    var beerColor = ColorHelper.EbcToHex(Model.BrewRecipeVersion.Color);
+}
+
+<div id="recipeDetails" class="recipe-page">
+    <header class="recipe-header" style="--beer-color: @beerColor;">
+        <div class="recipe-title-row">
+            <span class="recipename">@Model.BrewRecipe.Name</span>
+            <form method="get">
+                <input type="hidden" name="id" value="@Model.BrewRecipe.Id" />
+                <select name="version" id="version" class="form-select form-select-sm recipe-version-select" onchange="this.form.submit()">
+                    @foreach (var version in Model.BrewRecipe.Versions.OrderByDescending(v => v.Version))
+                    {
+                        <option value="@version.Version" selected="@(version.Id == Model.BrewRecipeVersion.Id)">Version @version.Version</option>
+                    }
+                </select>
+            </form>
+        </div>
+        <div class="recipe-style">@Model.BrewRecipe.Style</div>
+        <div class="recipe-metrics">
+            <div class="recipe-metric"><span class="recipe-metric-label">St.Würze</span><span class="recipe-metric-value">@Model.BrewRecipeVersion.OriginalGravity<span class="recipe-metric-unit">°P</span></span></div>
+            <div class="recipe-metric"><span class="recipe-metric-label">Bittere</span><span class="recipe-metric-value">@Model.BrewRecipeVersion.Bitterness<span class="recipe-metric-unit">IBU</span></span></div>
+            <div class="recipe-metric"><span class="recipe-metric-label">Farbe</span><span class="recipe-metric-value">@Model.BrewRecipeVersion.Color<span class="recipe-metric-unit">EBC</span></span></div>
+            <div class="recipe-metric"><span class="recipe-metric-label">Alkohol</span><span class="recipe-metric-value">@Model.BrewRecipeVersion.EstimatedABV<span class="recipe-metric-unit">%</span></span></div>
+        </div>
+        @if (!string.IsNullOrWhiteSpace(Model.BrewRecipe.Description))
+        {
+            <p class="recipe-description">@Model.BrewRecipe.Description</p>
+        }
+    </header>
+
+    <section class="recipe-section">
+        <h3 class="recipe-section-title">Grunddaten</h3>
+        <div class="recipe-section-body"><table class="recipe-key-values"><tr><td><label asp-for="BrewRecipeVersion.BatchSize"></label></td><td>@Model.BrewRecipeVersion.BatchSize L</td></tr><tr><td><label asp-for="BrewRecipeVersion.BrewhouseEfficiency"></label></td><td>@Model.BrewRecipeVersion.BrewhouseEfficiency %</td></tr></table></div>
+    </section>
+
+    <section class="recipe-section">
+        <h3 class="recipe-section-title">Brauwasser</h3>
+        <div class="recipe-section-body">
+            <table class="recipe-key-values"><tr><td>Hauptguss (@Model.BrewRecipeVersion.MashWaterPercentage %)</td><td>@(Model.BrewRecipeVersion.TotalWater * Model.BrewRecipeVersion.MashWaterPercentage / 100) L</td></tr><tr><td>Nachguss (@(100 - Model.BrewRecipeVersion.MashWaterPercentage) %)</td><td>@(Model.BrewRecipeVersion.TotalWater - Model.BrewRecipeVersion.TotalWater * Model.BrewRecipeVersion.MashWaterPercentage / 100) L</td></tr><tr><td><strong>Gesamt</strong></td><td><strong>@Model.BrewRecipeVersion.TotalWater L</strong></td></tr></table>
+            @if (Model.BrewRecipeVersion.WaterAdditions.Count > 0)
+            {
+                <h4 class="recipe-subtitle">Wasserzusätze</h4>
+                <table class="recipe-table recipe-table-simple"><tbody>@for (int i = 0; i < Model.BrewRecipeVersion.WaterAdditions.Count; i++) {
+                    <tr><td>@Model.BrewRecipeVersion.WaterAdditions[i].Type</td><td class="numeric">@Model.BrewRecipeVersion.WaterAdditions[i].Amount @Model.BrewRecipeVersion.WaterAdditions[i].Unit</td></tr>
+                }
+            </tbody></table>
+        }
+    </div>
+</section>
+
+<section class="recipe-section"><h3 class="recipe-section-title">Schüttung</h3><div class="recipe-section-body"><table class="recipe-table recipe-table-simple"><tbody>@for (int i = 0; i < Model.BrewRecipeVersion.MaltAdditions.Count; i++) {
+    <tr><td>@Model.BrewRecipeVersion.MaltAdditions[i].Name</td><td class="numeric">@Model.BrewRecipeVersion.MaltAdditions[i].Amount kg</td></tr>
+}
+</tbody></table></div></section>
+
+<section class="recipe-section"><h3 class="recipe-section-title">Maischplan</h3><div class="recipe-section-body"><table class="recipe-table recipe-table-simple"><thead><tr><th>Schritt</th><th class="numeric">Temperatur</th><th class="numeric">Dauer</th></tr></thead><tbody>@for (int i = 0; i < Model.BrewRecipeVersion.MashSteps.Count; i++) {
+    <tr><td>@Model.BrewRecipeVersion.MashSteps[i].Name</td><td class="numeric">@Model.BrewRecipeVersion.MashSteps[i].Temperature °C</td><td class="numeric">@Model.BrewRecipeVersion.MashSteps[i].Duration min</td></tr>
+}
+</tbody></table></div></section>
+
+<section class="recipe-section"><h3 class="recipe-section-title">Würzekochen</h3><div class="recipe-section-body"><table class="recipe-key-values"><tr><td><label asp-for="BrewRecipeVersion.BoilDuration"></label></td><td>@Model.BrewRecipeVersion.BoilDuration min</td></tr></table>@if (Model.BrewRecipeVersion.HopAdditions.Count > 0) {
+    <h4 class="recipe-subtitle">Hopfen</h4><div class="recipe-table-wrap"><table class="recipe-table"><thead><tr><th>Hopfen</th><th class="numeric">Alpha</th><th class="numeric">Menge</th><th class="numeric">Kochzeit</th></tr></thead><tbody>@for (int i = 0; i < Model.BrewRecipeVersion.HopAdditions.Count; i++) {
+    <tr><td>@Model.BrewRecipeVersion.HopAdditions[i].Name</td><td class="numeric">@Model.BrewRecipeVersion.HopAdditions[i].AlphaAcid %</td><td class="numeric">@Model.BrewRecipeVersion.HopAdditions[i].Amount g</td><td class="numeric">@Model.BrewRecipeVersion.HopAdditions[i].Duration min</td></tr>
+}
+</tbody></table></div>
+    }
+</div></section>
+
+<section class="recipe-section"><h3 class="recipe-section-title">Hefe</h3><div class="recipe-section-body"><table class="recipe-table recipe-table-simple"><tbody>@for (int i = 0; i < Model.BrewRecipeVersion.YeastAdditions.Count; i++) {
+    <tr><td>@Model.BrewRecipeVersion.YeastAdditions[i].Name@if (!string.IsNullOrWhiteSpace(Model.BrewRecipeVersion.YeastAdditions[i].Description)) {
+        <span class="text-muted"> (@Model.BrewRecipeVersion.YeastAdditions[i].Description)</span>
+    }
+</td><td class="numeric">@Model.BrewRecipeVersion.YeastAdditions[i].Amount @Model.BrewRecipeVersion.YeastAdditions[i].Unit</td></tr>
+    }
+</tbody></table></div></section>
+
+<section class="recipe-section"><h3 class="recipe-section-title">Gärung und Reifung</h3><div class="recipe-section-body"><table class="recipe-key-values"><tr><td><label asp-for="BrewRecipeVersion.FermentationTemperature"></label></td><td>@Model.BrewRecipeVersion.FermentationTemperature °C</td></tr><tr><td><label asp-for="BrewRecipeVersion.ApparantAttenuation"></label></td><td>@Model.BrewRecipeVersion.ApparantAttenuation %</td></tr><tr><td><label asp-for="BrewRecipeVersion.Carbonation"></label></td><td>@Model.BrewRecipeVersion.Carbonation</td></tr></table>@if (Model.BrewRecipeVersion.FermentationAdditions.Count > 0) {
+    <h4 class="recipe-subtitle">Gärzugaben</h4><div class="recipe-table-wrap"><table class="recipe-table"><thead><tr><th>Zugabe</th><th class="numeric">Menge</th><th class="numeric">Zeit</th></tr></thead><tbody>@for (int i = 0; i < Model.BrewRecipeVersion.FermentationAdditions.Count; i++) {
+    <tr><td>@Model.BrewRecipeVersion.FermentationAdditions[i].Name</td><td class="numeric">@Model.BrewRecipeVersion.FermentationAdditions[i].Amount @Model.BrewRecipeVersion.FermentationAdditions[i].Unit</td><td class="numeric">@Model.BrewRecipeVersion.FermentationAdditions[i].Time</td></tr>
+}
+</tbody></table></div>
+    }
+</div></section>
+
+<div class="recipe-footer-actions"><div class="secondary-actions"><a asp-page="./Index" class="btn btn-outline-secondary">Zurück</a></div><div class="primary-actions"><a asp-page="./Edit" asp-route-id="@Model.BrewRecipe.Id" asp-route-version="@Model.BrewRecipeVersion.Version" class="btn btn-outline-primary">Bearbeiten</a><a asp-page="../BrewBatchPages/Create" asp-route-recipeVersionId="@Model.BrewRecipeVersion.Id" class="btn btn-primary">Brauen</a></div></div>
+</div>

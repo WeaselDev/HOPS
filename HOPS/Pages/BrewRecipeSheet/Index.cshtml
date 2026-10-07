@@ -1,0 +1,117 @@
+@page
+@using HOPS.Component
+@using HOPS.Properties
+@model HOPS.Pages.BrewRecipeSheet.IndexModel
+
+@{
+    ViewData["Title"] = Resource.BrewRecipes;
+}
+
+<h1>@Resource.BrewRecipes</h1>
+
+<p>
+    <a asp-page="Create">@Resource.NewRecipe</a>
+</p>
+
+<div class="recipe-grid">
+    @foreach (var item in Model.Recipes)
+    {
+        var recipe = item.BrewRecipe;
+
+        var currentVersion = recipe.Versions
+            .Where(v => !v.IsDeleted)
+            .OrderByDescending(v => v.Version)
+            .FirstOrDefault();
+
+        @if (currentVersion != null)
+        {
+            var beerColor = ColorHelper.EbcToHex(currentVersion.Color);
+
+            <article class="recipe-card">
+                <header class="recipe-card-header recipe-header" style="--beer-color: @beerColor;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="recipename">
+                            @recipe.Name
+                            <span class="versionTag">v@(currentVersion.Version)</span>
+                        </span>
+
+                        <div>
+                            @if (item.AverageRating.HasValue)
+                            {
+                                var roundedRating =
+                                    (int)Math.Round(item.AverageRating.Value);
+
+                                <span title="@item.RatingCount Bewertungen aus @item.BrewCount Suden">
+                                    @for (int i = 0; i < 5; i++)
+                                    {
+                                        @(i < roundedRating ? "★" : "☆")
+                                    }
+
+                                    @item.AverageRating.Value.ToString("0.0")
+
+                                    <small>
+                                        (@item.RatingCount/@item.BrewCount)
+                                    </small>
+                                </span>
+                            }
+                            else if (item.BrewCount > 0)
+                            {
+                                <span class="text-muted">
+                                    Nicht bewertet
+                                    <small>(0/@item.BrewCount)</small>
+                                </span>
+                            }
+                        </div>
+                    </div>
+                </header>
+
+                <div class="recipe-card-body">
+                    <div class="recipe-style">
+                        <span style="margin-left:1em;">@recipe.Style</span>
+                    </div>
+
+                    <div class="recipe-metrics">
+                        <div class="recipe-metric">
+                            <span class="recipe-metric-label"><label asp-for="@currentVersion.OriginalGravity"></label></span>
+                            <span class="recipe-metric-value">
+                                @currentVersion.OriginalGravity
+                                <span class="recipe-metric-unit">°P</span>
+                            </span>
+                        </div>
+
+                        <div class="recipe-metric">
+                            <span class="recipe-metric-label"><label asp-for="@currentVersion.Bitterness"></label></span>
+                            <span class="recipe-metric-value">
+                                @currentVersion.Bitterness
+                                <span class="recipe-metric-unit">IBU</span>
+                            </span>
+                        </div>
+
+                        <div class="recipe-metric">
+                            <span class="recipe-metric-label"><label asp-for="@currentVersion.Color"></label></span>
+                            <span class="recipe-metric-value">
+                                @currentVersion.Color
+                                <span class="recipe-metric-unit">EBC</span>
+                            </span>
+                        </div>
+
+                        <div class="recipe-metric">
+                            <span class="recipe-metric-label"><label asp-for="@currentVersion.EstimatedABV"></label></span>
+                            <span class="recipe-metric-value">
+                                @currentVersion.EstimatedABV
+                                <span class="recipe-metric-unit">%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="recipe-card-footer">
+                    <a asp-page="./Details"
+                       asp-route-id="@recipe.Id">
+                        @Resource.Show
+                    </a>
+                </footer>
+            </article>
+        }
+    }
+</div>

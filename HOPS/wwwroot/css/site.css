@@ -1,0 +1,844 @@
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+/* Bootstrap overrides */
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+
+/* Recipe index */
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .08);
+    overflow: hidden;
+    transition: box-shadow .15s ease, transform .15s ease;
+}
+
+    .recipe-card:hover {
+        box-shadow: 0 5px 14px rgba(0, 0, 0, .15);
+        transform: translateY(-2px);
+    }
+
+.recipe-card-header {
+    padding: .8rem 1rem;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+    .recipe-card-header h2 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+.recipe-card-body-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.recipe-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+    padding: .75rem 1rem;
+    border-top: 1px solid #eee;
+}
+
+
+/* Recipe sheet */
+
+.recipe-sheet-page {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.recipe-sheet-column {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+    .recipe-sheet-column:first-child {
+        border-right: 1px solid #ccc;
+        padding-right: 1.5rem;
+    }
+
+.recipe-sheet-section {
+    padding: 1rem;
+    background: white;
+}
+
+
+/* Recipe header */
+
+.recipe-header {
+    position: relative;
+    padding: .2rem 0 .8rem 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    .recipe-header::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        border-radius: 2px;
+        background-color: var(--beer-color, #d0d0d0);
+    }
+
+.recipe-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.recipename {
+    font-family: 'Oswald', sans-serif;
+    color: #262626;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.recipe-name-input {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.recipe-version-select {
+    width: auto;
+    min-width: 8rem;
+}
+
+.recipe-style {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    color: #555;
+    margin-top: .25rem;
+}
+
+.recipe-description {
+    font-style: italic;
+    color: #666;
+    margin: .75rem 0 0;
+}
+
+.recipe-description-input {
+    margin-top: .75rem;
+}
+
+
+/* Recipe metrics
+   Still used by Recipe Index. */
+
+.recipe-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: .9rem;
+}
+
+.recipe-metric {
+    text-align: center;
+    padding: 0 .5rem;
+    border-right: 1px solid #ddd;
+}
+
+    .recipe-metric:last-child {
+        border-right: 0;
+    }
+
+.recipe-metric-label {
+    display: block;
+    font-size: .65rem;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 2px;
+}
+
+.recipe-metric-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.recipe-metric-unit {
+    font-size: .8rem;
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+
+/* Recipe sections */
+
+.recipe-section-title {
+    font-family: 'Oswald', sans-serif;
+    color: #262626;
+    margin: 0 0 .45rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.recipe-subtitle {
+    font-family: 'Oswald', sans-serif;
+    color: #444;
+    margin: .9rem 0 .3rem;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+.recipe-section-body {
+    padding: .15rem 0 .25rem;
+}
+
+
+/* Recipe tables */
+
+.recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #555;
+}
+
+    .recipe-table th {
+        padding: .3rem .35rem;
+        color: #777;
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        white-space: nowrap;
+    }
+
+    .recipe-table td {
+        padding: .28rem .35rem;
+        vertical-align: middle;
+    }
+
+        .recipe-table th:first-child,
+        .recipe-table td:first-child {
+            padding-left: 0;
+        }
+
+        .recipe-table th:last-child,
+        .recipe-table td:last-child {
+            padding-right: 0;
+        }
+
+    .recipe-table .numeric {
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .recipe-table .value {
+        text-align: right;
+    }
+
+    .recipe-table .unit {
+        width: 1%;
+        padding-left: .3rem;
+        color: #666;
+        white-space: nowrap;
+    }
+
+    .recipe-table .form-control,
+    .recipe-table .form-select {
+        min-width: 0;
+    }
+
+.recipe-table-simple .form-control {
+    padding: .25rem .4rem;
+    font-size: .9rem;
+    min-height: 32px;
+}
+
+.recipe-key-values {
+    width: 100%;
+}
+
+    .recipe-key-values td {
+        padding: .3rem 0;
+    }
+
+        .recipe-key-values td:last-child {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+
+/* Editable collection tables */
+
+.recipe-table-wrap {
+    width: 100%;
+}
+
+    .recipe-table-wrap .recipe-table {
+        width: 100%;
+        table-layout: auto;
+    }
+
+        .recipe-table-wrap .recipe-table th,
+        .recipe-table-wrap .recipe-table td {
+            vertical-align: middle;
+        }
+
+    .recipe-table-wrap .recipe-drag-column,
+    .recipe-table-wrap .recipe-drag-cell {
+        width: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        padding-left: 0;
+        padding-right: 4px;
+        text-align: center;
+    }
+
+.recipe-drag-handle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--bs-secondary-color);
+    cursor: grab;
+    line-height: 1;
+    user-select: none;
+}
+
+    .recipe-drag-handle:hover {
+        color: var(--bs-body-color);
+    }
+
+    .recipe-drag-handle:active {
+        cursor: grabbing;
+    }
+
+.collection-row.recipe-row-dragging {
+    opacity: .45;
+}
+
+.recipe-table-wrap .recipe-actions-cell {
+    width: 28px;
+    min-width: 28px;
+    max-width: 28px;
+    padding-left: 4px;
+    padding-right: 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
+    .recipe-table-wrap .recipe-actions-cell .remove-row {
+        width: 24px;
+        min-width: 24px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+.recipe-table-wrap .input-name {
+    width: 100%;
+    min-width: 80px;
+}
+
+.recipe-table-wrap .input-number {
+    width: 56px;
+    min-width: 56px;
+    margin-left: auto;
+    text-align: right;
+}
+
+.recipe-table-wrap .input-unit {
+    width: 64px;
+    min-width: 64px;
+    margin-left: auto;
+}
+
+.recipe-table-wrap .recipe-input-with-unit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.recipe-table-wrap .recipe-inline-unit {
+    flex: 0 0 auto;
+}
+
+.recipe-table-wrap th.numeric,
+.recipe-table-wrap td.numeric {
+    width: 1%;
+    white-space: nowrap;
+}
+
+
+/* Recipe form fields */
+
+.recipe-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem 1rem;
+}
+
+.recipe-field label {
+    display: block;
+    margin-bottom: .2rem;
+    color: #666;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.recipe-field-narrow .form-control {
+    max-width: 8rem;
+}
+
+.recipe-input-with-unit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    white-space: nowrap;
+}
+
+    .recipe-input-with-unit .form-control {
+        width: 5.2rem;
+        text-align: right;
+    }
+
+.recipe-inline-unit {
+    display: inline-block;
+    min-width: 2.5rem;
+    margin-left: .3rem;
+    color: #666;
+    text-align: left;
+}
+
+.recipe-add-button {
+    margin-top: .45rem;
+}
+
+.validation-message {
+    font-size: .8rem;
+}
+
+
+/* Recipe footer */
+
+.recipe-footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+    .recipe-footer-actions .primary-actions,
+    .recipe-footer-actions .secondary-actions {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+    }
+
+
+/* BrewBatch */
+
+.batch-status {
+    font-family: 'Oswald', sans-serif;
+    font-size: .9rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.batch-rating {
+    color: #d99a00;
+    font-size: 1.1rem;
+    letter-spacing: .05em;
+    white-space: nowrap;
+}
+
+.batch-note {
+    white-space: pre-wrap;
+    color: #555;
+}
+
+.batch-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1.5rem;
+    margin-top: .35rem;
+}
+
+.batch-check {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+    .batch-check label {
+        margin: 0;
+    }
+
+.batch-destroyed {
+    color: #b02a37;
+    font-weight: 600;
+}
+
+
+/* BrewBatch journal */
+
+.batch-journal-table {
+    vertical-align: middle;
+}
+
+    .batch-journal-table > tbody > tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .batch-journal-table > tbody > tr:hover {
+            background-color: #f8f9fa;
+        }
+
+    .batch-journal-table th {
+        color: #777;
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        white-space: nowrap;
+    }
+
+    .batch-journal-table td {
+        padding-top: .65rem;
+        padding-bottom: .65rem;
+    }
+
+.batch-journal-date {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.batch-journal-recipe {
+    display: flex;
+    align-items: baseline;
+    gap: .4rem;
+}
+
+.batch-journal-recipe-name {
+    color: #262626;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+    .batch-journal-recipe-name:hover {
+        text-decoration: underline;
+    }
+
+.batch-journal-version {
+    color: #777;
+    font-size: .75rem;
+}
+
+.batch-journal-style {
+    color: #666;
+    font-size: .85rem;
+}
+
+.batch-journal-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem .65rem;
+    margin-top: .15rem;
+    color: #666;
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.batch-journal-actions {
+    width: 1%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* Legacy Recipe Create
+   These can go when Create uses the same collection markup as Edit. */
+
+.recipe-index {
+    display: none;
+}
+
+.recipe-row-actions {
+    display: flex;
+    gap: .15rem;
+}
+
+    .recipe-row-actions .btn {
+        width: 2rem;
+        padding: .2rem .25rem;
+        line-height: 1.5;
+    }
+
+.hop-addition {
+    padding: .4rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.addition-main {
+    display: grid;
+    grid-template-columns: 25px minmax(0, 1fr) auto;
+    align-items: center;
+}
+
+.addition-values {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: 25px;
+    margin-top: .35rem;
+}
+
+.compact-input {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+    .compact-input .form-control {
+        min-width: 0;
+        padding: .2rem .35rem;
+        font-size: .875rem;
+    }
+
+    .compact-input span {
+        flex: 0 0 28px;
+        margin-left: 4px;
+        color: #6c757d;
+        font-size: .8rem;
+    }
+
+.batch-maturation {
+    white-space: nowrap;
+}
+
+ 
+.batch-maturation-waiting {
+    color: #b58100;
+    font-weight: 600;
+}
+
+ 
+.batch-maturation-ready {
+    color: #198754;
+    font-weight: 600;
+}
+
+/* Labels */
+
+.label-print-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 360px) 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.label-print-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.label-print-actions {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.label-print-preview {
+    min-width: 0;
+}
+
+.label-preview-paper {
+    padding: 10mm;
+    background: #fff;
+    border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+    .label-preview-paper .printed-label {
+        display: block;
+        width: 180mm;
+        height: 18mm;
+    }
+
+.label-print-item {
+    width: 180mm;
+    height: 18mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+    .label-print-item .printed-label {
+        display: block;
+        width: 180mm;
+        height: 18mm;
+    }
+
+#labelPrintArea {
+    display: none;
+}
+
+/* Lables Ende */
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .recipe-title-row {
+        align-items: flex-start;
+    }
+
+    .recipe-version-select {
+        min-width: 7rem;
+    }
+
+    .recipe-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: .75rem;
+    }
+
+    .recipe-metric:nth-child(2) {
+        border-right: 0;
+    }
+
+    .recipe-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .recipe-table {
+        min-width: 34rem;
+    }
+
+        .recipe-table.recipe-table-simple {
+            min-width: 0;
+        }
+
+    .recipe-footer-actions {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+}
+
+@media print {
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .print-hide {
+        display: none !important;
+    }
+
+    .recipe-sheet-column {
+        gap: 0;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .label-screen-only {
+        display: none !important;
+    }
+
+    #labelPrintArea {
+        display: block;
+        width: 100%;
+    }
+
+    .label-print-item {
+        width: 180mm;
+        height: 18mm;
+        margin: 0 auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+        .label-print-item .printed-label {
+            display: block;
+            width: 180mm;
+            height: 18mm;
+        }
+}

@@ -1,0 +1,19 @@
+services:
+  hops:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: hops
+
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__HOPSContext: "Data Source=/data/hops.db"
+
+    volumes:
+      - ./data:/data

@@ -1,0 +1,13 @@
+**/bin
+**/obj
+.vs
+.git
+.gitignore
+ 
+Dockerfile*
+compose*.yaml
+compose*.yml
+ 
+*.db
+*.db-shm
+*.db-wal

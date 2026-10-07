@@ -1,0 +1,6 @@
+docker run -d \
+--name hops \
+-p 8080:8080 \
+-v hops-data:/data \
+hops
+Weitere Zeilen anzeigen

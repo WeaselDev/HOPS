@@ -1,0 +1,1087 @@
+@page
+@using HOPS.Models
+@using HOPS.Properties
+@model HOPS.Pages.BrewRecipeSheet.CreateModel
+
+@{
+    ViewData["Title"] = @Resource.CreateRecipe;
+}
+
+<form method="post" id="recipeForm">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <header class="recipe-header">
+        <div class="recipe-title-row">
+            <div class="flex-grow-1">
+                <label asp-for="BrewRecipe.Name" class="recipe-metric-label"></label>
+                <input asp-for="BrewRecipe.Name" class="form-control recipe-name-input" />
+                <span asp-validation-for="BrewRecipe.Name" class="text-danger validation-message"></span>
+            </div>
+        </div>
+    </header>
+
+    <div id="recipeDetails" class="recipe-sheet-page">
+        <div class="recipe-sheet-column">
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.BaseData</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-table recipe-table-simple">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Style"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Style" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Style" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].BatchSize"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Versions[0].BatchSize" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Versions[0].BatchSize" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">L</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].BrewhouseEfficiency"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Versions[0].BrewhouseEfficiency" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Versions[0].BrewhouseEfficiency" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].OriginalGravity"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Versions[0].OriginalGravity" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Versions[0].OriginalGravity" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">°P</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].Bitterness"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Versions[0].Bitterness" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Versions[0].Bitterness" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">IBU</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].Color"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Versions[0].Color" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Versions[0].Color" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">EBC</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].EstimatedABV"></label>
+                                </td>
+                                <td>
+                                    <input asp-for="BrewRecipe.Versions[0].EstimatedABV" class="form-control" />
+                                    <span asp-validation-for="BrewRecipe.Versions[0].EstimatedABV" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="recipe-description-input">
+                        <label asp-for="BrewRecipe.Description" class="recipe-metric-label"></label>
+                        <input asp-for="BrewRecipe.Description" class="form-control" />
+                        <span asp-validation-for="BrewRecipe.Description" class="text-danger validation-message"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.GrainBill</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th class="recipe-drag-column"></th>
+                                    <th>@Resource.Malt</th>
+                                    <th class="numeric">@Resource.Amount [kg]</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="maltAdditions">
+                                @for (int i = 0; i < Model.BrewRecipe.Versions[0].MaltAdditions.Count; i++)
+                                {
+                                    <tr class="collection-row">
+                                        <td class="recipe-drag-cell">
+                                            <input type="hidden" asp-for="BrewRecipe.Versions[0].MaltAdditions[i].Index" />
+                                            <input type="hidden" name="BrewRecipe.Versions[0].MaltAdditions[@i].Unit" value="kg" />
+                                            <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                                        </td>
+                                        <td>
+                                            <input asp-for="BrewRecipe.Versions[0].MaltAdditions[i].Name" class="form-control input-name" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].MaltAdditions[i].Amount" class="form-control input-number scalable-amount malt-amount" />
+                                        </td>
+                                        <td class="recipe-actions-cell">
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="MaltAdditions">+ Schüttung</button>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Hops</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Hops</th>
+                                <th class="numeric">@Resource.AlphaAcid [%]</th>
+                                <th class="numeric">@Resource.Amount [g]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var hop in Model.BrewRecipe.Versions[0].HopAdditions
+                                .GroupBy(h => new { h.Name, h.AlphaAcid })
+                                .Select(g => new
+                                {
+                                    g.Key.Name,
+                                    g.Key.AlphaAcid,
+                                    Amount = g.Sum(h => h.Amount)
+                                }))
+                            {
+                                <tr>
+                                    <td>@hop.Name</td>
+                                    <td class="numeric">@hop.AlphaAcid</td>
+                                    <td class="numeric">@hop.Amount</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.OtherIngredients</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th class="recipe-drag-column"></th>
+                                    <th>@Resource.Addition</th>
+                                    <th class="numeric">@Resource.Amount</th>
+                                    <th class="numeric">@Resource.Unit</th>
+                                    <th class="numeric">@Resource.Time</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="fermentationAdditions">
+                                @for (int i = 0; i < Model.BrewRecipe.Versions[0].FermentationAdditions.Count; i++)
+                                {
+                                    <tr class="collection-row">
+                                        <td class="recipe-drag-cell">
+                                            <input type="hidden" asp-for="BrewRecipe.Versions[0].FermentationAdditions[i].Index" />
+                                            <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                                        </td>
+                                        <td>
+                                            <input asp-for="BrewRecipe.Versions[0].FermentationAdditions[i].Name" class="form-control input-name" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].FermentationAdditions[i].Amount" class="form-control input-number scalable-amount" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].FermentationAdditions[i].Unit" class="form-control input-number" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].FermentationAdditions[i].Time" class="form-control input-number" />
+                                        </td>
+                                        <td class="recipe-actions-cell">
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="FermentationAdditions">+ Gärzugabe</button>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Yeast</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th class="recipe-drag-column"></th>
+                                    <th>@Resource.Yeast</th>
+                                    <th class="numeric">@Resource.Amount</th>
+                                    <th>@Resource.Unit</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="yeastAdditions">
+                                @for (int i = 0; i < Model.BrewRecipe.Versions[0].YeastAdditions.Count; i++)
+                                {
+                                    <tr class="collection-row">
+                                        <td class="recipe-drag-cell">
+                                            <input type="hidden" asp-for="BrewRecipe.Versions[0].YeastAdditions[i].Index" />
+                                            <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                                        </td>
+                                        <td>
+                                            <input asp-for="BrewRecipe.Versions[0].YeastAdditions[i].Name" class="form-control input-name" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].YeastAdditions[i].Amount" class="form-control input-number" />
+                                        </td>
+                                        <td>
+                                            <select asp-for="BrewRecipe.Versions[0].YeastAdditions[i].Unit" class="form-select input-unit">
+                                                <option value="stck">stck</option>
+                                                <option value="g">g</option>
+                                            </select>
+                                        </td>
+                                        <td class="recipe-actions-cell">
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="YeastAdditions">+ Hefe</button>
+                </div>
+            </section>
+        </div>
+
+        <div class="recipe-sheet-column">
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.BrewingWater</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-fields">
+                        <div class="recipe-field recipe-field-narrow">
+                            <label asp-for="BrewRecipe.Versions[0].TotalWater"></label>
+                            <div class="recipe-input-with-unit">
+                                <input asp-for="BrewRecipe.Versions[0].TotalWater" class="form-control" />
+                                <span class="recipe-inline-unit">L</span>
+                            </div>
+                        </div>
+
+                        <div class="recipe-field recipe-field-narrow">
+                            <label asp-for="BrewRecipe.Versions[0].MashWaterPercentage"></label>
+                            <div class="recipe-input-with-unit">
+                                <input asp-for="BrewRecipe.Versions[0].MashWaterPercentage" class="form-control" />
+                                <span class="recipe-inline-unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="recipe-subtitle">@Resource.WaterAdditions</h4>
+
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th class="recipe-drag-column"></th>
+                                    <th>@Resource.WaterAddition</th>
+                                    <th class="numeric">@Resource.Amount</th>
+                                    <th class="numeric">@Resource.Unit</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="waterAdditions">
+                                @for (int i = 0; i < Model.BrewRecipe.Versions[0].WaterAdditions.Count; i++)
+                                {
+                                    <tr class="collection-row">
+                                        <td class="recipe-drag-cell">
+                                            <input type="hidden" asp-for="BrewRecipe.Versions[0].WaterAdditions[i].Index" />
+                                            <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                                        </td>
+                                        <td>
+                                            <select asp-for="BrewRecipe.Versions[0].WaterAdditions[i].Type" asp-items="Html.GetEnumSelectList<WaterAdditionType>()" class="form-select"></select>
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].WaterAdditions[i].Amount" class="form-control input-number scalable-amount" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].WaterAdditions[i].Unit" class="form-control input-number" />
+                                        </td>
+                                        <td class="recipe-actions-cell">
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="WaterAdditions">+ Wasserzusatz</button>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.MashSchedule</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th class="recipe-drag-column"></th>
+                                    <th>@Resource.Step</th>
+                                    <th class="numeric">@Resource.Temperature [°C]</th>
+                                    <th class="numeric">@Resource.Duration [min]</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="mashSteps">
+                                @for (int i = 0; i < Model.BrewRecipe.Versions[0].MashSteps.Count; i++)
+                                {
+                                    <tr class="collection-row">
+                                        <td class="recipe-drag-cell">
+                                            <input type="hidden" asp-for="BrewRecipe.Versions[0].MashSteps[i].Index" />
+                                            <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                                        </td>
+                                        <td>
+                                            <input asp-for="BrewRecipe.Versions[0].MashSteps[i].Name" class="form-control input-name" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].MashSteps[i].Temperature" class="form-control input-number" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].MashSteps[i].Duration" class="form-control input-number" type="text" />
+                                        </td>
+                                        <td class="recipe-actions-cell">
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="MashSteps">+ Maischschritt</button>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Boil</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-key-values">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Versions[0].BoilDuration"></label>
+                                </td>
+                                <td>
+                                    <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewRecipe.Versions[0].BoilDuration" class="form-control input-number" />
+                                        <span class="recipe-inline-unit">min</span>
+                                    </div>
+                                    <span asp-validation-for="BrewRecipe.Versions[0].BoilDuration" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="recipe-subtitle">@Resource.HopAdditions</h4>
+
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th class="recipe-drag-column"></th>
+                                    <th>@Resource.Hops</th>
+                                    <th class="numeric">@Resource.AlphaAcid [%]</th>
+                                    <th class="numeric">@Resource.Amount [g]</th>
+                                    <th class="numeric">@Resource.Duration [min]</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="hopAdditions">
+                                @for (int i = 0; i < Model.BrewRecipe.Versions[0].HopAdditions.Count; i++)
+                                {
+                                    <tr class="collection-row">
+                                        <td class="recipe-drag-cell">
+                                            <input type="hidden" asp-for="BrewRecipe.Versions[0].HopAdditions[i].Index" />
+                                            <input type="hidden" name="BrewRecipe.Versions[0].HopAdditions[@i].Unit" value="g" />
+                                            <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                                        </td>
+                                        <td>
+                                            <input asp-for="BrewRecipe.Versions[0].HopAdditions[i].Name" class="form-control input-name" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].HopAdditions[i].AlphaAcid" class="form-control input-number" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].HopAdditions[i].Amount" class="form-control input-number scalable-amount" />
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewRecipe.Versions[0].HopAdditions[i].Duration" class="form-control input-number" type="text" />
+                                        </td>
+                                        <td class="recipe-actions-cell">
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="HopAdditions">+ Hopfengabe</button>
+
+                    <h4 class="recipe-subtitle">@Resource.FiningAgents</h4>
+
+                    <div class="form-check">
+                        <input asp-for="BrewRecipe.Versions[0].UseIrishMoss" class="form-check-input" />
+                        <label asp-for="BrewRecipe.Versions[0].UseIrishMoss" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="BrewRecipe.Versions[0].UseWhirlfloc" class="form-check-input" />
+                        <label asp-for="BrewRecipe.Versions[0].UseWhirlfloc" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="BrewRecipe.Versions[0].UseSilicaSol" class="form-check-input" />
+                        <label asp-for="BrewRecipe.Versions[0].UseSilicaSol" class="form-check-label"></label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.FermentationAndAging</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-fields">
+                        <div class="recipe-field recipe-field-narrow">
+                            <label asp-for="BrewRecipe.Versions[0].FermentationTemperature"></label>
+                            <div class="recipe-input-with-unit">
+                                <input asp-for="BrewRecipe.Versions[0].FermentationTemperature" class="form-control" />
+                                <span class="recipe-inline-unit">°C</span>
+                            </div>
+                        </div>
+
+                        <div class="recipe-field recipe-field-narrow">
+                            <label asp-for="BrewRecipe.Versions[0].ApparantAttenuation"></label>
+                            <div class="recipe-input-with-unit">
+                                <input asp-for="BrewRecipe.Versions[0].ApparantAttenuation" class="form-control" />
+                                <span class="recipe-inline-unit">%</span>
+                            </div>
+                        </div>
+
+                        <div class="recipe-field recipe-field-narrow">
+                            <label asp-for="BrewRecipe.Versions[0].Carbonation"></label>
+                            <div class="recipe-input-with-unit">
+                                <input asp-for="BrewRecipe.Versions[0].Carbonation" class="form-control" />
+                                <span class="recipe-inline-unit">g CO2/L</span>
+                            </div>
+                        </div>
+
+                        <div class="recipe-field recipe-field-narrow">
+                            @Resource.MaturationTime
+                            <div class="recipe-input-with-unit">
+                                <input asp-for="BrewRecipe.Versions[0].MaturationWeeksMin" class="form-control" /> 
+                                <span class="recipe-inline-unit">-</span>
+                                <input asp-for="BrewRecipe.Versions[0].MaturationWeeksMax" class="form-control" />
+                                <span class="recipe-inline-unit">@Resource.Weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="recipe-footer-actions">
+        <div class="secondary-actions">
+            <a asp-page="./Index" class="btn btn-outline-secondary">@Resource.Cancle</a>
+        </div>
+        <div class="primary-actions">
+            <button type="submit" class="btn btn-primary">@Resource.Create</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $.validator.methods.number = function(value, element) {
+            return this.optional(element)
+                || /^-?\d+(,\d+)?$/.test(value);
+        };
+
+        const prefix = "BrewRecipe.Versions[0]";
+
+        const configs = {
+            WaterAdditions: {
+                fields: [
+                    {
+                        n: "Type",
+                        t: "select",
+                        options: [
+                            ["0", "DistilledWater"],
+                            ["1", "LacticAcid"],
+                            ["2", "CalciumChloride"],
+                            ["3", "CalciumSulfate"],
+                            ["4", "MagnesiumSulfate"]
+                        ]
+                    },
+                    {
+                        n: "Amount",
+                        cls: "scalable-amount"
+                    },
+                    {
+                        n: "Unit"
+                    }
+                ]
+            },
+            MaltAdditions: {
+                fields: [
+                    {
+                        n: "Name"
+                    },
+                    {
+                        n: "Amount",
+                        cls: "scalable-amount malt-amount"
+                    }
+                ],
+                fixedUnit: "kg"
+            },
+            MashSteps: {
+                fields: [
+                    {
+                        n: "Name"
+                    },
+                    {
+                        n: "Temperature"
+                    },
+                    {
+                        n: "Duration"
+                    }
+                ]
+            },
+            HopAdditions: {
+                fields: [
+                    {
+                        n: "Name"
+                    },
+                    {
+                        n: "AlphaAcid"
+                    },
+                    {
+                        n: "Amount",
+                        cls: "scalable-amount"
+                    },
+                    {
+                        n: "Duration"
+                    }
+                ],
+                fixedUnit: "g"
+            },
+            YeastAdditions: {
+                fields: [
+                    {
+                        n: "Name"
+                    },
+                    {
+                        n: "Amount"
+                    },
+                    {
+                        n: "Unit",
+                        t: "select",
+                        options: [
+                            ["stck", "stck"],
+                            ["g", "g"]
+                        ]
+                    }
+                ]
+            },
+            FermentationAdditions: {
+                fields: [
+                    {
+                        n: "Name"
+                    },
+                    {
+                        n: "Amount",
+                        cls: "scalable-amount"
+                    },
+                    {
+                        n: "Unit"
+                    },
+                    {
+                        n: "Time"
+                    }
+                ]
+            }
+        };
+
+        function inputHtml(collection, index, field) {
+            const name = `${prefix}.${collection}[${index}].${field.n}`;
+
+            if (field.t === "select") {
+                const options = field.options
+                    .map(option => `<option value="${option[0]}">${option[1]}</option>`)
+                    .join("");
+
+                const inputClass = field.n === "Unit"
+                    ? "input-unit"
+                    : "";
+
+                return `<select name="${name}" class="form-select ${inputClass}">${options}</select>`;
+            }
+
+            const isTextField = field.n === "Name"
+                || field.n === "Description";
+
+            const inputClass = isTextField
+                ? "input-name"
+                : "input-number";
+
+            return `<input name="${name}" class="form-control ${inputClass} ${field.cls || ""}" type="text" />`;
+        }
+
+        function getCollectionName(tbody) {
+            return Object.keys(configs).find(collection => {
+                const id = collection[0].toLowerCase()
+                    + collection.slice(1);
+
+                return tbody.id === id;
+            });
+        }
+
+        function rowHasContent(row, collection) {
+            const config = configs[collection];
+
+            return config.fields.some(field => {
+                /*
+                 * Selects have a default value and therefore don't count
+                 * as user-entered content on their own.
+                 */
+                if (field.t === "select") {
+                    return false;
+                }
+
+                const element = row.querySelector(
+                    `[name$=".${field.n}"]`
+                );
+
+                if (!element) {
+                    return false;
+                }
+
+                return element.value.trim() !== "";
+            });
+        }
+
+        function reindex(container, collection) {
+            [...container.querySelectorAll(":scope > tr")].forEach((row, index) => {
+                row.querySelectorAll("[name]").forEach(element => {
+                    element.name = element.name.replace(
+                        new RegExp(`${collection}\\[\\d+\\]`),
+                        `${collection}[${index}]`
+                    );
+                });
+
+                row.querySelectorAll("[id]").forEach(element => {
+                    element.id = element.id.replace(
+                        new RegExp(`${collection}_\\d+__`),
+                        `${collection}_${index}__`
+                    );
+                });
+
+                row.querySelectorAll("label[for]").forEach(element => {
+                    element.htmlFor = element.htmlFor.replace(
+                        new RegExp(`${collection}_\\d+__`),
+                        `${collection}_${index}__`
+                    );
+                });
+
+                const indexInput = row.querySelector(
+                    'input[name$=".Index"]'
+                );
+
+                if (indexInput) {
+                    indexInput.value = index + 1;
+                }
+            });
+        }
+
+        function createRow(collection, index) {
+            const config = configs[collection];
+            const row = document.createElement("tr");
+
+            row.className = "collection-row";
+
+            const fixedUnit = config.fixedUnit
+                ? `<input type="hidden" name="${prefix}.${collection}[${index}].Unit" value="${config.fixedUnit}" />`
+                : "";
+
+            const fields = config.fields
+                .map(field => {
+                    const cellClass = field.n === "Name"
+                        || field.n === "Description"
+                        || field.t === "select"
+                        ? ""
+                        : "numeric";
+
+                    return `<td class="${cellClass}">${inputHtml(collection, index, field)}</td>`;
+                })
+                .join("");
+
+            row.innerHTML = `
+                <td class="recipe-drag-cell">
+                    <input type="hidden" name="${prefix}.${collection}[${index}].Index" value="${index + 1}" />
+                    ${fixedUnit}
+                    <button type="button" class="recipe-drag-handle" title="Verschieben" aria-label="Verschieben">⠿</button>
+                </td>
+                ${fields}
+                <td class="recipe-actions-cell">
+                    <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                </td>
+            `;
+
+            return row;
+        }
+
+        function ensureEmptyRow(container, collection) {
+            let rows = [
+                ...container.querySelectorAll(
+                    ":scope > .collection-row"
+                )
+            ];
+
+            /*
+             * There should never be more than one completely empty row.
+             * Keep the last empty row, because it is the natural input row.
+             */
+            const emptyRows = rows.filter(
+                row => !rowHasContent(row, collection)
+            );
+
+            if (emptyRows.length > 1) {
+                emptyRows
+                    .slice(0, -1)
+                    .forEach(row => row.remove());
+            }
+
+            rows = [
+                ...container.querySelectorAll(
+                    ":scope > .collection-row"
+                )
+            ];
+
+            if (rows.length === 0) {
+                container.appendChild(
+                    createRow(collection, 0)
+                );
+
+                reindex(container, collection);
+
+                return;
+            }
+
+            const lastRow = rows[rows.length - 1];
+
+            /*
+             * The last row has been used. Immediately provide a fresh
+             * empty row underneath it.
+             */
+            if (rowHasContent(lastRow, collection)) {
+                container.appendChild(
+                    createRow(collection, rows.length)
+                );
+            }
+
+            reindex(container, collection);
+        }
+
+        function getCollectionContainer(collection) {
+            const containerId = collection[0].toLowerCase()
+                + collection.slice(1);
+
+            return document.getElementById(containerId);
+        }
+
+        function handleCollectionInput(target) {
+            const row = target.closest(".collection-row");
+
+            if (!row) {
+                return;
+            }
+
+            const container = row.parentElement;
+            const collection = getCollectionName(container);
+
+            if (!collection) {
+                return;
+            }
+
+            const rows = [
+                ...container.querySelectorAll(
+                    ":scope > .collection-row"
+                )
+            ];
+
+            const lastRow = rows[rows.length - 1];
+
+            if (row !== lastRow) {
+                return;
+            }
+
+            ensureEmptyRow(container, collection);
+        }
+
+        document.addEventListener("input", event => {
+            handleCollectionInput(event.target);
+        });
+
+        document.addEventListener("change", event => {
+            handleCollectionInput(event.target);
+        });
+
+        document.addEventListener("click", event => {
+            const addButton = event.target.closest(".add-row");
+
+            if (addButton) {
+                const collection = addButton.dataset.collection;
+
+                if (!configs[collection]) {
+                    return;
+                }
+
+                const tbody = getCollectionContainer(collection);
+
+                if (!tbody) {
+                    return;
+                }
+
+                /*
+                 * The + button remains available as a fallback.
+                 * If an empty row already exists, putting the focus there is
+                 * more useful than creating another one.
+                 */
+                ensureEmptyRow(tbody, collection);
+
+                const rows = [
+                    ...tbody.querySelectorAll(
+                        ":scope > .collection-row"
+                    )
+                ];
+
+                const lastRow = rows[rows.length - 1];
+
+                const firstInput = lastRow.querySelector(
+                    'input:not([type="hidden"]), select'
+                );
+
+                if (firstInput) {
+                    firstInput.focus();
+                }
+
+                return;
+            }
+
+            const removeButton = event.target.closest(".remove-row");
+
+            if (!removeButton) {
+                return;
+            }
+
+            const row = removeButton.closest(".collection-row");
+
+            if (!row) {
+                return;
+            }
+
+            const tbody = row.parentElement;
+            const collection = getCollectionName(tbody);
+
+            if (!collection) {
+                return;
+            }
+
+            row.remove();
+
+            reindex(tbody, collection);
+            ensureEmptyRow(tbody, collection);
+        });
+
+        let draggedRow = null;
+
+        document.addEventListener("pointerdown", event => {
+            const handle = event.target.closest(
+                ".recipe-drag-handle"
+            );
+
+            if (!handle) {
+                return;
+            }
+
+            const row = handle.closest(".collection-row");
+
+            if (!row) {
+                return;
+            }
+
+            row.draggable = true;
+        });
+
+        document.addEventListener("pointerup", () => {
+            document
+                .querySelectorAll(
+                    ".collection-row[draggable='true']"
+                )
+                .forEach(row => {
+                    if (row !== draggedRow) {
+                        row.draggable = false;
+                    }
+                });
+        });
+
+        document.addEventListener("dragstart", event => {
+            const row = event.target.closest(".collection-row");
+
+            if (!row || !row.draggable) {
+                return;
+            }
+
+            draggedRow = row;
+            draggedRow.classList.add(
+                "recipe-row-dragging"
+            );
+
+            event.dataTransfer.effectAllowed = "move";
+            event.dataTransfer.setData("text/plain", "");
+        });
+
+        document.addEventListener("dragover", event => {
+            if (!draggedRow) {
+                return;
+            }
+
+            const targetRow = event.target.closest(
+                ".collection-row"
+            );
+
+            if (
+                !targetRow
+                || targetRow === draggedRow
+            ) {
+                return;
+            }
+
+            const sourceBody = draggedRow.parentElement;
+            const targetBody = targetRow.parentElement;
+
+            if (sourceBody !== targetBody) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const bounds =
+                targetRow.getBoundingClientRect();
+
+            const insertAfter =
+                event.clientY
+                > bounds.top + bounds.height / 2;
+
+            if (insertAfter) {
+                targetRow.after(draggedRow);
+            } else {
+                targetRow.before(draggedRow);
+            }
+        });
+
+        document.addEventListener("dragend", () => {
+            if (!draggedRow) {
+                return;
+            }
+
+            const tbody = draggedRow.parentElement;
+            const collection = getCollectionName(tbody);
+
+            draggedRow.classList.remove(
+                "recipe-row-dragging"
+            );
+
+            draggedRow.draggable = false;
+
+            if (collection) {
+                reindex(tbody, collection);
+                ensureEmptyRow(tbody, collection);
+            }
+
+            draggedRow = null;
+        });
+
+        document
+            .getElementById("recipeForm")
+            .addEventListener("submit", function() {
+                Object.keys(configs).forEach(collection => {
+                    const container =
+                        getCollectionContainer(collection);
+
+                    if (!container) {
+                        return;
+                    }
+
+                    /*
+                     * Empty rows are only a UI convenience and should never
+                     * reach model binding.
+                     */
+                    [
+                        ...container.querySelectorAll(
+                            ":scope > .collection-row"
+                        )
+                    ]
+                        .filter(
+                            row => !rowHasContent(
+                                row,
+                                collection
+                            )
+                        )
+                        .forEach(row => row.remove());
+
+                    reindex(container, collection);
+                });
+            });
+
+        /*
+         * Every collection starts with exactly one spare empty row.
+         * Existing rows from the PageModel are kept.
+         */
+        Object.keys(configs).forEach(collection => {
+            const container =
+                getCollectionContainer(collection);
+
+            if (!container) {
+                return;
+            }
+
+            ensureEmptyRow(container, collection);
+        });
+    </script>
+}

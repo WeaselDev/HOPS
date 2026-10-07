@@ -1,0 +1,202 @@
+@page
+@model HOPS.Pages.BrewBatchPages.IndexModel
+@using HOPS.Properties
+
+@{
+    ViewData["Title"] = @Resource.BrewLog;
+}
+
+<header class="recipe-header">
+    <div class="recipe-title-row">
+        <span class="recipename">@Resource.BrewLog</span>
+    </div>
+</header>
+
+<div class="batch-journal">
+    <div class="batch-journal-filters">
+        <div class="batch-journal-status-filter">
+            <label for="batchStatusFilter">@Resource.Status</label>
+            <select id="batchStatusFilter" class="form-select form-select-sm">
+                <option value="">@Resource.All</option>
+                @foreach (var status in Model.BrewBatches
+                    .Select(x => x.BrewBatch.Status)
+                    .Distinct()
+                    .OrderBy(x => x))
+                {
+                    <option value="@status">@status</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <table id="batchJournalTable" class="table batch-journal-table">
+        <thead>
+            <tr>
+                <th>@Resource.BrewingDate</th>
+                <th>@Resource.Recipe</th>
+                <th>@Resource.Status</th>
+                <th>@Resource.ReadyToDrink</th>
+                <th>@Resource.Rating</th>
+                <th class="batch-journal-actions"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.BrewBatches)
+            {
+                var batch = item.BrewBatch;
+                var recipeVersion = item.BrewRecipeVersion;
+                var recipe = item.BrewRecipe;
+
+                var maturationMin = recipeVersion?.MaturationWeeksMin ?? 0;
+                var maturationMax = recipeVersion?.MaturationWeeksMax ?? 0;
+
+                var weeksUntilMin = 0;
+                var weeksUntilMax = 0;
+
+                if (batch.BottlingDate.HasValue && maturationMin > 0)
+                {
+                    var maturationMinDate = batch.BottlingDate.Value.AddDays(maturationMin * 7);
+                    var maturationMaxDate = batch.BottlingDate.Value.AddDays(maturationMax * 7);
+
+                    weeksUntilMin = (int)Math.Ceiling(
+                        (maturationMinDate.Date - DateTime.Today).TotalDays / 7.0);
+
+                    weeksUntilMax = (int)Math.Ceiling(
+                        (maturationMaxDate.Date - DateTime.Today).TotalDays / 7.0);
+                }
+
+                <tr>
+                    <td data-order="@(batch.BrewDate?.ToString("yyyy-MM-dd") ?? string.Empty)">
+                        @if (batch.BrewDate.HasValue)
+                        {
+                            <span class="batch-journal-date">@batch.BrewDate.Value.ToString("dd.MM.yyyy")</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                    </td>
+                    <td data-search="@recipe?.Name @recipe?.Style">
+                        <div class="batch-journal-recipe">
+                            <a asp-page="./Details" asp-route-id="@batch.Id" class="batch-journal-recipe-name">@recipe?.Name</a>
+                            <span class="batch-journal-version">v@(recipeVersion?.Version)</span>
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(recipe?.Style))
+                        {
+                            <div class="batch-journal-style">@recipe.Style</div>
+                        }
+
+                        <div class="batch-journal-values">
+                            <span>@batch.BatchSize L</span>
+
+                            @if (batch.FermentationStartPlato.HasValue)
+                            {
+                                <span>@batch.FermentationStartPlato °P</span>
+                            }
+
+                            @if (batch.BottlingPlato.HasValue)
+                            {
+                                <span>→ @batch.BottlingPlato °P</span>
+                            }
+
+                            @if (batch.ActualABV.HasValue)
+                            {
+                                <span>@batch.ActualABV %</span>
+                            }
+                        </div>
+                    </td>
+                    <td data-search="@batch.Status">
+                        <span class="batch-status">@batch.Status</span>
+                    </td>
+                    <td>
+                        @if (!batch.BottlingDate.HasValue || maturationMin <= 0)
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                        else if (weeksUntilMin > 0)
+                        {
+                            <span class="batch-maturation batch-maturation-waiting">
+                                @Resource.In
+                                @weeksUntilMin
+                                @if (weeksUntilMax > weeksUntilMin)
+                                {
+                                    <span>-</span>
+                                    @weeksUntilMax
+                                }
+                                @Resource.Weeks
+                            </span>
+                        }
+                        else if (weeksUntilMax >= 0)
+                        {
+                            <span class="batch-maturation batch-maturation-ready">@Resource.ReadyToDrink</span>
+                        }
+                        else
+                        {
+                            <span class="batch-maturation">@Resource.Mature</span>
+                        }
+                    </td>
+                    <td data-order="@(batch.Rating ?? -1)">
+                        @if (batch.Rating.HasValue)
+                        {
+                            <span class="batch-rating">
+                                @for (int i = 0; i < 5; i++)
+                                {
+                                    @(i < batch.Rating.Value ? "★" : "☆")
+                                }
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                    </td>
+                    <td class="batch-journal-actions">
+                        <a asp-page="./Details" asp-route-id="@batch.Id" class="btn btn-sm btn-outline-primary">@Resource.Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        const batchTable = new DataTable("#batchJournalTable", {
+            order: [[0, "desc"]],
+            pageLength: 25,
+            layout: {
+                topStart: "search",
+                topEnd: "pageLength",
+                bottomStart: "info",
+                bottomEnd: "paging"
+            },
+            columnDefs: [
+                {
+                    targets: 5,
+                    orderable: false,
+                    searchable: false
+                }
+            ],
+            language: {
+                search: "@Resource.Search",
+                searchPlaceholder: "@Resource.Table_Placeholder",
+                lengthMenu: "@Resource.Table_LengthMenu",
+                info: "@Resource.Table_Info",
+                infoEmpty: "@Resource.Table_InfoEmpty",
+                zeroRecords: "@Resource.Table_ZeroRecords"
+            }
+        });
+
+        document
+            .getElementById("batchStatusFilter")
+            .addEventListener("change", function () {
+                batchTable
+                    .column(2)
+                    .search(this.value, {
+                        exact: true
+                    })
+                    .draw();
+            });
+    </script>
+}

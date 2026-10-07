@@ -1,0 +1,489 @@
+@page
+@model HOPS.Pages.BrewBatchPages.DetailsModel
+@using HOPS.Models
+@using HOPS.Properties
+@{
+    ViewData["Title"] = Model.BrewRecipe.Name;
+}
+
+<header class="recipe-header">
+    <div class="recipe-title-row">
+        <span class="recipename">
+            <a asp-page="../BrewRecipeSheet/Details"
+               asp-route-id="@Model.BrewRecipe.Id"
+               asp-route-version="@Model.BrewBatch.BrewRecipeVersion.Version">
+                @Model.BrewRecipe.Name
+            </a>
+        </span>
+
+        <div class="d-flex align-items-center gap-3">
+            <div class="batch-rating">
+                @if (Model.BrewBatch.Rating.HasValue)
+                {
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        @(i < Model.BrewBatch.Rating.Value ? "★" : "☆")
+                    }
+                }
+                else
+                {
+                    <span class="text-muted">@Resource.NotRated</span>
+                }
+            </div>
+
+            <span class="text-muted">v@(Model.BrewBatch.BrewRecipeVersion.Version)</span>
+            <span class="batch-status">@Model.BrewBatch.Status</span>
+            @if (Model.BrewRecipe.IsDeleted)
+            {
+                <span class="badge text-bg-danger">@Resource.RecipeDeleted</span>
+            }
+            else if (Model.BrewBatch.BrewRecipeVersion.IsDeleted)
+            {
+                <span class="badge text-bg-secondary">@Resource.VersionDeleted</span>
+            }
+        </div>
+    </div>
+</header>
+
+<div id="batchDetails" class="recipe-sheet-page">
+    <div class="recipe-sheet-column">
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.Batch</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewRecipe.Style"></label>
+                            </td>
+                            <td colspan="2" class="value">@Model.BrewRecipe.Style</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.Status"></label>
+                            </td>
+                            <td colspan="2" class="value">@Model.BrewBatch.Status</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BrewDate"></label>
+                            </td>
+                            <td colspan="2" class="value">@Model.BrewBatch.BrewDate?.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BatchSize"></label>
+                            </td>
+                            <td class="numeric">@Model.BrewBatch.BatchSize</td>
+                            <td class="unit">L</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BrewhouseEfficiency"></label>
+                            </td>
+                            <td class="numeric">@Model.BrewBatch.BrewhouseEfficiency</td>
+                            <td class="unit">%</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.FermentationStartDate"></label>
+                            </td>
+                            <td colspan="2" class="value">@Model.BrewBatch.FermentationStartDate?.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BottlingDate"></label>
+                            </td>
+                            <td colspan="2" class="value">@Model.BrewBatch.BottlingDate?.ToString("dd.MM.yyyy")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BottlingVolume"></label>
+                            </td>
+                            <td class="numeric">@Model.BrewBatch.BottlingVolume</td>
+                            <td class="unit">L</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="recipe-subtitle">@Resource.TargetActual</h4>
+
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="numeric">@Resource.Target</th>
+                            <th class="numeric">@Resource.Actual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BrewRecipeVersion.OriginalGravity"></label>
+                            </td>
+                            <td class="numeric">@Model.BrewBatch.BrewRecipeVersion.OriginalGravity °P</td>
+                            <td class="numeric">@Model.BrewBatch.FermentationStartPlato °P</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BottlingPlato"></label>
+                            </td>
+                            <td class="numeric">-</td>
+                            <td class="numeric">@Model.BrewBatch.BottlingPlato °P</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.ApparentAttenuation"></label>
+                            </td>
+                            <td class="numeric">@Model.BrewBatch.BrewRecipeVersion.ApparantAttenuation %</td>
+                            <td class="numeric">@Model.BrewBatch.ApparentAttenuation %</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.ActualABV"></label>
+                            </td>
+                            <td class="numeric">@Model.BrewBatch.BrewRecipeVersion.EstimatedABV %</td>
+                            <td class="numeric">@Model.BrewBatch.ActualABV %</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.Ingredients</h3>
+            <div class="recipe-section-body">
+                <h4 class="recipe-subtitle">@Resource.Malt</h4>
+
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Name</th>
+                            <th class="numeric">@Resource.Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var malt in Model.BrewBatch.BrewRecipeVersion.MaltAdditions)
+                        {
+                            var amount = malt.CalculateAmount(
+                                Model.BrewBatch.BrewRecipeVersion.BatchSize,
+                                Model.BrewBatch.BatchSize,
+                                Model.BrewBatch.BrewRecipeVersion.BrewhouseEfficiency,
+                                Model.BrewBatch.BrewhouseEfficiency);
+
+                            <tr>
+                                <td>@malt.Name</td>
+                                <td class="numeric">@amount.ToString("0.00") @malt.Unit</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <h4 class="recipe-subtitle">@Resource.Hops</h4>
+
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Hop</th>
+                            <th class="numeric">@Resource.AlphaAcid</th>
+                            <th class="numeric">@Resource.Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var hop in Model.IngredientHops)
+                        {
+                            <tr>
+                                <td>@hop.Name</td>
+                                <td class="numeric">@hop.AlphaAcid %</td>
+                                <td class="numeric">@hop.Amount.ToString("0.00") @hop.Unit</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <h4 class="recipe-subtitle">@Resource.Yeasts</h4>
+
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Name</th>
+                            <th>@Resource.Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var yeast in Model.BrewBatch.YeastAdditions)
+                        {
+                            <tr>
+                                <td>
+                                    @yeast.Name
+
+                                    @if (!string.IsNullOrWhiteSpace(yeast.Description))
+                                    {
+                                        <span class="text-muted">(@yeast.Description)</span>
+                                    }
+                                </td>
+                                <td class="numeric">@yeast.Amount @yeast.Unit</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        @if (
+            Model.BrewBatch.Rating.HasValue ||
+            !string.IsNullOrWhiteSpace(Model.BrewBatch.RatingNote))
+        {
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Rating</h3>
+                <div class="recipe-section-body">
+                    @if (Model.BrewBatch.Rating.HasValue)
+                    {
+                        <div class="batch-rating">
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                @(i < Model.BrewBatch.Rating.Value ? "★" : "☆")
+                            }
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(Model.BrewBatch.RatingNote))
+                    {
+                        <h4 class="recipe-subtitle">
+                            <label asp-for="BrewBatch.RatingNote"></label>
+                        </h4>
+                        <div class="batch-note">@Model.BrewBatch.RatingNote</div>
+                    }
+                </div>
+            </section>
+        }
+
+        @if (Model.BrewBatch.IsDestroyed)
+        {
+            <section class="recipe-sheet-section">
+                <div class="batch-destroyed">@Resource.BatchIsDestroyed</div>
+            </section>
+        }
+    </div>
+
+    <div class="recipe-sheet-column">
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.BrewingWater</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-key-values">
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Resource.MashWater (@Model.BrewBatch.MashWaterPercentage %) / @Resource.SpargeWater
+                            </td>
+                            <td>@(Model.BrewBatch.BrewRecipeVersion.TotalWater * Model.BrewBatch.MashWaterPercentage / 100) L / @(Model.BrewBatch.BrewRecipeVersion.TotalWater - (Model.BrewBatch.BrewRecipeVersion.TotalWater * Model.BrewBatch.MashWaterPercentage / 100)) L</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="BrewBatch.BrewRecipeVersion.TotalWater"></label>
+                            </td>
+                            <td>@Model.BrewBatch.BrewRecipeVersion.TotalWater L</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @if (Model.BrewBatch.WaterAdditions.Count > 0)
+                {
+                    <h4 class="recipe-subtitle">@Resource.WaterAdditions</h4>
+
+                    <table class="recipe-table recipe-table-simple">
+                        <tbody>
+                            @foreach (var addition in Model.BrewBatch.WaterAdditions)
+                            {
+                                <tr>
+                                    <td>@addition.Type</td>
+                                    <td class="numeric">@addition.Amount @addition.Unit</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.MashSchedule</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Step</th>
+                            <th class="numeric">@Resource.Temperature</th>
+                            <th class="numeric">@Resource.Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var mashStep in Model.BrewBatch.BrewRecipeVersion.MashSteps)
+                        {
+                            <tr>
+                                <td>@mashStep.Name</td>
+                                <td class="numeric">@mashStep.Temperature °C</td>
+                                <td class="numeric">@mashStep.Duration min</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.Boil</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-key-values">
+                    <tbody>
+                        <tr>
+                            <td>@Resource.BoilDuration</td>
+                            <td>@Model.BrewBatch.BrewRecipeVersion.BoilDuration min</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @if (Model.BrewAdditions.Count > 0)
+                {
+                    <h4 class="recipe-subtitle">@Resource.HopAdditions</h4>
+
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th>@Resource.Hop</th>
+                                    <th class="numeric">@Resource.AlphaAcid</th>
+                                    <th class="numeric">@Resource.Amount</th>
+                                    <th class="numeric print-hide">@Resource.BoilDuration</th>
+                                    <th class="numeric">@Resource.Timer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var addition in Model.BrewAdditions)
+                                {
+                                    <tr>
+                                        <td>@addition.Name</td>
+                                        <td class="numeric">@addition.AlphaAcid %</td>
+                                        <td class="numeric">@addition.Amount.ToString("0.00") @addition.Unit</td>
+                                        <td class="numeric print-hide">@addition.Duration min</td>
+                                        <td class="numeric">@addition.TimerTime min</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.FermentationAndAging</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-key-values">
+                    <tbody>
+                        <tr>
+                            <td><label asp-for="BrewBatch.BrewRecipeVersion.FermentationTemperature"></label></td>
+                            <td>@Model.BrewBatch.BrewRecipeVersion.FermentationTemperature °C</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewBatch.BrewRecipeVersion.ApparantAttenuation"></label></td>
+                            <td>@Model.BrewBatch.BrewRecipeVersion.ApparantAttenuation %</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewBatch.BrewRecipeVersion.Carbonation"></label></td>
+                            <td>@Model.BrewBatch.BrewRecipeVersion.Carbonation g CO₂/L</td>
+                        </tr>
+                        @if (
+                            Model.BrewBatch.BottlingVolume.HasValue &&
+                            Model.BrewBatch.BottlingTemperature.HasValue)
+                        { 
+                            <tr>
+                                <td>@Resource.BottlingVolume</td>
+                                <td>
+                                    @Model.BrewBatch.BottlingVolume L @@ @Model.BrewBatch.BottlingTemperature °C
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Resource.PrimingSugar</td>
+                                <td>
+                                    <strong>
+                                        @Model.BrewBatch.PrimingSugar?.ToString("0.0") g
+                                    </strong>
+                                </td>
+                            </tr>
+                        }
+                        @if (Model.BrewBatch.BrewRecipeVersion.MaturationWeeksMin > 0){
+                            <tr>
+                                <td>@Resource.MaturationTime</td>
+                                <td>
+                                    @Model.BrewBatch.BrewRecipeVersion.MaturationWeeksMin 
+                                    @if(Model.BrewBatch.BrewRecipeVersion.MaturationWeeksMax > Model.BrewBatch.BrewRecipeVersion.MaturationWeeksMin)
+                                    {
+                                        <span>-</span> @Model.BrewBatch.BrewRecipeVersion.MaturationWeeksMax
+                                    }
+                                    @Resource.Weeks
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+
+                <h4 class="recipe-subtitle">@Resource.FiningAgents</h4>
+
+                <div class="batch-checks">
+                    <div class="batch-check">
+                        <input asp-for="BrewBatch.UseIrishMoss" class="form-check-input" disabled />
+                        <label asp-for="BrewBatch.UseIrishMoss"></label>
+                    </div>
+                    <div class="batch-check">
+                        <input asp-for="BrewBatch.UseWhirlfloc" class="form-check-input" disabled />
+                        <label asp-for="BrewBatch.UseWhirlfloc"></label>
+                    </div>
+                    <div class="batch-check">
+                        <input asp-for="BrewBatch.UseSilicaSol" class="form-check-input" disabled />
+                        <label asp-for="BrewBatch.UseSilicaSol"></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @if (!string.IsNullOrWhiteSpace(Model.BrewBatch.BrewNote))
+        {
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.BrewNote</h3>
+                <div class="recipe-section-body batch-note">@Model.BrewBatch.BrewNote</div>
+            </section>
+        }
+    </div>
+</div>
+
+<div class="recipe-footer-actions print-hide">
+    <div class="secondary-actions">
+        <a asp-page="./Index" class="btn btn-outline-secondary">@Resource.Back</a>
+
+        <form method="post"
+              asp-page-handler="Delete"
+              asp-route-id="@Model.BrewBatch.Id"
+              class="d-inline"
+              onsubmit="return confirm('@Resource.ConfirmDeleteBatch');">
+            <button type="submit" class="btn btn-outline-danger">
+                @Resource.Delete
+            </button>
+        </form>
+        <a asp-page="./PrintLabel" asp-route-id="@Model.BrewBatch.Id" class="btn btn-outline-primary">
+            @Resource.PrintLabel
+        </a>
+    </div>
+
+    <div class="primary-actions">
+        <a asp-page="./Edit"
+           asp-route-id="@Model.BrewBatch.Id"
+           class="btn btn-primary">
+            @Resource.Edit
+        </a>
+    </div>
+
+</div>

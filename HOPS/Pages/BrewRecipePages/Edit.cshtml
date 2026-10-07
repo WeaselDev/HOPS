@@ -1,0 +1,513 @@
+@page
+@model HOPS.Pages.BrewRecipePages.EditModel
+@using HOPS.Models
+@{ ViewData["Title"] = "Rezept bearbeiten"; }
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="BrewRecipe.Id" />
+    <input type="hidden" asp-for="BrewRecipeVersion.Id" />
+    <input type="hidden" asp-for="BrewRecipeVersion.Version" />
+    <input type="hidden" id="PreviousBatchSize" value="@Model.BrewRecipeVersion.BatchSize" />
+    <input type="hidden" id="PreviousBrewhouseEfficiency" value="@Model.BrewRecipeVersion.BrewhouseEfficiency" />
+
+    <div id="recipeDetails" class="recipe-page">
+        <header class="recipe-header">
+            <div class="recipe-title-row">
+                <div class="flex-grow-1">
+                    <label asp-for="BrewRecipe.Name" class="recipe-metric-label"></label>
+                    <input asp-for="BrewRecipe.Name" class="form-control recipe-name-input"/>
+                    <span asp-validation-for="BrewRecipe.Name" class="text-danger validation-message"></span>
+                </div>
+            </div>
+            <div class="mt-2">
+                <label asp-for="BrewRecipe.Style" class="recipe-metric-label"></label>
+                <input asp-for="BrewRecipe.Style" class="form-control"/>
+                <span asp-validation-for="BrewRecipe.Style" class="text-danger validation-message"></span>
+            </div>
+            <div class="recipe-metrics">
+                <div class="recipe-metric">
+                    <span class="recipe-metric-label">
+                        <label asp-for="BrewRecipeVersion.OriginalGravity"></label>
+                    </span>
+                    <input asp-for="BrewRecipeVersion.OriginalGravity" class="form-control" />
+                    <span asp-validation-for="BrewRecipeVersion.OriginalGravity" class="text-danger validation-message"></span>
+                </div>
+                <div class="recipe-metric">
+                    <span class="recipe-metric-label">
+                        <label asp-for="BrewRecipeVersion.Bitterness"></label>
+                    </span>
+                    <input asp-for="BrewRecipeVersion.Bitterness" class="form-control" />
+                    <span asp-validation-for="BrewRecipeVersion.Bitterness" class="text-danger validation-message"></span>
+                </div>
+                <div class="recipe-metric">
+                    <span class="recipe-metric-label">
+                        <label asp-for="BrewRecipeVersion.Color"></label>
+                    </span>
+                    <input asp-for="BrewRecipeVersion.Color" class="form-control" />
+                    <span asp-validation-for="BrewRecipeVersion.Color" class="text-danger validation-message"></span>
+                </div>
+                <div class="recipe-metric">
+                    <span class="recipe-metric-label">
+                        <label asp-for="BrewRecipeVersion.EstimatedABV"></label>
+                    </span>
+                    <input asp-for="BrewRecipeVersion.EstimatedABV" class="form-control" />
+                    <span asp-validation-for="BrewRecipeVersion.EstimatedABV" class="text-danger validation-message"></span>
+                </div>
+            </div>
+            <div class="recipe-description-input">
+                <label asp-for="BrewRecipe.Description" class="recipe-metric-label"></label>
+                <input asp-for="BrewRecipe.Description" class="form-control"/>
+                <span asp-validation-for="BrewRecipe.Description" class="text-danger validation-message"></span>
+            </div>
+        </header>
+
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Grunddaten</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-fields">
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.BatchSize"></label>
+                        <div class="recipe-input-with-unit">
+                            <input asp-for="BrewRecipeVersion.BatchSize" class="form-control"/>
+                            <span class="recipe-inline-unit">L</span>
+                        </div>
+                        <span asp-validation-for="BrewRecipeVersion.BatchSize" class="text-danger validation-message"></span>
+                    </div>
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.BrewhouseEfficiency"></label>
+                        <div class="recipe-input-with-unit">
+                            <input asp-for="BrewRecipeVersion.BrewhouseEfficiency" class="form-control"/>
+                            <span class="recipe-inline-unit">%</span>
+                        </div>
+                        <span asp-validation-for="BrewRecipeVersion.BrewhouseEfficiency" class="text-danger validation-message"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Brauwasser</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-fields">
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.TotalWater"></label>
+                        <div class="recipe-input-with-unit">
+                            <input asp-for="BrewRecipeVersion.TotalWater" class="form-control scalable-amount"/>
+                            <span class="recipe-inline-unit">L</span>
+                        </div>
+                    </div>
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.MashWaterPercentage"></label>
+                        <div class="recipe-input-with-unit">
+                            <input asp-for="BrewRecipeVersion.MashWaterPercentage" class="form-control"/>
+                            <span class="recipe-inline-unit">%</span>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="recipe-subtitle">Wasserzusätze</h4>
+                <div class="recipe-table-wrap">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th class="recipe-index">#</th>
+                                <th class="">Typ</th>
+                                <th class="numeric">Menge</th>
+                                <th class="numeric">Einheit</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="waterAdditions">
+                            @for (int i = 0; i < @Model.BrewRecipeVersion.WaterAdditions.Count; i++) 
+                            { 
+                                <tr class="collection-row">
+                                    <td class="recipe-index">
+                                        <input type="hidden" asp-for="BrewRecipeVersion.WaterAdditions[i].Index" />
+                                        <span>@Model.BrewRecipeVersion.WaterAdditions[i].Index</span>
+                                        <input type="hidden" asp-for="BrewRecipeVersion.WaterAdditions[i].Id" />
+                                    </td>
+                                    <td>
+                                        <select asp-for="BrewRecipeVersion.WaterAdditions[i].Type" asp-items="Html.GetEnumSelectList<WaterAdditionType>()" class="form-select"></select>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.WaterAdditions[i].Amount" class="form-control input-number scalable-amount" />
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.WaterAdditions[i].Unit" class="form-control input-number" />
+                                        </div>
+                                    </td>
+                                    <td class="recipe-actions-cell">
+                                        <div class="recipe-row-actions">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-up" title="Nach oben">↑</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-down" title="Nach unten">↓</button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="WaterAdditions">+ Wasserzusatz</button>
+            </div>
+        </section>
+        
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Schüttung</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-table-wrap">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th class="recipe-index">#</th>
+                                <th class="">Malz</th>
+                                <th class="numeric">Menge</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="maltAdditions">
+                            @for (int i = 0; i < @Model.BrewRecipeVersion.MaltAdditions.Count; i++) 
+                            { 
+                                <tr class="collection-row">
+                                    <td class="recipe-index">
+                                        <input type="hidden" asp-for="BrewRecipeVersion.MaltAdditions[i].Index" />
+                                        <span>@Model.BrewRecipeVersion.MaltAdditions[i].Index</span>
+                                        <input type="hidden" asp-for="BrewRecipeVersion.MaltAdditions[i].Id" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="BrewRecipeVersion.MaltAdditions[i].Name" class="form-control input-name" />
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewRecipeVersion.MaltAdditions[i].Amount" class="form-control input-number scalable-amount malt-amount" />
+                                        <span class="recipe-inline-unit">kg</span>
+                                        </div>
+                                    </td>
+                                    <td class="recipe-actions-cell">
+                                        <div class="recipe-row-actions">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-up" title="Nach oben">↑</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-down" title="Nach unten">↓</button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="MaltAdditions">+ Schüttung</button>
+            </div>
+        </section>
+
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Maischplan</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-table-wrap">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th class="recipe-index">#</th>
+                                <th class="">Schritt</th>
+                                <th class="numeric">Temperatur</th>
+                                <th class="numeric">Dauer</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="mashSteps">
+                            @for (int i = 0; i < @Model.BrewRecipeVersion.MashSteps.Count; i++) 
+                            { 
+                                <tr class="collection-row">
+                                    <td class="recipe-index">
+                                        <input type="hidden" asp-for="BrewRecipeVersion.MashSteps[i].Index" />
+                                        <span>@Model.BrewRecipeVersion.MashSteps[i].Index</span>
+                                        <input type="hidden" asp-for="BrewRecipeVersion.MashSteps[i].Id" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="BrewRecipeVersion.MashSteps[i].Name" class="form-control input-name" />
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.MashSteps[i].Temperature" class="form-control input-number" />
+                                            <span class="recipe-inline-unit">°C</span>
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.MashSteps[i].Duration" class="form-control input-number" />
+                                            <span class="recipe-inline-unit">min</span>
+                                        </div>
+                                    </td>
+                                    <td class="recipe-actions-cell">
+                                        <div class="recipe-row-actions">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-up" title="Nach oben">↑</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-down" title="Nach unten">↓</button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="MashSteps">+ Maischplan</button>
+            </div>
+        </section>
+        
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Würzekochen</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-field recipe-field-narrow">
+                    <label asp-for="BrewRecipeVersion.BoilDuration"></label>
+                    <div class="recipe-input-with-unit">
+                        <input asp-for="BrewRecipeVersion.BoilDuration" class="form-control"/>
+                        <span class="recipe-inline-unit">min</span>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="form-check">
+                        <input asp-for="BrewRecipeVersion.UseIrishMoss" class="form-check-input"/>
+                        <label asp-for="BrewRecipeVersion.UseIrishMoss" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="BrewRecipeVersion.UseWhirlfloc" class="form-check-input"/>
+                        <label asp-for="BrewRecipeVersion.UseWhirlfloc" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="BrewRecipeVersion.UseSilicaSol" class="form-check-input"/>
+                        <label asp-for="BrewRecipeVersion.UseSilicaSol" class="form-check-label"></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Hopfen</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-table-wrap">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th class="recipe-index">#</th>
+                                <th class="">Hopfen</th>
+                                <th class="numeric">Alpha</th>
+                                <th class="numeric">Menge</th>
+                                <th class="numeric">Kochzeit</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="hopAdditions">
+                            @for (int i = 0; i < @Model.BrewRecipeVersion.HopAdditions.Count; i++) 
+                            { 
+                                <tr class="collection-row">
+                                    <td class="recipe-index">
+                                        <input type="hidden" asp-for="BrewRecipeVersion.HopAdditions[i].Index" />
+                                        <span>@Model.BrewRecipeVersion.HopAdditions[i].Index</span>
+                                        <input type="hidden" asp-for="BrewRecipeVersion.HopAdditions[i].Id" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="BrewRecipeVersion.HopAdditions[i].Name" class="form-control input-name" />
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.HopAdditions[i].AlphaAcid" class="form-control input-number" />
+                                            <span class="recipe-inline-unit">%</span>
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.HopAdditions[i].Amount" class="form-control input-number scalable-amount" />
+                                            <span class="recipe-inline-unit">g</span>
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.HopAdditions[i].Duration" class="form-control input-number" />
+                                            <span class="recipe-inline-unit">min</span>
+                                        </div>
+                                    </td>
+                                    <td class="recipe-actions-cell">
+                                        <div class="recipe-row-actions">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-up" title="Nach oben">↑</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-down" title="Nach unten">↓</button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="HopAdditions">+ Hopfen</button>
+            </div>
+        </section>
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Hefe</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-table-wrap">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th class="recipe-index">#</th>
+                                <th class="">Hefe</th>
+                                <th class="numeric">Menge</th>
+                                <th class="numeric">Einheit</th>
+                                <th class="">Beschreibung</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="yeastAdditions">
+                            @for (int i = 0; i < @Model.BrewRecipeVersion.YeastAdditions.Count; i++) 
+                            { 
+                                <tr class="collection-row">
+                                    <td class="recipe-index">
+                                        <input type="hidden" asp-for="BrewRecipeVersion.YeastAdditions[i].Index" />
+                                        <span>@Model.BrewRecipeVersion.YeastAdditions[i].Index</span>
+                                        <input type="hidden" asp-for="BrewRecipeVersion.YeastAdditions[i].Id" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="BrewRecipeVersion.YeastAdditions[i].Name" class="form-control input-name" />
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.YeastAdditions[i].Amount" class="form-control input-number" />
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <select asp-for="BrewRecipeVersion.YeastAdditions[i].Unit" class="form-select input-unit">
+                                            <option value="stck">stck</option>
+                                            <option value="g">g</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input asp-for="BrewRecipeVersion.YeastAdditions[i].Description" class="form-control input-name" />
+                                    </td>
+                                    <td class="recipe-actions-cell">
+                                        <div class="recipe-row-actions">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-up" title="Nach oben">↑</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-down" title="Nach unten">↓</button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="YeastAdditions">+ Hefe</button>
+            </div>
+        </section>
+
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Gärung und Reifung</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-fields">
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.FermentationTemperature"></label>
+                        <div class="recipe-input-with-unit">
+                            <input asp-for="BrewRecipeVersion.FermentationTemperature" class="form-control"/>
+                            <span class="recipe-inline-unit">°C</span>
+                        </div>
+                    </div>
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.ApparantAttenuation"></label>
+                        <div class="recipe-input-with-unit">
+                            <input asp-for="BrewRecipeVersion.ApparantAttenuation" class="form-control"/>
+                            <span class="recipe-inline-unit">%</span>
+                        </div>
+                    </div>
+                    <div class="recipe-field recipe-field-narrow">
+                        <label asp-for="BrewRecipeVersion.Carbonation"></label>
+                        <input asp-for="BrewRecipeVersion.Carbonation" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recipe-section">
+            <h3 class="recipe-section-title">Gärzugaben</h3>
+            <div class="recipe-section-body">
+                <div class="recipe-table-wrap">
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th class="recipe-index">#</th>
+                                <th class="">Zugabe</th>
+                                <th class="numeric">Menge</th>
+                                <th class="numeric">Einheit</th>
+                                <th class="numeric">Zeit</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="fermentationAdditions">
+                            @for (int i = 0; i < @Model.BrewRecipeVersion.FermentationAdditions.Count; i++) 
+                            { 
+                                <tr class="collection-row">
+                                    <td class="recipe-index">
+                                        <input type="hidden" asp-for="BrewRecipeVersion.FermentationAdditions[i].Index" />
+                                        <span>@Model.BrewRecipeVersion.FermentationAdditions[i].Index</span>
+                                        <input type="hidden" asp-for="BrewRecipeVersion.FermentationAdditions[i].Id" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="BrewRecipeVersion.FermentationAdditions[i].Name" class="form-control input-name" />
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.FermentationAdditions[i].Amount" class="form-control input-number scalable-amount" />
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.FermentationAdditions[i].Unit" class="form-control input-number" />
+                                        </div>
+                                    </td>
+                                    <td class="numeric">
+                                        <div class="recipe-input-with-unit">
+                                            <input asp-for="BrewRecipeVersion.FermentationAdditions[i].Time" class="form-control input-number" />
+                                        </div>
+                                    </td>
+                                    <td class="recipe-actions-cell">
+                                        <div class="recipe-row-actions">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-up" title="Nach oben">↑</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary move-down" title="Nach unten">↓</button>
+                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="Löschen">×</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="FermentationAdditions">+ Gärzugaben</button>
+            </div>
+        </section>
+
+        <div class="recipe-footer-actions">
+            <div class="secondary-actions">
+                <a asp-page="./Index" class="btn btn-outline-secondary">Abbrechen</a>
+            </div>
+            <div class="primary-actions">
+                <button type="submit" class="btn btn-primary">Speichern</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts { @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }<script>
+$.validator.methods.number = function(value, element) { return this.optional(element) || /^-?\d+(,\d+)?$/.test(value); };
+const prefix = "BrewRecipeVersion";
+const configs = {
+ WaterAdditions: { fields: [{n:'Type',t:'select',options:[['0','DistilledWater'],['1','LacticAcid'],['2','CalciumChloride'],['3','CalciumSulfate'],['4','MagnesiumSulfate']]},{n:'Amount'},{n:'Unit'}] },
+ MaltAdditions: { fields: [{n:'Name'},{n:'Amount',unit:'kg',cls:'scalable-amount malt-amount'}], fixedUnit:'kg' },
+ MashSteps: { fields: [{n:'Name'},{n:'Temperature',unit:'°C'},{n:'Duration',unit:'min'}] },
+ HopAdditions: { fields: [{n:'Name'},{n:'AlphaAcid',unit:'%'},{n:'Amount',unit:'g',cls:'scalable-amount'},{n:'Duration',unit:'min'}], fixedUnit:'g' },
+ YeastAdditions: { fields: [{n:'Name'},{n:'Amount'},{n:'Unit',t:'select',options:[['stck','stck'],['g','g']]},{n:'Description'}] },
+ FermentationAdditions: { fields: [{n:'Name'},{n:'Amount',cls:'scalable-amount'},{n:'Unit'},{n:'Time'}] }
+};
+function inputHtml(collection,index,f) { const name=`${prefix}.${collection}[${index}].${f.n}`; if(f.t==='select') return `<select name="${name}" class="form-select ${f.n==='Unit'?'input-unit':''}">${f.options.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join('')}</select>`; const nameClass=f.n==='Name'||f.n==='Description'?'input-name':'input-number'; return `<div class="${f.n==='Name'||f.n==='Description'?'':'recipe-input-with-unit'}"><input name="${name}" class="form-control ${nameClass} ${f.cls||''}" type="text" />${f.unit?`<span class="recipe-inline-unit">${f.unit}</span>`:''}</div>`; }
+function reindex(container, collection) { [...container.querySelectorAll(':scope > tr')].forEach((row,i)=>{ row.querySelector('.recipe-index span').textContent=i+1; row.querySelectorAll('[name]').forEach(el=>el.name=el.name.replace(new RegExp(`${collection}\[\d+\]`),`${collection}[${i}]`)); const ix=row.querySelector('input[name$=".Index"]'); if(ix) ix.value=i+1; }); }
+document.addEventListener('click', e=>{ const add=e.target.closest('.add-row'); if(add) { const collection=add.dataset.collection, tbody=document.getElementById(collection[0].toLowerCase()+collection.slice(1)), index=tbody.children.length, cfg=configs[collection]; const tr=document.createElement('tr'); tr.className='collection-row'; tr.innerHTML=`<td class="recipe-index"><input type="hidden" name="${prefix}.${collection}[${index}].Index" value="${index+1}"/><span>${index+1}</span>${cfg.fixedUnit?`<input type="hidden" name="${prefix}.${collection}[${index}].Unit" value="${cfg.fixedUnit}"/>`:''}</td>${cfg.fields.map(f=>`<td class="${f.n==='Name'||f.n==='Description'?'':'numeric'}">${inputHtml(collection,index,f)}</td>`).join('')}<td class="recipe-actions-cell"><div class="recipe-row-actions"><button type="button" class="btn btn-sm btn-outline-secondary move-up">↑</button><button type="button" class="btn btn-sm btn-outline-secondary move-down">↓</button><button type="button" class="btn btn-sm btn-outline-danger remove-row">×</button></div></td>`; tbody.appendChild(tr); } const row=e.target.closest('.collection-row'); if(!row) return; const tbody=row.parentElement, collection=Object.keys(configs).find(c=>tbody.id===c[0].toLowerCase()+c.slice(1)); if(e.target.closest('.remove-row')) row.remove(); else if(e.target.closest('.move-up')&&row.previousElementSibling) tbody.insertBefore(row,row.previousElementSibling); else if(e.target.closest('.move-down')&&row.nextElementSibling) tbody.insertBefore(row.nextElementSibling,row); else return; reindex(tbody,collection); });
+document.querySelectorAll('#maltAdditions .collection-row').forEach((r,i)=>{ if(!r.querySelector('input[name$=".Unit"]')) r.insertAdjacentHTML('afterbegin',`<input type="hidden" name="${prefix}.MaltAdditions[${i}].Unit" value="kg"/>`); }); document.querySelectorAll('#hopAdditions .collection-row').forEach((r,i)=>{ if(!r.querySelector('input[name$=".Unit"]')) r.insertAdjacentHTML('afterbegin',`<input type="hidden" name="${prefix}.HopAdditions[${i}].Unit" value="g"/>`); });
+const batchSizeInput=document.getElementById("BrewRecipeVersion_BatchSize"), efficiencyInput=document.getElementById("BrewRecipeVersion_BrewhouseEfficiency"), previousBatch=document.getElementById("PreviousBatchSize"), previousEfficiency=document.getElementById("PreviousBrewhouseEfficiency"); function num(v){return parseFloat(v.replace(',','.'));} function updateRecipeAmounts(){const pb=num(previousBatch.value),cb=num(batchSizeInput.value),pe=num(previousEfficiency.value),ce=num(efficiencyInput.value);if(!isNaN(pb)&&!isNaN(cb)&&pb!==0){const factor=cb/pb;document.querySelectorAll('.scalable-amount').forEach(x=>{const v=num(x.value);if(!isNaN(v))x.value=(v*factor).toFixed(2).replace('.',',');});}if(!isNaN(pe)&&!isNaN(ce)&&ce!==0){const factor=pe/ce;document.querySelectorAll('.malt-amount').forEach(x=>{const v=num(x.value);if(!isNaN(v))x.value=(v*factor).toFixed(2).replace('.',',');});}previousBatch.value=batchSizeInput.value;previousEfficiency.value=efficiencyInput.value;} batchSizeInput.addEventListener('change',updateRecipeAmounts);efficiencyInput.addEventListener('change',updateRecipeAmounts);</script> }

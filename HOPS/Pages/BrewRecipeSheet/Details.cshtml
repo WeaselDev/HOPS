@@ -1,0 +1,412 @@
+@page
+@model HOPS.Pages.BrewRecipeSheet.DetailsModel
+@using HOPS.Component
+@using HOPS.Properties
+
+@{
+    ViewData["Title"] = Model.BrewRecipe.Name;
+    var beerColor = ColorHelper.EbcToHex(Model.BrewRecipeVersion.Color);
+}
+
+<header class="recipe-header" style="--beer-color: @beerColor;">
+    <div class="recipe-title-row">
+        <span class="recipename">@Model.BrewRecipe.Name</span>
+        <form method="get">
+            <input type="hidden" name="id" value="@Model.BrewRecipe.Id" />
+
+            <select name="version"
+                    id="version"
+                    class="form-select form-select-sm recipe-version-select"
+                    onchange="this.form.submit()">
+
+                @if (Model.BrewRecipeVersion.IsDeleted)
+                {
+                    <option value="@Model.BrewRecipeVersion.Version" selected>
+                        @Resource.Version @Model.BrewRecipeVersion.Version (@Resource.IsDeleted)
+                    </option>
+                }
+
+                @foreach (var version in Model.BrewRecipe.Versions
+                .Where(v => !v.IsDeleted)
+                .OrderByDescending(v => v.Version))
+                {
+                    <option value="@version.Version"
+                            selected="@(version.Id == Model.BrewRecipeVersion.Id)">
+                        @Resource.Version @version.Version
+                    </option>
+                }
+            </select>
+        </form>
+    </div>
+</header>
+
+<div id="recipeDetails" class="recipe-sheet-page">
+    <div class="recipe-sheet-column">
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.BaseData</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <tbody>
+                        <tr>
+                            <td><label asp-for="BrewRecipe.Style"></label></td>
+                            <td colspan="2">@Model.BrewRecipe.Style</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.BatchSize"></label></td>
+                            <td class="numeric">@Model.BrewRecipeVersion.BatchSize</td>
+                            <td class="unit">L</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.BrewhouseEfficiency"></label></td>
+                            <td class="numeric">@Model.BrewRecipeVersion.BrewhouseEfficiency</td>
+                            <td class="unit">%</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.OriginalGravity"></label></td>
+                            <td class="numeric">@Model.BrewRecipeVersion.OriginalGravity</td>
+                            <td class="unit">°P</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.Bitterness"></label></td>
+                            <td class="numeric">@Model.BrewRecipeVersion.Bitterness</td>
+                            <td class="unit">IBU</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.Color"></label></td>
+                            <td class="numeric">@Model.BrewRecipeVersion.Color</td>
+                            <td class="unit">EBC</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.EstimatedABV"></label></td>
+                            <td class="numeric">@Model.BrewRecipeVersion.EstimatedABV</td>
+                            <td class="unit">%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @if (!string.IsNullOrWhiteSpace(Model.BrewRecipe.Description))
+                {
+                    <p class="recipe-description">@Model.BrewRecipe.Description</p>
+                }
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.GrainBill</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Name</th>
+                            <th class="numeric">@Resource.Amount [kg]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.BrewRecipeVersion.MaltAdditions.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model.BrewRecipeVersion.MaltAdditions[i].Name</td>
+                                <td class="numeric">@Model.BrewRecipeVersion.MaltAdditions[i].Amount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.Hops</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Hops</th>
+                            <th class="numeric">@Resource.AlphaAcid [%]</th>
+                            <th class="numeric">@Resource.Amount [kg]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var hop in Model.BrewRecipeVersion.HopAdditions
+                        .GroupBy(h => new { h.Name, h.AlphaAcid })
+                        .Select(g => new
+                        {
+                            g.Key.Name,
+                            g.Key.AlphaAcid,
+                            Amount = g.Sum(h => h.Amount)
+                        }))
+                        {
+                            <tr>
+                                <td>@hop.Name</td>
+                                <td class="numeric">@hop.AlphaAcid %</td>
+                                <td class="numeric">@hop.Amount g</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.OtherIngredients</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <tbody>
+                        @foreach (var addition in Model.BrewRecipeVersion.FermentationAdditions
+                            .GroupBy(a => new { a.Name, a.Unit })
+                            .Select(g => new
+                            {
+                                g.Key.Name,
+                                g.Key.Unit,
+                                Amount = g.Sum(a => a.Amount)
+                            }))
+                        {
+                            <tr>
+                                <td>@addition.Name</td>
+                                <td class="numeric">@addition.Amount @addition.Unit</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.Yeast</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <tbody>
+                        @for (int i = 0; i < Model.BrewRecipeVersion.YeastAdditions.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.BrewRecipeVersion.YeastAdditions[i].Name
+                                    @if (!string.IsNullOrWhiteSpace(Model.BrewRecipeVersion.YeastAdditions[i].Description))
+                                    {
+                                        <span class="text-muted">(@Model.BrewRecipeVersion.YeastAdditions[i].Description)</span>
+                                    }
+                                </td>
+                                <td class="numeric">@Model.BrewRecipeVersion.YeastAdditions[i].Amount @Model.BrewRecipeVersion.YeastAdditions[i].Unit</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <div class="recipe-sheet-column" id="brewingProcess">
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.BrewingWater</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-key-values">
+                    <tbody>
+                        <tr>
+                            <td>@Resource.MashWater (@Model.BrewRecipeVersion.MashWaterPercentage %)</td>
+                            <td>@(Model.BrewRecipeVersion.TotalWater * Model.BrewRecipeVersion.MashWaterPercentage / 100) L</td>
+                        </tr>
+                        <tr>
+                            <td>@Resource.SpargeWater (@(100 - Model.BrewRecipeVersion.MashWaterPercentage) %)</td>
+                            <td>@(Model.BrewRecipeVersion.TotalWater - Model.BrewRecipeVersion.TotalWater * Model.BrewRecipeVersion.MashWaterPercentage / 100) L</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Resource.TotalWater</strong></td>
+                            <td><strong>@Model.BrewRecipeVersion.TotalWater L</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @if (Model.BrewRecipeVersion.WaterAdditions.Count > 0)
+                {
+                    <h4 class="recipe-subtitle">@Resource.WaterAdditions</h4>
+                    <table class="recipe-table recipe-table-simple">
+                        <tbody>
+                            @for (int i = 0; i < Model.BrewRecipeVersion.WaterAdditions.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.BrewRecipeVersion.WaterAdditions[i].Type</td>
+                                    <td class="numeric">@Model.BrewRecipeVersion.WaterAdditions[i].Amount @Model.BrewRecipeVersion.WaterAdditions[i].Unit</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.MashSchedule</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-table recipe-table-simple">
+                    <thead>
+                        <tr>
+                            <th>@Resource.Step</th>
+                            <th class="numeric">@Resource.Temperature [°C]</th>
+                            <th class="numeric">@Resource.Duration [min]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.BrewRecipeVersion.MashSteps.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model.BrewRecipeVersion.MashSteps[i].Name</td>
+                                <td class="numeric">@Model.BrewRecipeVersion.MashSteps[i].Temperature</td>
+                                <td class="numeric">@Model.BrewRecipeVersion.MashSteps[i].Duration</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.Boil</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-key-values">
+                    <tbody>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.BoilDuration"></label></td>
+                            <td>@Model.BrewRecipeVersion.BoilDuration min</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @if (Model.BrewRecipeVersion.HopAdditions.Count > 0)
+                {
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th>@Resource.Hops</th>
+                                    <th class="numeric">@Resource.AlphaAcid [%]</th>
+                                    <th class="numeric">@Resource.Amount [g]</th>
+                                    <th class="numeric">@Resource.Duration [min]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.BrewRecipeVersion.HopAdditions.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@Model.BrewRecipeVersion.HopAdditions[i].Name</td>
+                                        <td class="numeric">@Model.BrewRecipeVersion.HopAdditions[i].AlphaAcid</td>
+                                        <td class="numeric">@Model.BrewRecipeVersion.HopAdditions[i].Amount</td>
+                                        <td class="numeric">@Model.BrewRecipeVersion.HopAdditions[i].Duration</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="recipe-sheet-section">
+            <h3 class="recipe-section-title">@Resource.FermentationAndAging</h3>
+            <div class="recipe-section-body">
+                <table class="recipe-key-values">
+                    <tbody>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.FermentationTemperature"></label></td>
+                            <td>@Model.BrewRecipeVersion.FermentationTemperature °C</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.ApparantAttenuation"></label></td>
+                            <td>@Model.BrewRecipeVersion.ApparantAttenuation %</td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="BrewRecipeVersion.Carbonation"></label></td>
+                            <td>@Model.BrewRecipeVersion.Carbonation g Co2/L</td>
+                        </tr>
+                        <tr>
+                            <td>@Resource.MaturationTime</td>
+                            <td>
+                                @Model.BrewRecipeVersion.MaturationWeeksMin - @Model.BrewRecipeVersion.MaturationWeeksMax @Resource.Weeks
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @if (Model.BrewRecipeVersion.FermentationAdditions.Count > 0)
+                {
+                    <h4 class="recipe-subtitle">@Resource.FermentationAdditions</h4>
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <thead>
+                                <tr>
+                                    <th>@Resource.Addition</th>
+                                    <th class="numeric">@Resource.Amount</th>
+                                    <th class="numeric">@Resource.Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.BrewRecipeVersion.FermentationAdditions.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@Model.BrewRecipeVersion.FermentationAdditions[i].Name</td>
+                                        <td class="numeric">@Model.BrewRecipeVersion.FermentationAdditions[i].Amount @Model.BrewRecipeVersion.FermentationAdditions[i].Unit</td>
+                                        <td class="numeric">@Model.BrewRecipeVersion.FermentationAdditions[i].Time</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="recipe-footer-actions">
+    <div class="secondary-actions">
+        <a asp-page="./Index" class="btn btn-outline-secondary">
+            @Resource.Back
+        </a>
+
+        @if (!Model.BrewRecipe.IsDeleted)
+        {
+            <form method="post"
+                  asp-page-handler="DeleteRecipe"
+                  asp-route-id="@Model.BrewRecipe.Id"
+                  class="d-inline"
+                  onsubmit="return confirm('Rezept einschließlich aller Versionen wirklich löschen?');">
+                <button type="submit" class="btn btn-outline-danger">
+                    @Resource.Delete
+                </button>
+            </form>
+        }
+    </div>
+
+    <div class="primary-actions">
+        @if (!Model.BrewRecipe.IsDeleted)
+        {
+            @if (!Model.BrewRecipeVersion.IsDeleted)
+            {
+                <form method="post"
+                      asp-page-handler="DeleteVersion"
+                      asp-route-id="@Model.BrewRecipe.Id"
+                      asp-route-version="@Model.BrewRecipeVersion.Version"
+                      class="d-inline"
+                      onsubmit="return confirm('@Resource.ConfirmDeleteVersion');">
+                    <button type="submit" class="btn btn-outline-danger">
+                        @Resource.DeleteVersion
+                    </button>
+                </form>
+            }
+
+            <a asp-page="./Edit"
+               asp-route-id="@Model.BrewRecipe.Id"
+               asp-route-version="@Model.BrewRecipeVersion.Version"
+               class="btn btn-outline-primary">
+                @Resource.Edit
+            </a>
+
+            @if (!Model.BrewRecipeVersion.IsDeleted)
+            {
+                <a asp-page="../BrewBatchPages/Create"
+                   asp-route-recipeVersionId="@Model.BrewRecipeVersion.Id"
+                   class="btn btn-primary">
+                    @Resource.Brew
+                </a>
+            }
+        }
+    </div>
+</div>

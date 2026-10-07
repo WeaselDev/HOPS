@@ -1,0 +1,357 @@
+﻿@page "{id:guid}"
+@model HOPS.Pages.BrewBatchPages.PrintLabelModel
+@using HOPS.Properties
+@using System.Globalization
+
+@{
+    ViewData["Title"] = Resource.PrintLabel;
+
+    var originalPlato = Model.Label.OriginalPlato
+        ?.ToString("0.0", CultureInfo.InvariantCulture) ?? string.Empty;
+
+    var abv = Model.Label.ABV
+        ?.ToString("0.0", CultureInfo.InvariantCulture) ?? string.Empty;
+
+    var ibu = Model.Label.IBU
+        ?.ToString("0", CultureInfo.InvariantCulture) ?? string.Empty;
+
+    var bestToDrink = Model.Label.BestToDrinkFrom
+        ?.ToString("yyyy-MM-dd") ?? string.Empty;
+}
+
+<header class="recipe-header label-screen-only">
+    <div class="recipe-title-row">
+        <span class="recipename">@Resource.PrintLabel</span>
+    </div>
+</header>
+
+<div class="label-print-layout label-screen-only">
+    <section class="label-print-settings">
+        <h3 class="recipe-section-title">@Resource.LabelData</h3>
+
+        <div class="recipe-field">
+            <label for="labelName">@Resource.Name</label>
+            <input id="labelName"
+                   class="form-control label-input"
+                   type="text"
+                   value="@Model.Label.BeerName" />
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelOriginalPlato">@Resource.OriginalGravity</label>
+            <div class="recipe-input-with-unit">
+                <input id="labelOriginalPlato"
+                       class="form-control input-number label-input"
+                       type="number"
+                       step="0.1"
+                       value="@originalPlato" />
+                <span class="recipe-inline-unit">°P</span>
+            </div>
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelABV">@Resource.ActualABV</label>
+            <div class="recipe-input-with-unit">
+                <input id="labelABV"
+                       class="form-control input-number label-input"
+                       type="number"
+                       step="0.1"
+                       value="@abv" />
+                <span class="recipe-inline-unit">% vol</span>
+            </div>
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelIBU">@Resource.Bitterness</label>
+            <div class="recipe-input-with-unit">
+                <input id="labelIBU"
+                       class="form-control input-number label-input"
+                       type="number"
+                       step="1"
+                       value="@ibu" />
+                <span class="recipe-inline-unit">IBU</span>
+            </div>
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelBestToDrink">@Resource.ReadyToDrink</label>
+            <input id="labelBestToDrink"
+                   class="form-control label-input"
+                   type="date"
+                   value="@bestToDrink" />
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelBottleSize">@Resource.BottleSize</label>
+            <div class="recipe-input-with-unit">
+                <select id="labelBottleSize" class="form-select">
+                    <option value="0.33" selected>0,33</option>
+                    <option value="0.5">0,5</option>
+                    <option value="0.75">0,75</option>
+                </select>
+                <span class="recipe-inline-unit">L</span>
+            </div>
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelCount">@Resource.LabelCount</label>
+            <input id="labelCount"
+                   class="form-control input-number label-input"
+                   type="number"
+                   min="1"
+                   step="1"
+                   value="@Model.Label.LabelCount" />
+        </div>
+
+        <div class="label-print-actions">
+            <a asp-page="./Details"
+               asp-route-id="@RouteData.Values["id"]"
+               class="btn btn-outline-secondary">
+                @Resource.Back
+            </a>
+
+            <button id="printLabels"
+                    type="button"
+                    class="btn btn-primary">
+                @Resource.Print
+            </button>
+        </div>
+    </section>
+
+    <section class="label-print-preview">
+        <h3 class="recipe-section-title">@Resource.Preview</h3>
+
+        <div class="label-preview-paper">
+            <div id="labelPreview"></div>
+        </div>
+    </section>
+</div>
+
+<div id="labelPrintArea"></div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            const labelName = document.getElementById("labelName");
+            const labelOriginalPlato = document.getElementById("labelOriginalPlato");
+            const labelABV = document.getElementById("labelABV");
+            const labelIBU = document.getElementById("labelIBU");
+            const labelBestToDrink = document.getElementById("labelBestToDrink");
+            const labelBottleSize = document.getElementById("labelBottleSize");
+            const labelCount = document.getElementById("labelCount");
+
+            const labelPreview = document.getElementById("labelPreview");
+            const labelPrintArea = document.getElementById("labelPrintArea");
+            const printButton = document.getElementById("printLabels");
+
+            const bottlingVolume = @(
+                        (Model.Label.LabelCount * Model.Label.BottleSize)
+        .ToString(CultureInfo.InvariantCulture)
+                        );
+
+            let svgTemplate = null;
+
+            async function loadSvgTemplate() {
+                const response = await fetch("/labels/label.svg");
+
+                if (!response.ok) {
+                    throw new Error("Could not load label.svg");
+                }
+
+                const svgText = await response.text();
+
+                const parser = new DOMParser();
+
+                const svgDocument = parser.parseFromString(
+                    svgText,
+                    "image/svg+xml");
+
+                const parserError = svgDocument.querySelector("parsererror");
+
+                if (parserError) {
+                    throw new Error("Could not parse label.svg");
+                }
+
+                svgTemplate = svgDocument.documentElement;
+            }
+
+            function formatDecimal(value, digits) {
+                const number = Number.parseFloat(value);
+
+                if (Number.isNaN(number)) {
+                    return "";
+                }
+
+                return number.toLocaleString(
+                    document.documentElement.lang || undefined,
+                    {
+                        minimumFractionDigits: digits,
+                        maximumFractionDigits: digits
+                    });
+            }
+
+            function formatDate(value) {
+                if (!value) {
+                    return "";
+                }
+
+                const parts = value.split("-");
+
+                if (parts.length !== 3) {
+                    return value;
+                }
+
+                return `${parts[2]}.${parts[1]}.${parts[0]}`;
+            }
+
+            function createDataText() {
+                const values = [];
+
+                if (labelOriginalPlato.value) {
+                    values.push(
+                        `${formatDecimal(labelOriginalPlato.value, 1)} °P`);
+                }
+
+                if (labelABV.value) {
+                    values.push(
+                        `${formatDecimal(labelABV.value, 1)} % vol`);
+                }
+
+                if (labelIBU.value) {
+                    values.push(
+                        `${formatDecimal(labelIBU.value, 0)} IBU`);
+                }
+
+                return values.join(" · ");
+            }
+
+            function setSvgText(svg, id, value) {
+                const element = svg.querySelector(`#${id}`);
+
+                if (!element) {
+                    return;
+                }
+
+                const tspan = element.querySelector("tspan");
+
+                if (tspan) {
+                    tspan.textContent = value;
+                }
+                else {
+                    element.textContent = value;
+                }
+            }
+
+            function createLabel() {
+                const svg = svgTemplate.cloneNode(true);
+
+                svg.removeAttribute("id");
+
+                setSvgText(
+                    svg,
+                    "Name",
+                    labelName.value);
+
+                setSvgText(
+                    svg,
+                    "Data",
+                    createDataText());
+
+                setSvgText(
+                    svg,
+                    "BestToDrinkLabel",
+                    "@Html.Raw(Resource.ReadyToDrink)");
+
+                setSvgText(
+                    svg,
+                    "BestToDrink",
+                    formatDate(labelBestToDrink.value));
+
+                svg.classList.add("printed-label");
+
+                return svg;
+            }
+
+            function renderPreview() {
+                if (!svgTemplate) {
+                    return;
+                }
+
+                labelPreview.innerHTML = "";
+                labelPreview.appendChild(createLabel());
+            }
+
+            function renderLabels() {
+                if (!svgTemplate) {
+                    return;
+                }
+
+                const count = Math.max(
+                    1,
+                    Number.parseInt(labelCount.value) || 1);
+
+                labelPrintArea.innerHTML = "";
+
+                for (let index = 0; index < count; index++) {
+                    const item = document.createElement("div");
+
+                    item.classList.add("label-print-item");
+                    item.appendChild(createLabel());
+
+                    labelPrintArea.appendChild(item);
+                }
+            }
+
+            function updateAll() {
+                renderPreview();
+                renderLabels();
+            }
+
+            function updateLabelCount() {
+                const bottleSize = Number.parseFloat(
+                    labelBottleSize.value);
+
+                if (!bottleSize || bottleSize <= 0) {
+                    return;
+                }
+
+                labelCount.value = Math.floor(
+                    bottlingVolume / bottleSize);
+
+                updateAll();
+            }
+
+            document
+                .querySelectorAll(".label-input")
+                .forEach(function(input) {
+                    input.addEventListener(
+                        "input",
+                        updateAll);
+                });
+
+            labelBottleSize.addEventListener(
+                "change",
+                updateLabelCount);
+
+            printButton.addEventListener(
+                "click",
+                function() {
+                    renderLabels();
+                    window.print();
+                });
+
+            try {
+                await loadSvgTemplate();
+                updateAll();
+            }
+            catch (error) {
+                console.error(error);
+
+                labelPreview.innerHTML =
+                    '<div class="alert alert-danger">label.svg could not be loaded.</div>';
+
+                printButton.disabled = true;
+            }
+        });
+    </script>
+}

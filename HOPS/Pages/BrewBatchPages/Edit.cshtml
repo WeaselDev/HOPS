@@ -1,0 +1,719 @@
+@page
+@using HOPS.Models
+@model HOPS.Pages.BrewBatchPages.EditModel
+@using HOPS.Properties
+
+@{
+    ViewData["Title"] = Resource.EditBatch;
+}
+
+<form method="post">
+    <input type="hidden" asp-for="BrewBatch.Id" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger validation-message"></div>
+
+    <header class="recipe-header">
+        <div class="recipe-title-row">
+            <span class="recipename">@Model.BrewRecipe.Name</span>
+
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-muted">v@(Model.BrewBatch.BrewRecipeVersion.Version)</span>
+                <span class="batch-status">@Model.BrewBatch.Status</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="batchDetails" class="recipe-sheet-page">
+        <div class="recipe-sheet-column">
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Batch</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-table recipe-table-simple">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewRecipe.Style"></label>
+                                </td>
+                                <td colspan="2" class="value">@Model.BrewRecipe.Style</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.Status"></label>
+                                </td>
+                                <td colspan="2">
+                                    <select asp-for="BrewBatch.Status" asp-items="Html.GetEnumSelectList<BrewBatchStatus>()" class="form-select"></select>
+                                    <span asp-validation-for="BrewBatch.Status" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BrewDate"></label>
+                                </td>
+                                <td colspan="2">
+                                    <input asp-for="BrewBatch.BrewDate" type="date" class="form-control" />
+                                    <span asp-validation-for="BrewBatch.BrewDate" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BatchSize"></label>
+                                </td>
+                                <td class="numeric">
+                                    <input asp-for="BrewBatch.BatchSize" class="form-control input-number" />
+                                    <span asp-validation-for="BrewBatch.BatchSize" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">L</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BrewhouseEfficiency"></label>
+                                </td>
+                                <td class="numeric">
+                                    <input asp-for="BrewBatch.BrewhouseEfficiency" class="form-control input-number" />
+                                    <span asp-validation-for="BrewBatch.BrewhouseEfficiency" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.FermentationStartDate"></label>
+                                </td>
+                                <td colspan="2">
+                                    <input asp-for="BrewBatch.FermentationStartDate" type="date" class="form-control" />
+                                    <span asp-validation-for="BrewBatch.FermentationStartDate" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BottlingDate"></label>
+                                </td>
+                                <td colspan="2">
+                                    <input asp-for="BrewBatch.BottlingDate" type="date" class="form-control" />
+                                    <span asp-validation-for="BrewBatch.BottlingDate" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BottlingVolume"></label>
+                                </td>
+                                <td class="numeric">
+                                    <input asp-for="BrewBatch.BottlingVolume" class="form-control input-number" />
+                                    <span asp-validation-for="BrewBatch.BottlingVolume" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">L</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BottlingTemperature"></label>
+                                </td>
+                                <td class="numeric">
+                                    <input asp-for="BrewBatch.BottlingTemperature" class="form-control input-number" />
+                                    <span asp-validation-for="BrewBatch.BottlingTemperature" class="text-danger validation-message"></span>
+                                </td>
+                                <td class="unit">°C</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="recipe-subtitle">@Resource.Target / @Resource.Actual</h4>
+
+                    <table class="recipe-table recipe-table-simple">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="numeric">@Resource.Target</th>
+                                <th class="numeric">@Resource.Actual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BrewRecipeVersion.OriginalGravity"></label>
+                                </td>
+                                <td class="numeric">
+                                    @Model.BrewBatch.BrewRecipeVersion.OriginalGravity °P
+                                </td>
+                                <td class="numeric">
+                                    <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewBatch.FermentationStartPlato" class="form-control input-number" />
+                                        <span class="recipe-inline-unit">°P</span>
+                                    </div>
+                                    <span asp-validation-for="BrewBatch.FermentationStartPlato" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.BottlingPlato"></label>
+                                </td>
+                                <td class="numeric">-</td>
+                                <td class="numeric">
+                                    <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewBatch.BottlingPlato" class="form-control input-number" />
+                                        <span class="recipe-inline-unit">°P</span>
+                                    </div>
+                                    <span asp-validation-for="BrewBatch.BottlingPlato" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.ApparentAttenuation"></label>
+                                </td>
+                                <td class="numeric">
+                                    @Model.BrewBatch.BrewRecipeVersion.ApparantAttenuation %
+                                </td>
+                                <td class="numeric">
+                                    <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewBatch.ApparentAttenuation" class="form-control input-number" />
+                                        <span class="recipe-inline-unit">%</span>
+                                    </div>
+                                    <span asp-validation-for="BrewBatch.ApparentAttenuation" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.ActualABV"></label>
+                                </td>
+                                <td class="numeric">
+                                    @Model.BrewBatch.BrewRecipeVersion.EstimatedABV %
+                                </td>
+                                <td class="numeric">
+                                    <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewBatch.ActualABV" class="form-control input-number" />
+                                        <span class="recipe-inline-unit">%</span>
+                                    </div>
+                                    <span asp-validation-for="BrewBatch.ActualABV" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Ingredients</h3>
+                <div class="recipe-section-body">
+                    <h4 class="recipe-subtitle">@Resource.Malt</h4>
+
+                    <table class="recipe-table recipe-table-simple">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Name</th>
+                                <th class="numeric">@Resource.Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var malt in Model.BrewBatch.BrewRecipeVersion.MaltAdditions)
+                            {
+                                <tr class="maltAdditionRow" data-recipe-amount="@malt.Amount">
+                                    <td>@malt.Name</td>
+                                    <td class="numeric">
+                                        <span class="maltAmount"></span> @malt.Unit
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <h4 class="recipe-subtitle">@Resource.Hops</h4>
+
+                    <table class="recipe-table recipe-table-simple">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Hop</th>
+                                <th class="numeric">@Resource.AlphaAcid</th>
+                                <th class="numeric">@Resource.Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ingredientHops"></tbody>
+                    </table>
+
+                    <h4 class="recipe-subtitle">@Resource.Yeasts</h4>
+
+                    <table class="recipe-table recipe-table-simple">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Yeast</th>
+                                <th class="numeric">@Resource.Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.BrewBatch.YeastAdditions.Count; i++)
+                            {
+                                <tr>
+                                    <td>
+                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Id" />
+                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Index" />
+                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Name" />
+                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Unit" />
+
+                                        @Model.BrewBatch.YeastAdditions[i].Name
+
+                                        @if (!string.IsNullOrWhiteSpace(Model.BrewBatch.YeastAdditions[i].Description))
+                                        {
+                                            <span class="text-muted">(@Model.BrewBatch.YeastAdditions[i].Description)</span>
+                                        }
+                                    </td>
+                                    <td class="numeric">
+                                        @Model.BrewBatch.YeastAdditions[i].Amount @Model.BrewBatch.YeastAdditions[i].Unit
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Rating</h3>
+                <div class="recipe-section-body">
+                    <div class="recipe-field">
+                        <label asp-for="BrewBatch.Rating"></label>
+                        <select asp-for="BrewBatch.Rating" class="form-select">
+                            <option value="">@Resource.NotRated</option>
+                            <option value="0">☆☆☆☆☆</option>
+                            <option value="1">★☆☆☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                        <span asp-validation-for="BrewBatch.Rating" class="text-danger validation-message"></span>
+                    </div>
+
+                    <div class="recipe-field mt-3">
+                        <label asp-for="BrewBatch.BrewNote"></label>
+                        <textarea asp-for="BrewBatch.BrewNote" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="BrewBatch.BrewNote" class="text-danger validation-message"></span>
+                    </div>
+
+                    <div class="recipe-field mt-3">
+                        <label asp-for="BrewBatch.RatingNote"></label>
+                        <textarea asp-for="BrewBatch.RatingNote" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="BrewBatch.RatingNote" class="text-danger validation-message"></span>
+                    </div>
+
+                    <div class="batch-check mt-3">
+                        <input asp-for="BrewBatch.IsDestroyed" class="form-check-input" />
+                        <label asp-for="BrewBatch.IsDestroyed"></label>
+                    </div>
+                    <span asp-validation-for="BrewBatch.IsDestroyed" class="text-danger validation-message"></span>
+                </div>
+            </section>
+        </div>
+
+        <div class="recipe-sheet-column">
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.BrewingWater</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-key-values">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label asp-for="BrewBatch.MashWaterPercentage"></label>
+                                </td>
+                                <td>
+                                    <div class="recipe-input-with-unit">
+                                        <input asp-for="BrewBatch.MashWaterPercentage" class="form-control input-number" />
+                                        <span class="recipe-inline-unit">%</span>
+                                    </div>
+                                    <span asp-validation-for="BrewBatch.MashWaterPercentage" class="text-danger validation-message"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    @if (Model.BrewBatch.WaterAdditions.Count > 0)
+                    {
+                        <h4 class="recipe-subtitle">@Resource.WaterAdditions</h4>
+
+                        <table class="recipe-table recipe-table-simple">
+                            <tbody>
+                                @for (int i = 0; i < Model.BrewBatch.WaterAdditions.Count; i++)
+                                {
+                                    <tr class="waterAdditionRow">
+                                        <td>
+                                            <input type="hidden" asp-for="BrewBatch.WaterAdditions[i].Id" />
+                                            <input type="hidden" asp-for="BrewBatch.WaterAdditions[i].Index" />
+                                            <input type="hidden" asp-for="BrewBatch.WaterAdditions[i].Name" />
+                                            <input type="hidden" asp-for="BrewBatch.WaterAdditions[i].Type" />
+                                            <input type="hidden" asp-for="BrewBatch.WaterAdditions[i].Unit" />
+                                            @Model.BrewBatch.WaterAdditions[i].Type
+                                        </td>
+                                        <td class="numeric">
+                                            <input asp-for="BrewBatch.WaterAdditions[i].Amount" class="form-control input-number" />
+                                        </td>
+                                        <td class="unit">@Model.BrewBatch.WaterAdditions[i].Unit</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.MashSchedule</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-table recipe-table-simple">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Step</th>
+                                <th class="numeric">@Resource.Temperature</th>
+                                <th class="numeric">@Resource.Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var mashStep in Model.BrewBatch.BrewRecipeVersion.MashSteps)
+                            {
+                                <tr>
+                                    <td>@mashStep.Name</td>
+                                    <td class="numeric">@mashStep.Temperature °C</td>
+                                    <td class="numeric">@mashStep.Duration min</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="recipe-sheet-section">
+                <h3 class="recipe-section-title">@Resource.Boil</h3>
+                <div class="recipe-section-body">
+                    <table class="recipe-key-values">
+                        <tbody>
+                            <tr>
+                                <td>@Resource.BoilDuration</td>
+                                <td>@Model.BrewBatch.BrewRecipeVersion.BoilDuration min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    @if (Model.BrewBatch.Hops.Count > 0)
+                    {
+                        <h4 class="recipe-subtitle">@Resource.HopAdditions</h4>
+
+                        <div class="recipe-table-wrap">
+                            <table class="recipe-table">
+                                <thead>
+                                    <tr>
+                                        <th>@Resource.Hop</th>
+                                        <th class="numeric">@Resource.AlphaAcid [%]</th>
+                                        <th class="numeric">@Resource.Amount [g]</th>
+                                        <th class="numeric">@Resource.BoilDuration [min]</th>
+                                        <th class="numeric">@Resource.Timer [min]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.BrewBatch.Hops.Count; i++)
+                                    {
+                                        var brewHop = Model.BrewBatch.Hops[i];
+                                        var recipeHop = Model.BrewBatch.BrewRecipeVersion.HopAdditions
+                                            .Single(h => h.Id == brewHop.HopAdditionId);
+
+                                        <tr class="hopsAdditionRow"
+                                            data-recipe-name="@recipeHop.Name"
+                                            data-recipe-amount="@recipeHop.Amount"
+                                            data-recipe-alpha="@recipeHop.AlphaAcid"
+                                            data-recipe-unit="@recipeHop.Unit">
+
+                                            <td>
+                                                <input type="hidden" asp-for="BrewBatch.Hops[i].HopAdditionId" />
+                                                @recipeHop.Name
+                                            </td>
+                                            <td class="numeric">
+                                                <input asp-for="BrewBatch.Hops[i].AlphaAcid" class="form-control input-number hopAlphaAcid" />
+                                            </td>
+                                            <td class="numeric">
+                                                <span class="hopAmount"></span>
+                                            </td>
+                                            <td class="numeric">@recipeHop.Duration</td>
+                                            <td class="numeric">
+                                                @(Model.BrewBatch.BrewRecipeVersion.BoilDuration - recipeHop.Duration)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    <h4 class="recipe-subtitle">@Resource.Carbonation</h4>
+
+                    <table class="recipe-key-values">
+                        <tbody>
+                            <tr>
+                                <td>@Resource.Target</td>
+                                <td>
+                                    <span id="targetCarbonation">
+                                        @Model.BrewBatch.BrewRecipeVersion.Carbonation
+                                    </span>
+                                    g CO₂/L
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Resource.ResidualCo2</td>
+                                <td>
+                                    <span id="residualCo2"></span>
+                                    g CO₂/L
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>@Resource.PrimingSugar</strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <span id="primingSugar"></span>
+                                        g
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="recipe-subtitle">@Resource.FiningAgents</h4>
+
+                    <div class="batch-checks">
+                        <div class="batch-check">
+                            <input asp-for="BrewBatch.UseIrishMoss" class="form-check-input" />
+                            <label asp-for="BrewBatch.UseIrishMoss"></label>
+                        </div>
+                        <div class="batch-check">
+                            <input asp-for="BrewBatch.UseWhirlfloc" class="form-check-input" />
+                            <label asp-for="BrewBatch.UseWhirlfloc"></label>
+                        </div>
+                        <div class="batch-check">
+                            <input asp-for="BrewBatch.UseSilicaSol" class="form-check-input" />
+                            <label asp-for="BrewBatch.UseSilicaSol"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="recipe-footer-actions">
+        <div class="secondary-actions">
+            <a asp-page="./Details" asp-route-id="@Model.BrewBatch.Id" class="btn btn-outline-secondary">@Resource.Back</a>
+            <a asp-page="./Index" class="btn btn-outline-secondary">@Resource.ToList</a>
+        </div>
+        <div class="primary-actions">
+            <button type="submit" class="btn btn-primary">@Resource.Save</button>
+        </div>
+    </div>
+</form>
+
+<input type="hidden" value="@Model.BrewBatch.BrewRecipeVersion.BatchSize" id="RecipeBatchSize" />
+<input type="hidden" value="@Model.BrewBatch.BrewRecipeVersion.BrewhouseEfficiency" id="RecipeBrewhouseEfficiency" />
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $.validator.methods.number = function(value, element) {
+            return this.optional(element)
+                || /^-?\d+(,\d+)?$/.test(value);
+        };
+
+        const batchSizeInput = document.getElementById("BrewBatch_BatchSize");
+        const brewhouseEfficiencyInput = document.getElementById("BrewBatch_BrewhouseEfficiency");
+
+        const bottlingVolumeInput = document.getElementById("BrewBatch_BottlingVolume");
+        const bottlingTemperatureInput = document.getElementById("BrewBatch_BottlingTemperature");
+        const targetCarbonation = parseDecimal(document.getElementById("targetCarbonation").textContent);
+        const residualCo2Display = document.getElementById("residualCo2");
+        const primingSugarDisplay = document.getElementById("primingSugar");
+
+        batchSizeInput.addEventListener("input", updateBrewValues);
+        brewhouseEfficiencyInput.addEventListener("input", updateBrewValues);
+        bottlingVolumeInput.addEventListener("input", updateCarbonation);
+        bottlingTemperatureInput.addEventListener("input", updateCarbonation);
+
+        document.querySelectorAll(".hopAlphaAcid").forEach(function(input) {
+            input.addEventListener("input", updateBrewValues);
+        });
+
+        function parseDecimal(value) {
+            if (value === null || value === undefined || value === "") {
+                return NaN;
+            }
+
+            return parseFloat(
+                value.toString().replace(",", ".")
+            );
+        }
+
+        function formatDecimal(value) {
+            return value
+                .toFixed(2)
+                .replace(".", ",");
+        }
+
+        function updateBrewValues() {
+            const recipeBatchSize = parseDecimal(
+                document.getElementById("RecipeBatchSize").value
+            );
+
+            const recipeBrewhouseEfficiency = parseDecimal(
+                document.getElementById("RecipeBrewhouseEfficiency").value
+            );
+
+            const targetBatchSize = parseDecimal(batchSizeInput.value);
+
+            const targetBrewhouseEfficiency = parseDecimal(
+                brewhouseEfficiencyInput.value
+            );
+
+            if (
+                isNaN(recipeBatchSize)
+                || isNaN(targetBatchSize)
+                || recipeBatchSize === 0
+            ) {
+                return;
+            }
+
+            document.querySelectorAll(".maltAdditionRow").forEach(function(row) {
+                const recipeAmount = parseDecimal(row.dataset.recipeAmount);
+                const amountDisplay = row.querySelector(".maltAmount");
+
+                if (
+                    isNaN(recipeAmount)
+                    || isNaN(recipeBrewhouseEfficiency)
+                    || isNaN(targetBrewhouseEfficiency)
+                    || targetBrewhouseEfficiency === 0
+                    || !amountDisplay
+                ) {
+                    return;
+                }
+
+                const targetAmount =
+                    recipeAmount
+                    * (targetBatchSize / recipeBatchSize)
+                    * (recipeBrewhouseEfficiency / targetBrewhouseEfficiency);
+
+                amountDisplay.textContent = formatDecimal(targetAmount);
+            });
+
+            document.querySelectorAll(".hopsAdditionRow").forEach(function(row) {
+                const recipeAmount = parseDecimal(row.dataset.recipeAmount);
+                const recipeAlpha = parseDecimal(row.dataset.recipeAlpha);
+                const actualAlphaInput = row.querySelector(".hopAlphaAcid");
+                const amountDisplay = row.querySelector(".hopAmount");
+
+                if (!actualAlphaInput || !amountDisplay) {
+                    return;
+                }
+
+                const actualAlpha = parseDecimal(actualAlphaInput.value);
+
+                if (
+                    isNaN(recipeAmount)
+                    || isNaN(recipeAlpha)
+                    || isNaN(actualAlpha)
+                    || actualAlpha === 0
+                ) {
+                    return;
+                }
+
+                const targetAmount =
+                    recipeAmount
+                    * (targetBatchSize / recipeBatchSize)
+                    * (recipeAlpha / actualAlpha);
+
+                amountDisplay.textContent = formatDecimal(targetAmount);
+            });
+
+            updateIngredientHops();
+        }
+
+        function updateIngredientHops() {
+            const groupedHops = new Map();
+
+            document.querySelectorAll(".hopsAdditionRow").forEach(function(row) {
+                const name = row.dataset.recipeName;
+                const alphaInput = row.querySelector(".hopAlphaAcid");
+                const amountDisplay = row.querySelector(".hopAmount");
+                const unit = row.dataset.recipeUnit;
+
+                if (!alphaInput || !amountDisplay) {
+                    return;
+                }
+
+                const alphaAcid = parseDecimal(alphaInput.value);
+                const amount = parseDecimal(amountDisplay.textContent);
+
+                if (
+                    isNaN(alphaAcid)
+                    || isNaN(amount)
+                ) {
+                    return;
+                }
+
+                const key = `${name}|${alphaAcid}|${unit}`;
+
+                if (!groupedHops.has(key)) {
+                    groupedHops.set(key, {
+                        name: name,
+                        alphaAcid: alphaAcid,
+                        amount: 0,
+                        unit: unit
+                    });
+                }
+
+                groupedHops.get(key).amount += amount;
+            });
+
+            const container = document.getElementById("ingredientHops");
+
+            container.innerHTML = "";
+
+            groupedHops.forEach(function(hop) {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                            <td>${hop.name}</td>
+                            <td class="numeric">${hop.alphaAcid} %</td>
+                            <td class="numeric">${formatDecimal(hop.amount)} ${hop.unit}</td>
+                        `;
+
+                container.appendChild(row);
+            });
+        }
+
+        function calculateResidualCo2(temperatureCelsius) {
+            const temperatureFahrenheit = temperatureCelsius * 9 / 5 + 32;
+            const volumes = 3.0378 - 0.050062 * temperatureFahrenheit + 0.00026555 * temperatureFahrenheit * temperatureFahrenheit;
+ 
+            return Math.max(0, volumes * 1.977);
+        }
+ 
+        function updateCarbonation() {
+            const volume = parseDecimal(bottlingVolumeInput.value);
+            const temperature = parseDecimal(bottlingTemperatureInput.value);
+ 
+            if (
+                isNaN(volume)
+                || isNaN(temperature)
+                || isNaN(targetCarbonation)
+                || volume <= 0
+            ) {
+                residualCo2Display.textContent = "-";
+                primingSugarDisplay.textContent = "-";
+                return;
+            }
+ 
+            const residualCo2 = calculateResidualCo2(temperature); 
+            const requiredCo2PerLiter = Math.max(0, targetCarbonation - residualCo2);
+            const requiredCo2 = requiredCo2PerLiter * volume;
+            const sugar = requiredCo2 / 0.514;
+
+            residualCo2Display.textContent = formatDecimal(residualCo2);
+            primingSugarDisplay.textContent = formatDecimal(sugar);
+        }
+
+        
+
+        updateBrewValues();
+    </script>
+}
