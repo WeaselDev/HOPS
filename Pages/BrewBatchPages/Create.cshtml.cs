@@ -120,8 +120,16 @@ public class CreateModel : PageModel
         BrewBatch.YeastAdditions = BrewBatch.YeastAdditions
             .Where(y => y.Selected)
             .ToList();
-        BrewBatch.BottlingTemperature = BrewRecipeVersion.FermentationTemperature;
 
+        var brewRecipeVersion = await _context.BrewRecipeVersion
+            .FirstOrDefaultAsync(v => v.Id == BrewBatch.BrewRecipeVersionId);
+
+        if (brewRecipeVersion == null)
+        {
+            return NotFound();
+        }
+
+        BrewBatch.BottlingTemperature = brewRecipeVersion.FermentationTemperature;
 
         _context.BrewBatch.Add(BrewBatch);
 
