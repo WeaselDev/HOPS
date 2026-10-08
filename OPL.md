@@ -11,11 +11,15 @@ Aktuell keine bekannten Bugs.
 - [ ] Bierstile als Enum
 
 - [ ] Filter für Bierstil auf Index-Seite
-- [ ] Reifezeit
 
 &nbsp;
 
 ## 🔵 BrewBatch
+
+- [ ] Hefe bei abweichender BatchSize korrekt skalieren
+    - Hefemenge passend zur BatchSize skalieren
+    - Einzelne und mehrere Hefen testen
+    - Vorausgewählte Hefe beim Anlegen eines BrewBatch berücksichtigen
 
 - [ ] Index-Seite mit Filter-Pills für Status
 
@@ -45,6 +49,28 @@ Aktuell keine bekannten Bugs.
     - zusätzlichen Alkoholgehalt in % vol anzeigen
     - zunächst nur berechneter Anzeigewert, nicht persistieren
     - bei der Karbonisierungsberechnung im BrewBatch Edit und ggf. Details darstellen
+
+- [ ] Workflow-Aktionen in der BrewBatch-Übersicht
+    - Aktionen abhängig von BrewBatch.Status anzeigen
+    - Planned → Ready
+        - Status direkt auf Ready setzen
+    - Planned / Ready → Brewed
+        - Dialog mit den beim Brauen benötigten Ist-Daten
+        - Braudatum mit aktuellem Datum vorbelegen
+        - Menge
+        - Stammwürze
+        - ggf. Sudhausausbeute
+        - nach Bestätigung Status auf Brewed setzen
+    - Brewed → Bottled
+        - Dialog mit den beim Abfüllen benötigten Ist-Daten
+        - Abfülldatum mit aktuellem Datum vorbelegen
+        - Abfüllmenge
+        - Abfülltemperatur
+        - Restextrakt
+        - Karbonisierung und benötigten Haushaltszucker live anzeigen
+        - Best-to-Drink aus Reifezeit darstellen
+        - nach Bestätigung Status auf Bottled setzen
+    - Edit weiterhin für Korrekturen und Sonderfälle verwenden
 
 &nbsp;
 
