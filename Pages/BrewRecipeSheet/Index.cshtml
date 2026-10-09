@@ -110,6 +110,14 @@
                        asp-route-id="@recipe.Id">
                         @Resource.Show
                     </a>
+                    @if (!@currentVersion.IsDeleted)
+                    {
+                        <a asp-page="../BrewBatchPages/Create"
+                           asp-route-recipeVersionId="@currentVersion.Id"
+                           >
+                            @Resource.Brew
+                        </a>
+                    }
                 </footer>
             </article>
         }
