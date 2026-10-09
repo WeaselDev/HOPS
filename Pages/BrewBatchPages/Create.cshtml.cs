@@ -117,9 +117,7 @@ public class CreateModel : PageModel
             return Page();
         }
 
-        BrewBatch.YeastAdditions = BrewBatch.YeastAdditions
-            .Where(y => y.Selected)
-            .ToList();
+        BrewBatch.YeastAdditions = [.. BrewBatch.YeastAdditions.Where(y => y.Selected)];
 
         var brewRecipeVersion = await _context.BrewRecipeVersion
             .FirstOrDefaultAsync(v => v.Id == BrewBatch.BrewRecipeVersionId);

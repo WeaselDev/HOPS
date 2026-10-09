@@ -462,7 +462,12 @@
 
 <div class="recipe-footer-actions print-hide">
     <div class="secondary-actions">
-        <a asp-page="./Index" class="btn btn-outline-secondary">@Resource.Back</a>
+        <button type="button"
+                class="btn btn-secondary"
+                onclick="history.back()">
+            <i class="bi bi-arrow-left"></i>
+            @Resource.Back
+        </button>
 
         <form method="post"
               asp-page-handler="Delete"
