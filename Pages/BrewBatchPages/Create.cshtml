@@ -488,8 +488,7 @@
                     return;
                 }
 
-                const targetAmount =
-                    recipeAmount * batchSizeFactor;
+                const targetAmount = Math.ceil(recipeAmount * batchSizeFactor);
 
                 const formattedAmount =
                     formatDecimal(targetAmount);

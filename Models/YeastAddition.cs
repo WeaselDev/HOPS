@@ -14,7 +14,8 @@ namespace HOPS.Models
 
         public decimal CalculateAmount(decimal recipeBatchSizeLiters, decimal targetBatchSizeLiters)
         {
-            return 1;
+            int hackedYeastRange = 25;
+            return Math.Ceiling(targetBatchSizeLiters / hackedYeastRange);
         }
 
         public YeastAddition CreateCopy()
