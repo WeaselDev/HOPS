@@ -9,7 +9,7 @@
    id="svg1"
    xml:space="preserve"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="label_bc.svg"
+   sodipodi:docname="label.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -29,7 +29,7 @@
      inkscape:cy="85.816512"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" /><defs
@@ -102,4 +102,14 @@
          id="tspan7-5-2-3"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab';stroke-width:0.665"
          x="161.52409"
-         y="13.531911">Trinkreif</tspan></text></g></svg>
+         y="13.531911">Trinkreif</tspan></text><text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Brush Script MT';-inkscape-font-specification:'Brush Script MT Italic';writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.665001;stroke-opacity:1"
+       x="161.52409"
+       y="4.3001747"
+       id="BeerStyle"><tspan
+         sodipodi:role="line"
+         id="tspan7-5-2-3-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab';stroke-width:0.665"
+         x="161.52409"
+         y="4.3001747">Weizen</tspan></text></g></svg>

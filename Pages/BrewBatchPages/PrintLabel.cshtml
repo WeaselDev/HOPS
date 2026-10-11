@@ -17,6 +17,8 @@
 
     var bestToDrink = Model.Label.BestToDrinkFrom
         ?.ToString("yyyy-MM-dd") ?? string.Empty;
+
+    var style = Model.Label.Style ?? string.Empty;
 }
 
 <header class="recipe-header label-screen-only">
@@ -35,6 +37,14 @@
                    class="form-control label-input"
                    type="text"
                    value="@Model.Label.BeerName" />
+        </div>
+
+        <div class="recipe-field">
+            <label for="labelStyle">@Resource.Style</label>
+            <input id="labelStyle"
+                   class="form-control label-input"
+                   type="text"
+                   value="@Model.Label.Style" />
         </div>
 
         <div class="recipe-field">
@@ -134,6 +144,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", async function() {
             const labelName = document.getElementById("labelName");
+            const labelStyle = document.getElementById("labelStyle");
             const labelOriginalPlato = document.getElementById("labelOriginalPlato");
             const labelABV = document.getElementById("labelABV");
             const labelIBU = document.getElementById("labelIBU");
@@ -252,6 +263,11 @@
                     svg,
                     "Name",
                     labelName.value);
+
+                setSvgText(
+                    svg,
+                    "BeerStyle",
+                    labelStyle.value);
 
                 setSvgText(
                     svg,
