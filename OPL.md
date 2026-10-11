@@ -11,6 +11,7 @@ Aktuell keine bekannten Bugs.
 - [ ] Bierstile als Enum
 
 - [ ] Filter für Bierstil auf Index-Seite
+- [ ] Beschreibung Optional
 
 &nbsp;
 
