@@ -10,7 +10,7 @@ builder.Services.AddDbContext<HOPSContext>(options => options.UseSqlite(connecti
 builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AddPageRoute(
-    "/BrewRecipeSheet/Index",
+    "/BrewBatchPages/Index",
     "");
 });
 
