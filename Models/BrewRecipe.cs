@@ -8,6 +8,10 @@ namespace HOPS.Models
         [Display(ResourceType = typeof(Resource), Name = nameof(Resource.Style))]
         public string Style { get; set; } = string.Empty;
 
+        //public Guid BeerStyleId { get; set; }
+
+        //public BeerStyle? BeerStyle { get; set; }
+
         [Display(ResourceType = typeof(Resource), Name = nameof(Resource.Description))]
         public string? Description { get; set; } = string.Empty;
 
