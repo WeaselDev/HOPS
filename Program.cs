@@ -1,3 +1,4 @@
+using HOPS.Component;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -27,7 +28,24 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
+builder.Services.AddDbContext<HOPSContext>(options =>
+{
+    // Deine Datenbankkonfiguration
+});
+
+builder.Services.AddScoped<BeerStyleImportService>();
+
 var app = builder.Build();
+
+await using (var scope = app.Services.CreateAsyncScope())
+{
+    var importer = scope.ServiceProvider
+        .GetRequiredService<BeerStyleImportService>();
+
+    await importer.ImportAsync(
+        "wwwroot/data/json/bjcp_styleguide-2021.json");
+}
+
 
 // Apply migrations at startup
 using (var scope = app.Services.CreateScope())

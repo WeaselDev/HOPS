@@ -16,6 +16,104 @@ namespace HOPS.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
 
+            modelBuilder.Entity("HOPS.Models.BeerStyle", b =>
+                {
+                    b.Property<string>("StyleId")
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("AbvMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("AbvMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Appearance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Aroma")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Category")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CategoryDescription")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CategoryId")
+                        .HasMaxLength(20)
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("ColorMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("ColorMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Examples")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("FgMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("FgMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Flavor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("History")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("IbuMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("IbuMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Ingredients")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Mouthfeel")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("OgMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("OgMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OverallImpression")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StyleComparison")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StyleGuide")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("StyleId");
+
+                    b.ToTable("BeerStyles");
+                });
+
             modelBuilder.Entity("HOPS.Models.BrewBatch", b =>
                 {
                     b.Property<Guid>("Id")
