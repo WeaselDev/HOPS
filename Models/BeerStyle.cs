@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace HOPS.Models;
 
-public sealed class BeerStyle
+public class BeerStyle
 {
     [Key]
     [MaxLength(10)]
@@ -35,16 +35,12 @@ public sealed class BeerStyle
 
     public decimal? OgMin { get; set; }
     public decimal? OgMax { get; set; }
-
     public decimal? IbuMin { get; set; }
     public decimal? IbuMax { get; set; }
-
     public decimal? FgMin { get; set; }
     public decimal? FgMax { get; set; }
-
     public decimal? AbvMin { get; set; }
     public decimal? AbvMax { get; set; }
-
     public decimal? ColorMin { get; set; }
     public decimal? ColorMax { get; set; }
 }

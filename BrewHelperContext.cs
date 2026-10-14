@@ -11,5 +11,5 @@ public class HOPSContext(DbContextOptions<HOPSContext> options) : DbContext(opti
     public DbSet<MashStep> MashStep { get; set; } = default!;
     public DbSet<FermentationAddition> FermentationAddition { get; set; } = default!;
     public DbSet<BrewBatch> BrewBatch { get; set; } = default!;
-    public DbSet<BeerStyle> BeerStyles => Set<BeerStyle>();
+    public DbSet<BeerStyle> BeerStyles { get; set; } = default!;
 }

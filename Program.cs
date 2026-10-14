@@ -7,6 +7,9 @@ var connectionString = builder.Configuration.GetConnectionString("HOPSContext") 
 
 builder.Services.AddDbContext<HOPSContext>(options => options.UseSqlite(connectionString));
 
+// Register importer service
+builder.Services.AddTransient<BeerStyleImportService>();
+
 // Add services to the container.
 builder.Services.AddRazorPages(options =>
 {
@@ -28,30 +31,28 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
-builder.Services.AddDbContext<HOPSContext>(options =>
-{
-    // Deine Datenbankkonfiguration
-});
-
-builder.Services.AddScoped<BeerStyleImportService>();
-
 var app = builder.Build();
-
-await using (var scope = app.Services.CreateAsyncScope())
-{
-    var importer = scope.ServiceProvider
-        .GetRequiredService<BeerStyleImportService>();
-
-    await importer.ImportAsync(
-        "wwwroot/data/json/bjcp_styleguide-2021.json");
-}
-
 
 // Apply migrations at startup
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<HOPSContext>();
     db.Database.Migrate();
+}
+
+// Run beer style import once at startup (ignore already .done files)
+using (var scopeImport = app.Services.CreateScope())
+{
+    try
+    {
+        var importer = scopeImport.ServiceProvider.GetRequiredService<BeerStyleImportService>();
+        importer.ImportAllAsync().GetAwaiter().GetResult();
+    }
+    catch (Exception ex)
+    {
+        // cannot use logger here easily; swallow to avoid startup failure
+        Console.Error.WriteLine("Beer style import failed: " + ex.Message);
+    }
 }
 
 // Configure the HTTP request pipeline.
