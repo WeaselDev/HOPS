@@ -58,7 +58,7 @@ public class DetailsModel : PageModel
         BrewRecipeVersion = await _context.BrewRecipeVersion
             .Include(v => v.MaltAdditions.OrderBy(x => x.Index))
             .Include(v => v.HopAdditions.OrderBy(x => x.Index))
-            .Include(v => v.YeastAdditions.OrderBy(x => x.Index))
+            .Include(v => v.PreferredYeasts)
             .Include(v => v.MashSteps.OrderBy(x => x.Index))
             .Include(v => v.FermentationAdditions.OrderBy(x => x.Index))
             .Include(v => v.WaterAdditions.OrderBy(x => x.Index))

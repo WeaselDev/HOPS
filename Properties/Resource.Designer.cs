@@ -835,6 +835,15 @@ namespace HOPS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bevorzugte Hefe.
+        /// </summary>
+        public static string PreferredYeasts {
+            get {
+                return ResourceManager.GetString("PreferredYeasts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vorschau.
         /// </summary>
         public static string Preview {

@@ -509,6 +509,61 @@ namespace HOPS.Migrations
                     b.ToTable("WaterAddition");
                 });
 
+            modelBuilder.Entity("HOPS.Models.Yeast", b =>
+                {
+                    b.Property<string>("ProductId")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("AlcoholTolerance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("AttenuationRangeMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("AttenuationRangeMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BestFor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("BrewRecipeVersionId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Flocculation")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Form")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Producer")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("TemperatureRangeMax")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal?>("TemperatureRangeMin")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Type")
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("BrewRecipeVersionId");
+
+                    b.ToTable("Yeasts");
+                });
+
             modelBuilder.Entity("HOPS.Models.YeastAddition", b =>
                 {
                     b.Property<Guid>("Id")
@@ -519,9 +574,6 @@ namespace HOPS.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("BrewBatchId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("BrewRecipeVersionId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
@@ -545,8 +597,6 @@ namespace HOPS.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BrewBatchId");
-
-                    b.HasIndex("BrewRecipeVersionId");
 
                     b.ToTable("YeastAddition");
                 });
@@ -626,15 +676,18 @@ namespace HOPS.Migrations
                         .HasForeignKey("BrewRecipeVersionId");
                 });
 
+            modelBuilder.Entity("HOPS.Models.Yeast", b =>
+                {
+                    b.HasOne("HOPS.Models.BrewRecipeVersion", null)
+                        .WithMany("PreferredYeasts")
+                        .HasForeignKey("BrewRecipeVersionId");
+                });
+
             modelBuilder.Entity("HOPS.Models.YeastAddition", b =>
                 {
                     b.HasOne("HOPS.Models.BrewBatch", null)
                         .WithMany("YeastAdditions")
                         .HasForeignKey("BrewBatchId");
-
-                    b.HasOne("HOPS.Models.BrewRecipeVersion", null)
-                        .WithMany("YeastAdditions")
-                        .HasForeignKey("BrewRecipeVersionId");
                 });
 
             modelBuilder.Entity("HOPS.Models.BrewBatch", b =>
@@ -661,9 +714,9 @@ namespace HOPS.Migrations
 
                     b.Navigation("MashSteps");
 
-                    b.Navigation("WaterAdditions");
+                    b.Navigation("PreferredYeasts");
 
-                    b.Navigation("YeastAdditions");
+                    b.Navigation("WaterAdditions");
                 });
 #pragma warning restore 612, 618
         }

@@ -21,7 +21,12 @@ public class EditModel : PageModel
     [BindProperty]
     public BrewRecipeVersion BrewRecipeVersion { get; set; } = default!;
 
-    public List<SelectListItem> BeerStyleList { get; set; } = new();
+    public List<SelectListItem> BeerStyleList { get; set; } = new List<SelectListItem>();
+
+    public List<SelectListItem> PreferredYeastList { get; set; } = new List<SelectListItem>();
+
+        // Full yeast objects for rendering data-* attributes (producer/name)
+        public List<HOPS.Models.Yeast> PreferredYeastData { get; set; } = new List<HOPS.Models.Yeast>();
 
     public async Task<IActionResult> OnGetAsync(System.Guid? id, int? version)
     {
@@ -39,7 +44,7 @@ public class EditModel : PageModel
             .Include(r => r.Versions)
             .ThenInclude(v => v.MaltAdditions.OrderBy(x => x.Index))
             .Include(r => r.Versions)
-            .ThenInclude(v => v.YeastAdditions.OrderBy(x => x.Index))
+            .ThenInclude(v => v.PreferredYeasts)
             .Include(r => r.Versions)
             .ThenInclude(v => v.FermentationAdditions.OrderBy(x => x.Index))
             .Include(r => r.Versions)
@@ -80,7 +85,13 @@ public class EditModel : PageModel
         }
 
         BrewRecipe = brewrecipe;
+        // populate preferred yeast ids for the UI multi-select
+        BrewRecipeVersion.PreferredYeastIds = [.. brewrecipe.Versions
+            .Where(v => v.Id == BrewRecipeVersion.Id)
+            .SelectMany(v => v.PreferredYeasts.Select(y => y.ProductId))];
+
         await LoadBeerStylesAsync();
+        await LoadPreferredYeastsAsync();
         return Page();
     }
 
@@ -114,6 +125,29 @@ public class EditModel : PageModel
         BeerStyleList = list;
     }
 
+    private async Task LoadPreferredYeastsAsync()
+    {
+        var yeasts = await _context.Yeasts
+            .OrderBy(y => y.Producer)
+            .ThenBy(y => y.Name)
+            .ToListAsync();
+
+        PreferredYeastData = yeasts;
+
+        var list = new List<SelectListItem>();
+
+        foreach (var y in yeasts)
+        {
+            list.Add(new SelectListItem
+            {
+                Value = y.ProductId,
+                Text = (y.Producer is null ? "" : y.Producer + " - ") + (y.Name ?? y.ProductId)
+            });
+        }
+
+        PreferredYeastList = list;
+    }
+
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     // For more details, see https://aka.ms/RazorPagesCRUD.
     public async Task<IActionResult> OnPostAsync()
@@ -132,7 +166,7 @@ public class EditModel : PageModel
             .Include(r => r.Versions)
                 .ThenInclude(v => v.MaltAdditions)
             .Include(r => r.Versions)
-                .ThenInclude(v => v.YeastAdditions)
+                .ThenInclude(v => v.PreferredYeasts)
             .Include(r => r.Versions)
                 .ThenInclude(v => v.FermentationAdditions)
             .Include(r => r.Versions)
@@ -170,10 +204,21 @@ public class EditModel : PageModel
         if (recipeVersion.IsDeleted || versionWasBrewed)
         {
             CreateNewVersion(brewRecipe);
+
+            // assign preferred yeasts to the newly created version
+            var newVersion = brewRecipe.Versions.OrderByDescending(v => v.Version).First();
+            newVersion.PreferredYeasts = await _context.Yeasts
+                .Where(y => BrewRecipeVersion.PreferredYeastIds.Contains(y.ProductId))
+                .ToListAsync();
         }
         else
         {
             UpdateVersion(recipeVersion);
+
+            // update preferred yeasts for existing version
+            recipeVersion.PreferredYeasts = await _context.Yeasts
+                .Where(y => BrewRecipeVersion.PreferredYeastIds.Contains(y.ProductId))
+                .ToListAsync();
         }
 
         await _context.SaveChangesAsync();
@@ -230,18 +275,6 @@ public class EditModel : PageModel
                 existing.Duration = posted.Duration;
             });
 
-        SyncCollection(
-            recipeVersion.YeastAdditions,
-            BrewRecipeVersion.YeastAdditions,
-            x => x.Id,
-            (existing, posted) =>
-            {
-                existing.Index = posted.Index;
-                existing.Name = posted.Name;
-                existing.Amount = posted.Amount;
-                existing.Unit = posted.Unit;
-                existing.Description = posted.Description;
-            });
 
         SyncCollection(
             recipeVersion.MaltAdditions,
@@ -310,7 +343,7 @@ public class EditModel : PageModel
 
             MaltAdditions = [.. BrewRecipeVersion.MaltAdditions.Select(a => a.CreateCopy())],
             HopAdditions = [.. BrewRecipeVersion.HopAdditions.Select(a => a.CreateCopy())],
-            YeastAdditions = [.. BrewRecipeVersion.YeastAdditions.Select(a => a.CreateCopy())],
+            PreferredYeasts = [.. BrewRecipeVersion.PreferredYeasts],
             MashSteps = [.. BrewRecipeVersion.MashSteps.Select(a => a.CreateCopy())],
             FermentationAdditions = [.. BrewRecipeVersion.FermentationAdditions.Select(a => a.CreateCopy())],
             WaterAdditions = [.. BrewRecipeVersion.WaterAdditions.Select(a => a.CreateCopy())]

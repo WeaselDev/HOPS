@@ -483,6 +483,9 @@
   <data name="Mature" xml:space="preserve">
     <value>BANANA</value>
   </data>
+  <data name="PrintLabel" xml:space="preserve">
+    <value>Print Labels</value>
+  </data>
   <data name="LabelData" xml:space="preserve">
     <value>BANANA</value>
   </data>
@@ -497,5 +500,8 @@
   </data>
   <data name="Print" xml:space="preserve">
     <value>BANANA</value>
+  </data>
+  <data name="PreferredYeasts" xml:space="preserve">
+    <value>Preferred Yeasts</value>
   </data>
 </root>

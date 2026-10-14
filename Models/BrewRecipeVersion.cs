@@ -67,12 +67,16 @@ namespace HOPS.Models
         [Display(ResourceType = typeof(Resource), Name = nameof(Resource.MaturationWeeksMax))]
         public int MaturationWeeksMax { get; set; }
 
-        public List<MaltAddition> MaltAdditions { get; set; } = [];
-        public List<HopAddition> HopAdditions { get; set; } = [];
-        public List<YeastAddition> YeastAdditions { get; set; } = [];
-        public List<MashStep> MashSteps { get; set; } = [];
-        public List<FermentationAddition> FermentationAdditions { get; set; } = [];
-        public List<WaterAddition> WaterAdditions { get; set; } = [];
+        public List<MaltAddition> MaltAdditions { get; set; } = new List<MaltAddition>();
+        public List<HopAddition> HopAdditions { get; set; } = new List<HopAddition>();
+        // Preferred yeasts referenced by ProductId (many-to-many relationship)
+        public List<Yeast> PreferredYeasts { get; set; } = new List<Yeast>();
+
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public List<string> PreferredYeastIds { get; set; } = new List<string>();
+        public List<MashStep> MashSteps { get; set; } = new List<MashStep>();
+        public List<FermentationAddition> FermentationAdditions { get; set; } = new List<FermentationAddition>();
+        public List<WaterAddition> WaterAdditions { get; set; } = new List<WaterAddition>();
 
         public BrewRecipeVersion CreateNewVersion(int version)
         {
@@ -104,7 +108,8 @@ namespace HOPS.Models
 
                 MaltAdditions = [.. MaltAdditions.Select(a => a.CreateCopy())],
                 HopAdditions = [.. HopAdditions.Select(a => a.CreateCopy())],
-                YeastAdditions = [.. YeastAdditions.Select(a => a.CreateCopy())],
+                PreferredYeastIds = [.. PreferredYeastIds] ,
+                PreferredYeasts = [.. PreferredYeasts] ,
                 MashSteps = [.. MashSteps.Select(a => a.CreateCopy())],
                 FermentationAdditions = [.. FermentationAdditions.Select(a => a.CreateCopy())],
                 WaterAdditions = [.. WaterAdditions.Select(a => a.CreateCopy())]

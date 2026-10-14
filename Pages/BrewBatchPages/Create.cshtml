@@ -123,7 +123,7 @@
                             @for (int i = 0; i < Model.BrewBatch.YeastAdditions.Count; i++)
                             {
                                 <tr class="yeastAdditionRow"
-                                    data-recipe-amount="@Model.BrewRecipeVersion.YeastAdditions.Single(y => y.Index == Model.BrewBatch.YeastAdditions[i].Index).Amount">
+                                    @* data-recipe-amount="@Model.BrewRecipeVersion.YeastAdditions.Single(y => y.Index == Model.BrewBatch.YeastAdditions[i].Index).Amount" *@>
 
                                     <td>
                                         <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Index" />

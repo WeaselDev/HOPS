@@ -239,37 +239,42 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody id="yeastAdditions">
-                                @for (int i = 0; i < Model.BrewRecipeVersion.YeastAdditions.Count; i++)
-                                {
-                                    <tr class="collection-row">
-                                        <td class="recipe-drag-cell">
-                                            <input type="hidden" asp-for="BrewRecipeVersion.YeastAdditions[i].Index" />
-                                            <input type="hidden" asp-for="BrewRecipeVersion.YeastAdditions[i].Id" />
-                                            <button type="button" class="recipe-drag-handle" title="@Resource.Move" aria-label="@Resource.Move">⠿</button>
-                                        </td>
-                                        <td>
-                                            <input asp-for="BrewRecipeVersion.YeastAdditions[i].Name" class="form-control input-name" />
-                                        </td>
-                                        <td class="numeric">
-                                            <input asp-for="BrewRecipeVersion.YeastAdditions[i].Amount" class="form-control input-number" />
-                                        </td>
-                                        <td>
-                                            <select asp-for="BrewRecipeVersion.YeastAdditions[i].Unit" class="form-select input-unit">
-                                                <option value="stck">stck</option>
-                                                <option value="g">g</option>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5">
+                                        <label>@Resource.PreferredYeasts</label>
+                                        <div class="d-flex gap-2 align-items-start">
+                                            <select id="preferredYeastSelect" class="form-select select2" style="min-width:300px">
+                                                <option></option>
+                                                @foreach (var item in Model.PreferredYeastList)
+                                                {
+                                                    <option value="@item.Value" data-producer="@(Model.PreferredYeastData?.FirstOrDefault(y => y.ProductId == item.Value)?.Producer)" data-name="@(Model.PreferredYeastData?.FirstOrDefault(y => y.ProductId == item.Value)?.Name)">@item.Text</option>
+                                                }
                                             </select>
-                                        </td>
-                                        <td class="recipe-actions-cell">
-                                            <button type="button" class="btn btn-sm btn-outline-danger remove-row" title="@Resource.Delete">×</button>
-                                        </td>
-                                    </tr>
-                                }
+                                            <button id="addPreferredYeast" type="button" class="btn btn-sm btn-outline-secondary">+ Add</button>
+                                        </div>
+                                        <table class="table mt-2" id="preferredYeastList" aria-label="Preferred yeasts list">
+                                            <thead>
+                                                <tr><th>Id</th><th>Producer</th><th>Name</th><th></th></tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var y in Model.BrewRecipeVersion.PreferredYeasts)
+                                                {
+                                                    <tr data-id="@y.ProductId">
+                                                        <td>@y.ProductId</td>
+                                                        <td>@y.Producer</td>
+                                                        <td>@y.Name</td>
+                                                        <td><button type="button" class="btn btn-sm btn-outline-danger remove-yeast">×</button></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                        <input type="hidden" name="BrewRecipeVersion.PreferredYeastIds" id="PreferredYeastIdsHidden" />
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-
-                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="YeastAdditions">+ @Resource.Yeast</button>
                 </div>
             </section>
         </div>
@@ -620,6 +625,46 @@
                     width: 'resolve'
                 });
             }
+
+            var psel = $('#preferredYeastSelect');
+            if (psel.length && $.fn.select2) {
+                psel.select2({
+                    placeholder: '-',
+                    allowClear: true,
+                    width: 'resolve'
+                });
+            }
+
+            function updateHiddenInputs() {
+                var ids = $('#preferredYeastList tbody tr').map(function() { return $(this).data('id'); }).get();
+                $('input[name="BrewRecipeVersion.PreferredYeastIds"]').remove();
+                ids.forEach(function(id) {
+                    $('<input>').attr({ type: 'hidden', name: 'BrewRecipeVersion.PreferredYeastIds', value: id }).appendTo('form');
+                });
+            }
+
+            $('#addPreferredYeast').on('click', function() {
+                var sel = $('#preferredYeastSelect');
+                var val = sel.val();
+                if (!val) return;
+                if ($('#preferredYeastList tbody tr').filter(function() { return $(this).data('id') == val; }).length) return;
+                var option = sel.find('option[value="' + val + '"]');
+                var producer = option.data('producer') || '';
+                var name = option.data('name') || '';
+                var row = $('<tr>').attr('data-id', val).append(
+                    $('<td>').text(val),
+                    $('<td>').text(producer),
+                    $('<td>').text(name),
+                    $('<td>').append($('<button>').attr('type','button').addClass('btn btn-sm btn-outline-danger remove-yeast').text('×'))
+                );
+                $('#preferredYeastList tbody').append(row);
+                updateHiddenInputs();
+            });
+
+            $(document).on('click', '.remove-yeast', function() {
+                $(this).closest('tr').remove();
+                updateHiddenInputs();
+            });
         });
     </script>
 

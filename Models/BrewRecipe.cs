@@ -16,6 +16,6 @@ namespace HOPS.Models
         [Display(ResourceType = typeof(Resource), Name = nameof(Resource.IsDeleted))]
         public bool IsDeleted { get; set; }
 
-        public List<BrewRecipeVersion> Versions { get; set; } = [];
+        public List<BrewRecipeVersion> Versions { get; set; } = new List<BrewRecipeVersion>();
     }
 }

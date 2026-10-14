@@ -94,10 +94,7 @@ public class EditModel : PageModel
                 .SingleOrDefault(h =>
                     h.HopAdditionId == postedHop.HopAdditionId);
 
-            if (existingHop is not null)
-            {
-                existingHop.AlphaAcid = postedHop.AlphaAcid;
-            }
+            existingHop?.AlphaAcid = postedHop.AlphaAcid;
         }
 
         foreach (var postedWater in BrewBatch.WaterAdditions)
@@ -105,10 +102,7 @@ public class EditModel : PageModel
             var existingWater = brewBatch.WaterAdditions
                 .SingleOrDefault(w => w.Id == postedWater.Id);
 
-            if (existingWater is not null)
-            {
-                existingWater.Amount = postedWater.Amount;
-            }
+            existingWater?.Amount = postedWater.Amount;
         }
 
         await _context.SaveChangesAsync();
@@ -126,7 +120,7 @@ public class EditModel : PageModel
             .Include(b => b.BrewRecipeVersion)
                 .ThenInclude(v => v.HopAdditions.OrderBy(a => a.Index))
             .Include(b => b.BrewRecipeVersion)
-                .ThenInclude(v => v.YeastAdditions.OrderBy(a => a.Index))
+                .ThenInclude(v => v.PreferredYeasts.OrderBy(a => a.ProductId))
             .Include(b => b.BrewRecipeVersion)
                 .ThenInclude(v => v.WaterAdditions.OrderBy(a => a.Index))
             .Include(b => b.BrewRecipeVersion)
@@ -195,10 +189,7 @@ public class EditModel : PageModel
                 .SingleOrDefault(h =>
                     h.HopAdditionId == postedHop.HopAdditionId);
 
-            if (hop is not null)
-            {
-                hop.AlphaAcid = postedHop.AlphaAcid;
-            }
+            hop?.AlphaAcid = postedHop.AlphaAcid;
         }
 
         foreach (var postedWater in postedBrewBatch.WaterAdditions)
@@ -206,10 +197,7 @@ public class EditModel : PageModel
             var water = BrewBatch.WaterAdditions
                 .SingleOrDefault(w => w.Id == postedWater.Id);
 
-            if (water is not null)
-            {
-                water.Amount = postedWater.Amount;
-            }
+            water?.Amount = postedWater.Amount;
         }
 
         return Page();

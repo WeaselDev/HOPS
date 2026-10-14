@@ -54,7 +54,7 @@ public class DeleteModel : PageModel
             .Include(r => r.Versions)
             .ThenInclude(v => v.MaltAdditions)
             .Include(r => r.Versions)
-            .ThenInclude(v => v.YeastAdditions)
+            .ThenInclude(v => v.PreferredYeasts)
             .Include(r => r.Versions)
             .ThenInclude(v => v.FermentationAdditions)
             .FirstOrDefaultAsync(r => r.Id == id);

@@ -61,17 +61,17 @@ namespace HOPS.Models
         /// <summary>
         /// The list of alphas for hop additions for this batch.
         /// </summary>
-        public List<BrewHop> Hops { get; set; } = [];
+        public List<BrewHop> Hops { get; set; } = new List<BrewHop>();
 
         /// <summary>
         /// The list of water additions for this batch.
         /// </summary>
-        public List<WaterAddition> WaterAdditions { get; set; } = [];
+        public List<WaterAddition> WaterAdditions { get; set; } = new List<WaterAddition>();
 
         /// <summary>
         /// The list of yeast additions for this batch.
         /// </summary>
-        public List<YeastAddition> YeastAdditions { get; set; } = [];
+        public List<YeastAddition> YeastAdditions { get; set; } = new List<YeastAddition>();
 
         [Display(ResourceType = typeof(Resource), Name = nameof(Resource.BrewNote))]
         public string? BrewNote { get; set; }

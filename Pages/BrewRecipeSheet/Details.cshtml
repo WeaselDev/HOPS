@@ -175,17 +175,17 @@
             <div class="recipe-section-body">
                 <table class="recipe-table recipe-table-simple">
                     <tbody>
-                        @for (int i = 0; i < Model.BrewRecipeVersion.YeastAdditions.Count; i++)
+                        @for (int i = 0; i < Model.BrewRecipeVersion.PreferredYeasts.Count; i++)
                         {
                             <tr>
                                 <td>
-                                    @Model.BrewRecipeVersion.YeastAdditions[i].Name
-                                    @if (!string.IsNullOrWhiteSpace(Model.BrewRecipeVersion.YeastAdditions[i].Description))
+                                    @(Model.BrewRecipeVersion.PreferredYeasts[i].Name ?? Model.BrewRecipeVersion.PreferredYeasts[i].ProductId)
+                                    @if (!string.IsNullOrWhiteSpace(Model.BrewRecipeVersion.PreferredYeasts[i].Notes))
                                     {
-                                        <span class="text-muted">(@Model.BrewRecipeVersion.YeastAdditions[i].Description)</span>
+                                        <span class="text-muted">(@Model.BrewRecipeVersion.PreferredYeasts[i].Notes)</span>
                                     }
                                 </td>
-                                <td class="numeric">@Model.BrewRecipeVersion.YeastAdditions[i].Amount @Model.BrewRecipeVersion.YeastAdditions[i].Unit</td>
+                                <td class="numeric"></td>
                             </tr>
                         }
                     </tbody>

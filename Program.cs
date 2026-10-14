@@ -7,8 +7,9 @@ var connectionString = builder.Configuration.GetConnectionString("HOPSContext") 
 
 builder.Services.AddDbContext<HOPSContext>(options => options.UseSqlite(connectionString));
 
-// Register importer service
+// Register importer services
 builder.Services.AddTransient<BeerStyleImportService>();
+builder.Services.AddTransient<YeastImportService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages(options =>
@@ -40,18 +41,27 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-// Run beer style import once at startup (ignore already .done files)
+// Run importers once at startup (ignore already .done files)
 using (var scopeImport = app.Services.CreateScope())
 {
     try
     {
-        var importer = scopeImport.ServiceProvider.GetRequiredService<BeerStyleImportService>();
-        importer.ImportAllAsync().GetAwaiter().GetResult();
+        var beerImporter = scopeImport.ServiceProvider.GetRequiredService<BeerStyleImportService>();
+        beerImporter.ImportAllAsync().GetAwaiter().GetResult();
     }
     catch (Exception ex)
     {
-        // cannot use logger here easily; swallow to avoid startup failure
         Console.Error.WriteLine("Beer style import failed: " + ex.Message);
+    }
+
+    try
+    {
+        var yeastImporter = scopeImport.ServiceProvider.GetRequiredService<YeastImportService>();
+        yeastImporter.ImportAllAsync().GetAwaiter().GetResult();
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine("Yeast import failed: " + ex.Message);
     }
 }
 

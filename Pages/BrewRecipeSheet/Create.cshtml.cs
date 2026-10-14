@@ -1,8 +1,8 @@
+using HOPS.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using HOPS.Models;
 
 namespace HOPS.Pages.BrewRecipeSheet;
 
@@ -60,11 +60,17 @@ public class CreateModel : PageModel
     [BindProperty]
     public BrewRecipe BrewRecipe { get; set; } = new();
 
-    public List<SelectListItem> BeerStyleList { get; set; } = new();
+    public List<SelectListItem> BeerStyleList { get; set; } = new List<SelectListItem>();
+
+    public List<SelectListItem> PreferredYeastList { get; set; } = new List<SelectListItem>();
+
+    // Full yeast objects for rendering data-* attributes (producer/name)
+    public List<HOPS.Models.Yeast> PreferredYeastData { get; set; } = new List<HOPS.Models.Yeast>();
 
     public async Task<IActionResult> OnGetAsync()
     {
         await LoadBeerStylesAsync();
+        await LoadPreferredYeastsAsync();
         return Page();
     }
 
@@ -78,6 +84,14 @@ public class CreateModel : PageModel
 
         BrewRecipeVersion version = BrewRecipe.Versions.FirstOrDefault();
         version.MaturationWeeksMax = Math.Max(version.MaturationWeeksMin, version.MaturationWeeksMax);
+
+        // attach preferred yeasts selected in the UI
+        if (version.PreferredYeastIds != null && version.PreferredYeastIds.Any())
+        {
+            version.PreferredYeasts = await _context.Yeasts
+                .Where(y => version.PreferredYeastIds.Contains(y.ProductId))
+                .ToListAsync();
+        }
 
         _context.BrewRecipe.Add(BrewRecipe);
 
@@ -114,5 +128,28 @@ public class CreateModel : PageModel
         }
 
         BeerStyleList = list;
+    }
+
+    private async Task LoadPreferredYeastsAsync()
+    {
+        var yeasts = await _context.Yeasts
+            .OrderBy(y => y.Producer)
+            .ThenBy(y => y.Name)
+            .ToListAsync();
+
+        PreferredYeastData = yeasts;
+
+        var list = new List<SelectListItem>();
+
+        foreach (var y in yeasts)
+        {
+            list.Add(new SelectListItem
+            {
+                Value = y.ProductId,
+                Text = (y.Producer is null ? "" : y.Producer + " - ") + (y.Name ?? y.ProductId)
+            });
+        }
+
+        PreferredYeastList = list;
     }
 }

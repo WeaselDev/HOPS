@@ -26,7 +26,7 @@ public class CreateModel : PageModel
         BrewRecipeVersion = await _context.BrewRecipeVersion
             .Include(v => v.MashSteps.OrderBy(m => m.Index))
             .Include(v => v.MaltAdditions.OrderBy(m => m.Index))
-            .Include(v => v.YeastAdditions.OrderBy(m => m.Index))
+            //.Include(v => v.YeastAdditions.OrderBy(m => m.Index))
             .Include(v => v.HopAdditions.OrderBy(m => m.Index))
             .Include(v => v.WaterAdditions.OrderBy(m => m.Index))
             .Include(v => v.FermentationAdditions.OrderBy(m => m.Index))
@@ -70,10 +70,10 @@ public class CreateModel : PageModel
                 })
             ],
 
-            YeastAdditions =
-            [
-                .. BrewRecipeVersion.YeastAdditions.Select(a => a.CreateCopy())
-            ],
+            //YeastAdditions =
+            //[
+            //    .. BrewRecipeVersion.YeastAdditions.Select(a => a.CreateCopy())
+            //],
 
             WaterAdditions =
             [
@@ -81,15 +81,15 @@ public class CreateModel : PageModel
             ]
         };
 
-        foreach (var yeast in BrewBatch.YeastAdditions)
-        {
-            var recipeYeast = BrewRecipeVersion.YeastAdditions
-                .Single(y => y.Index == yeast.Index);
+        //foreach (var yeast in BrewBatch.YeastAdditions)
+        //{
+        //    var recipeYeast = BrewRecipeVersion.YeastAdditions
+        //        .Single(y => y.Index == yeast.Index);
 
-            yeast.Amount = recipeYeast.CalculateAmount(
-                BrewRecipeVersion.BatchSize,
-                BrewBatch.BatchSize);
-        }
+        //    yeast.Amount = recipeYeast.CalculateAmount(
+        //        BrewRecipeVersion.BatchSize,
+        //        BrewBatch.BatchSize);
+        //}
         if (BrewBatch.YeastAdditions.Count > 0)
         {
             BrewBatch.YeastAdditions[0].Selected = true;
