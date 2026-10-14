@@ -11,6 +11,8 @@ public class BrewBatchJournalItem
     public BrewRecipeVersion BrewRecipeVersion { get; set; } = null!;
 
     public BrewRecipe BrewRecipe { get; set; } = null!;
+
+    public BeerStyle BeerStyle { get; set; } = null!;
 }
 
 public class IndexModel : PageModel
@@ -32,13 +34,16 @@ public class IndexModel : PageModel
                 on batch.BrewRecipeVersionId equals version.Id
             join recipe in _context.BrewRecipe
                 on version.BrewRecipeId equals recipe.Id
+            join beerstyle in _context.BeerStyles
+                on recipe.BeerStyleId equals beerstyle.StyleId
             where !batch.IsDeleted
             orderby batch.BrewDate descending
             select new BrewBatchJournalItem
             {
                 BrewBatch = batch,
                 BrewRecipeVersion = version,
-                BrewRecipe = recipe
+                BrewRecipe = recipe,
+                BeerStyle = beerstyle
             })
             .ToListAsync();
     }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HOPS.Models;
 
@@ -20,6 +21,8 @@ public class EditModel : PageModel
     [BindProperty]
     public BrewRecipeVersion BrewRecipeVersion { get; set; } = default!;
 
+    public List<SelectListItem> BeerStyleList { get; set; } = new();
+
     public async Task<IActionResult> OnGetAsync(System.Guid? id, int? version)
     {
         if (id is null)
@@ -28,6 +31,7 @@ public class EditModel : PageModel
         }
 
         var brewrecipe = await _context.BrewRecipe
+            .Include(r => r.BeerStyle)
             .Include(r => r.Versions)
             .ThenInclude(v => v.MashSteps.OrderBy(x => x.Index))
             .Include(r => r.Versions)
@@ -76,7 +80,38 @@ public class EditModel : PageModel
         }
 
         BrewRecipe = brewrecipe;
+        await LoadBeerStylesAsync();
         return Page();
+    }
+
+    private async Task LoadBeerStylesAsync()
+    {
+        var styles = await _context.BeerStyles
+            .OrderBy(b => b.Category)
+            .ThenBy(b => b.Name)
+            .ToListAsync();
+
+        var groups = new Dictionary<string, SelectListGroup>();
+        var list = new List<SelectListItem>();
+
+        foreach (var s in styles)
+        {
+            var key = string.IsNullOrWhiteSpace(s.Category) ? "Uncategorized" : s.Category!;
+            if (!groups.TryGetValue(key, out var grp))
+            {
+                grp = new SelectListGroup { Name = key };
+                groups[key] = grp;
+            }
+
+            list.Add(new SelectListItem
+            {
+                Value = s.StyleId,
+                Text = (s.Name ?? s.Category ?? s.StyleId),
+                Group = grp
+            });
+        }
+
+        BeerStyleList = list;
     }
 
     // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -85,6 +120,7 @@ public class EditModel : PageModel
     {
         if (!ModelState.IsValid)
         {
+            await LoadBeerStylesAsync();
             return Page();
         }
 
@@ -123,7 +159,7 @@ public class EditModel : PageModel
 
         // Allgemeine Rezeptdaten dürfen unabhängig von der Version geändert werden.
         brewRecipe.Name = BrewRecipe.Name;
-        brewRecipe.Style = BrewRecipe.Style;
+        brewRecipe.BeerStyleId = BrewRecipe.BeerStyleId;
         brewRecipe.Description = BrewRecipe.Description;
 
         BrewRecipeVersion.MaturationWeeksMax = Math.Max(BrewRecipeVersion.MaturationWeeksMin, BrewRecipeVersion.MaturationWeeksMax);
@@ -144,6 +180,7 @@ public class EditModel : PageModel
 
         return RedirectToPage("./Index");
     }
+
 
     private void UpdateVersion(BrewRecipeVersion recipeVersion)
     {

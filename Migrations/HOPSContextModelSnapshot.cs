@@ -224,6 +224,9 @@ namespace HOPS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("BeerStyleId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
@@ -237,11 +240,9 @@ namespace HOPS.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Style")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("BeerStyleId");
 
                     b.ToTable("BrewRecipe");
                 });
@@ -566,6 +567,15 @@ namespace HOPS.Migrations
                     b.HasOne("HOPS.Models.BrewBatch", null)
                         .WithMany("Hops")
                         .HasForeignKey("BrewBatchId");
+                });
+
+            modelBuilder.Entity("HOPS.Models.BrewRecipe", b =>
+                {
+                    b.HasOne("HOPS.Models.BeerStyle", "BeerStyle")
+                        .WithMany()
+                        .HasForeignKey("BeerStyleId");
+
+                    b.Navigation("BeerStyle");
                 });
 
             modelBuilder.Entity("HOPS.Models.BrewRecipeVersion", b =>

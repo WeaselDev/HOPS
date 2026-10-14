@@ -67,7 +67,7 @@
 
                 <div class="recipe-card-body">
                     <div class="recipe-style">
-                        <span style="margin-left:1em;">@recipe.Style</span>
+                        <span style="margin-left:1em;">@((recipe.BeerStyle?.Name ?? recipe.BeerStyle?.Category) ?? recipe.BeerStyleId)</span>
                     </div>
 
                     <div class="recipe-metrics">

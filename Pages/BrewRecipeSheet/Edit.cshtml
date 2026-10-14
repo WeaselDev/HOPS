@@ -3,6 +3,7 @@
 @using HOPS.Component
 @using HOPS.Models
 @using HOPS.Properties
+<link href="~/lib/select2/css/select2.min.css" rel="stylesheet" />
 
 @{
     ViewData["Title"] = Resource.EditRecipe;
@@ -37,11 +38,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <label asp-for="BrewRecipe.Style"></label>
+                                    <label asp-for="BrewRecipe.BeerStyleId"></label>
                                 </td>
                                 <td colspan="2">
-                                    <input asp-for="BrewRecipe.Style" class="form-control" />
-                                    <span asp-validation-for="BrewRecipe.Style" class="text-danger validation-message"></span>
+                                    <select asp-for="BrewRecipe.BeerStyleId" asp-items="Model.BeerStyleList" class="form-select select2" data-placeholder="-">
+                                        <option value=""></option>
+                                    </select>
+                                    <span asp-validation-for="BrewRecipe.BeerStyleId" class="text-danger validation-message"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -605,6 +608,20 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script src="~/lib/select2/js/select2.min.js"></script>
+    <script>
+        $(function () {
+            var sel = $('#BrewRecipe_BeerStyleId');
+            if (sel.length && $.fn.select2) {
+                sel.select2({
+                    placeholder: '-',
+                    allowClear: true,
+                    width: 'resolve'
+                });
+            }
+        });
+    </script>
 
     <script>
         $.validator.methods.number = function(value, element) {

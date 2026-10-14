@@ -40,6 +40,7 @@ public class PrintLabelModel : PageModel
         }
 
         var brewRecipe = await _context.BrewRecipe
+            .Include(r => r.BeerStyle)
             .FirstOrDefaultAsync(r => r.Id == recipeVersion.BrewRecipeId);
 
         if (brewRecipe == null)
@@ -74,7 +75,7 @@ public class PrintLabelModel : PageModel
         Label = new LabelModel
         {
             BeerName = brewRecipe.Name,
-            Style = brewRecipe.Style,
+            Style = (brewRecipe.BeerStyle?.Name ?? brewRecipe.BeerStyle?.Category) ?? brewRecipe.BeerStyleId,
             OriginalPlato = brewBatch.FermentationStartPlato,
             ABV = brewBatch.ActualABV,
             IBU = recipeVersion.Bitterness,

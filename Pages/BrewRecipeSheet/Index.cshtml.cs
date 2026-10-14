@@ -30,6 +30,7 @@ public class IndexModel : PageModel
     {
         var recipes = await _context.BrewRecipe
             .Where(r => !r.IsDeleted)
+            .Include(r => r.BeerStyle)
             .Include(r => r.Versions)
             .ToListAsync();
 

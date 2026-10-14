@@ -55,6 +55,7 @@ public class DetailsModel : PageModel
         }
 
         BrewRecipe = await _context.BrewRecipe
+            .Include(r => r.BeerStyle)
             .FirstOrDefaultAsync(r =>
                 r.Id == BrewBatch.BrewRecipeVersion.BrewRecipeId);
 
