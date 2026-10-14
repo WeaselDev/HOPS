@@ -769,6 +769,48 @@ body {
 
 /* Lables Ende */
 
+/* Yeast Description */
+
+
+.description-expand {
+    position: relative;
+    max-width: 300px;
+}
+
+.description-short {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.description-full {
+    display: none;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    z-index: 100;
+    width: 300px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 15%);
+    white-space: normal;
+}
+
+.description-expand:hover .description-short {
+    visibility: hidden;
+}
+
+.description-expand:hover .description-full {
+    display: block;
+}
+
+
+/* Yeast Description End*/
+
 /* Responsive */
 
 @media (max-width: 600px) {

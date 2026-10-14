@@ -180,12 +180,21 @@
                             <tr>
                                 <td>
                                     @(Model.BrewRecipeVersion.PreferredYeasts[i].Name ?? Model.BrewRecipeVersion.PreferredYeasts[i].ProductId)
+                                </td>
+                                <td>
                                     @if (!string.IsNullOrWhiteSpace(Model.BrewRecipeVersion.PreferredYeasts[i].Notes))
                                     {
-                                        <span class="text-muted">(@Model.BrewRecipeVersion.PreferredYeasts[i].Notes)</span>
+                                        <div class="description-expand">
+                                            <span class="description-short">
+                                                @Model.BrewRecipeVersion.PreferredYeasts[i].Notes
+                                            </span>
+                                            <span class="description-full">
+                                                @Model.BrewRecipeVersion.PreferredYeasts[i].Notes
+                                            </span>
+                                        </div>
                                     }
+
                                 </td>
-                                <td class="numeric"></td>
                             </tr>
                         }
                     </tbody>
