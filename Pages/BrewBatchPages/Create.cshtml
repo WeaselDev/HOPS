@@ -114,36 +114,37 @@
                     <table class="recipe-table recipe-table-simple">
                         <thead>
                             <tr>
-                                <th>@Resource.Yeast</th>
-                                <th class="numeric">@Resource.Amount</th>
+                                <th>Preferred yeast</th>
+                                <th class="numeric">Producer / Name</th>
                                 <th class="numeric">@Resource.Selected</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @for (int i = 0; i < Model.BrewBatch.YeastAdditions.Count; i++)
+                        <tbody id="preferredYeastRows">
+                            @for (int i = 0; i < Model.BrewRecipeVersion.PreferredYeasts.Count; i++)
                             {
-                                <tr class="yeastAdditionRow"
-                                    @* data-recipe-amount="@Model.BrewRecipeVersion.YeastAdditions.Single(y => y.Index == Model.BrewBatch.YeastAdditions[i].Index).Amount" *@>
-
-                                    <td>
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Index" />
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Name" />
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Unit" />
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Amount" class="yeastAmount" />
-
-                                        @Model.BrewBatch.YeastAdditions[i].Name
-                                    </td>
+                                var py = Model.BrewRecipeVersion.PreferredYeasts[i];
+                                <tr>
+                                    <td>@py.ProductId</td>
+                                    <td class="numeric">@py.Producer - @py.Name</td>
                                     <td class="numeric">
-                                        <span class="yeastAmountDisplay">@Model.BrewBatch.YeastAdditions[i].Amount</span>
-                                        @Model.BrewBatch.YeastAdditions[i].Unit
-                                    </td>
-                                    <td class="numeric">
-                                        <input asp-for="BrewBatch.YeastAdditions[i].Selected" class="form-check-input" />
+                                        <input type="checkbox" class="form-check-input preferred-yeast-checkbox" name="SelectedYeastIds" value="@py.ProductId" @(Model.BrewBatch.SelectedYeastIds.Contains(py.ProductId) ? "checked" : "") />
+
                                     </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
+                    <input type="hidden" id="SelectedYeastIdsHidden" name="SelectedYeastIdsSerialized" />
+                    <script>
+                        (function(){
+                            function updateHidden() {
+                                var ids = Array.from(document.querySelectorAll('.preferred-yeast-checkbox:checked')).map(cb => cb.value);
+                                document.getElementById('SelectedYeastIdsHidden').value = ids.join(';');
+                            }
+                            document.querySelectorAll('.preferred-yeast-checkbox').forEach(cb => cb.addEventListener('change', updateHidden));
+                            updateHidden();
+                        })();
+                    </script>
                 </div>
             </section>
         </div>

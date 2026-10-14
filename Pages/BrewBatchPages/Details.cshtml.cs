@@ -34,6 +34,8 @@ public class DetailsModel : PageModel
                 .ThenInclude(v => v.MaltAdditions.OrderBy(a => a.Index))
             .Include(b => b.BrewRecipeVersion)
                 .ThenInclude(v => v.HopAdditions.OrderBy(a => a.Index))
+            .Include(b => b.BrewRecipeVersion)
+                .ThenInclude(v => v.PreferredYeasts)
             //.Include(b => b.BrewRecipeVersion)
             //    .ThenInclude(v => v.YeastAdditions.OrderBy(a => a.Index))
             .Include(b => b.BrewRecipeVersion)

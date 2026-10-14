@@ -269,7 +269,17 @@
                                                 }
                                             </tbody>
                                         </table>
-                                        <input type="hidden" name="BrewRecipeVersion.PreferredYeastIds" id="PreferredYeastIdsHidden" />
+                                        @{ 
+                                            var initialIds = (Model.BrewRecipeVersion.PreferredYeastIds != null && Model.BrewRecipeVersion.PreferredYeastIds.Any())
+                                                ? Model.BrewRecipeVersion.PreferredYeastIds
+                                                : (Model.BrewRecipeVersion.PreferredYeasts != null ? Model.BrewRecipeVersion.PreferredYeasts.Select(y => y.ProductId).ToList() : new List<string>());
+                                        }
+                                        @foreach (var id in initialIds)
+                                        {
+                                            <input type="hidden" name="BrewRecipeVersion.PreferredYeastIds" value="@id" />
+                                        }
+                                        <input type="hidden" id="PreferredYeastIdsHidden" />
+
                                     </td>
                                 </tr>
                             </tbody>

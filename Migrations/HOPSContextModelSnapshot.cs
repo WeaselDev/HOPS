@@ -174,6 +174,9 @@ namespace HOPS.Migrations
                     b.Property<string>("RatingNote")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("SelectedYeasts")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 

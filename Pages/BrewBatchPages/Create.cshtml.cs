@@ -17,6 +17,9 @@ public class CreateModel : PageModel
     [BindProperty]
     public BrewBatch BrewBatch { get; set; } = default!;
 
+    [BindProperty]
+    public string? SelectedYeastIdsSerialized { get; set; }
+
     public BrewRecipeVersion BrewRecipeVersion { get; set; } = null!;
 
     public BrewRecipe BrewRecipe { get; set; } = null!;
@@ -26,7 +29,7 @@ public class CreateModel : PageModel
         BrewRecipeVersion = await _context.BrewRecipeVersion
             .Include(v => v.MashSteps.OrderBy(m => m.Index))
             .Include(v => v.MaltAdditions.OrderBy(m => m.Index))
-            //.Include(v => v.YeastAdditions.OrderBy(m => m.Index))
+            .Include(v => v.PreferredYeasts)
             .Include(v => v.HopAdditions.OrderBy(m => m.Index))
             .Include(v => v.WaterAdditions.OrderBy(m => m.Index))
             .Include(v => v.FermentationAdditions.OrderBy(m => m.Index))
@@ -81,6 +84,9 @@ public class CreateModel : PageModel
             ]
         };
 
+        // if recipe has preferred yeasts, initialize BrewBatch.SelectedYeasts to null
+        BrewBatch.SelectedYeasts = null;
+
         //foreach (var yeast in BrewBatch.YeastAdditions)
         //{
         //    var recipeYeast = BrewRecipeVersion.YeastAdditions
@@ -94,6 +100,9 @@ public class CreateModel : PageModel
         {
             BrewBatch.YeastAdditions[0].Selected = true;
         }
+
+        // initialize SelectedYeastIds from SelectedYeasts string (if any)
+        BrewBatch.SelectedYeasts = null;
 
         foreach (var water in BrewBatch.WaterAdditions)
         {
@@ -115,6 +124,12 @@ public class CreateModel : PageModel
         if (!ModelState.IsValid)
         {
             return Page();
+        }
+
+        // persist selected yeast ids from the serialized hidden input
+        if (!string.IsNullOrWhiteSpace(SelectedYeastIdsSerialized))
+        {
+            BrewBatch.SelectedYeasts = SelectedYeastIdsSerialized;
         }
 
         BrewBatch.YeastAdditions = [.. BrewBatch.YeastAdditions.Where(y => y.Selected)];

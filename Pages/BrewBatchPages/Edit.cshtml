@@ -1,6 +1,6 @@
 @page
-@using HOPS.Models
 @model HOPS.Pages.BrewBatchPages.EditModel
+@using HOPS.Models
 @using HOPS.Properties
 
 @{
@@ -236,25 +236,15 @@
                                 <th class="numeric">@Resource.Amount</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @for (int i = 0; i < Model.BrewBatch.YeastAdditions.Count; i++)
+                        <tbody id="preferredYeastRows">
+                            @for (int i = 0; i < Model.BrewBatch.BrewRecipeVersion.PreferredYeasts.Count; i++)
                             {
+                                var py = Model.BrewBatch.BrewRecipeVersion.PreferredYeasts[i];
                                 <tr>
-                                    <td>
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Id" />
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Index" />
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Name" />
-                                        <input type="hidden" asp-for="BrewBatch.YeastAdditions[i].Unit" />
-
-                                        @Model.BrewBatch.YeastAdditions[i].Name
-
-                                        @if (!string.IsNullOrWhiteSpace(Model.BrewBatch.YeastAdditions[i].Description))
-                                        {
-                                            <span class="text-muted">(@Model.BrewBatch.YeastAdditions[i].Description)</span>
-                                        }
-                                    </td>
+                                    <td>@py.ProductId</td>
+                                    <td class="numeric">@py.Producer - @py.Name</td>
                                     <td class="numeric">
-                                        @Model.BrewBatch.YeastAdditions[i].Amount @Model.BrewBatch.YeastAdditions[i].Unit
+                                        <input type="checkbox" class="form-check-input preferred-yeast-checkbox" name="SelectedYeastIds" value="@py.ProductId" @(Model.BrewBatch.SelectedYeastIds.Contains(py.ProductId) ? "checked" : "") />
                                     </td>
                                 </tr>
                             }

@@ -73,6 +73,20 @@ namespace HOPS.Models
         /// </summary>
         public List<YeastAddition> YeastAdditions { get; set; } = new List<YeastAddition>();
 
+        /// <summary>
+        /// Serialized selected preferred yeast product ids (semicolon separated) persisted in the database.
+        /// </summary>
+        public string? SelectedYeasts { get; set; }
+
+        [NotMapped]
+        public List<string> SelectedYeastIds
+        {
+            get => string.IsNullOrWhiteSpace(SelectedYeasts)
+                ? new List<string>()
+                : SelectedYeasts!.Split(';', StringSplitOptions.RemoveEmptyEntries).ToList();
+            set => SelectedYeasts = (value == null || !value.Any()) ? null : string.Join(";", value);
+        }
+
         [Display(ResourceType = typeof(Resource), Name = nameof(Resource.BrewNote))]
         public string? BrewNote { get; set; }
 

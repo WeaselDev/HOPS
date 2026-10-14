@@ -227,6 +227,34 @@
                         }
                     </tbody>
                 </table>
+
+                @* Selected preferred yeasts for this batch *@
+                @if (Model.BrewBatch.SelectedYeastIds != null && Model.BrewBatch.SelectedYeastIds.Any())
+                {
+                    <h4 class="recipe-subtitle">Selected Yeasts</h4>
+
+                    <table class="recipe-table recipe-table-simple">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Producer</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var id in Model.BrewBatch.SelectedYeastIds)
+                            {
+                                var y = Model.BrewBatch.BrewRecipeVersion.PreferredYeasts.FirstOrDefault(p => p.ProductId == id);
+                                <tr>
+                                    <td>@id</td>
+                                    <td>@(y?.Producer ?? "")</td>
+                                    <td>@(y?.Name ?? "")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+
             </div>
         </section>
 

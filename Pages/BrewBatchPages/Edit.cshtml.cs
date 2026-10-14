@@ -17,6 +17,9 @@ public class EditModel : PageModel
     [BindProperty]
     public BrewBatch BrewBatch { get; set; } = default!;
 
+    [BindProperty]
+    public string? SelectedYeastIdsSerialized { get; set; }
+
     public BrewRecipe BrewRecipe { get; set; } = default!;
 
     public async Task<IActionResult> OnGetAsync(Guid? id)
