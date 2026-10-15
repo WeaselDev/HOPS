@@ -1,0 +1,3275 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "1",
+        "producer": "White Labs",
+        "product_id": "WLP001",
+        "name": "California Ale",
+        "type": "ale",
+        "notes": "White Labs wouldn’t be here without our first yeast strain produced in 1995, WLP001 California Ale Yeast®. This strain is a favorite in our collection and is used in some of the best beers around the world.\n\nWLP001 is famous for its clean flavors and hardy fermentations and is known for its use in hoppy beers. It accentuates hop flavors and aromas and attenuates well, even for high-gravity beers. A higher-than-average attenuation leads to drier beers as well as medium flocculation to leave a clean and crisp beer. With a healthy pitch and yeast, WLP001 is also quick at reabsorbing diacetyl.",
+        "best_for": "American IPA, American Wheat Beer, Barleywine, Blonde Ale, Brown Ale, California Common, Cider, Double IPA, Dry Mead, Imperial Stout, Old Ale, Pale Ale, Porter, Red Ale, Stout, Sweet Mead",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "2",
+        "producer": "White Labs",
+        "product_id": "WLP002",
+        "name": "English Ale",
+        "type": "ale",
+        "notes": "This is a classic ESB strain from one of England’s largest independent breweries. While it is traditionally used for English-style ales, including milds, bitters, porters, and stouts, it is also ideal for American-style pale ales and IPAs. Residual sweetness accentuates malt character along with mild fruity esters, adding complexity to the flavor and aroma of finished beers. Slight diacetyl production is common. Due to this strain’s high flocculation, the beer will finish clear and the yeast can easily be harvested from the fermenter for future use. It is common for this yeast to look coagulated.",
+        "best_for": "American IPA, Blonde Ale, Brown Ale, Double IPA, English Bitter, English IPA, Hazy/Juicy IPA, Imperial Stout, Old Ale, Pale Ale, Porter, Red Ale, Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 70
+          }
+        },
+        "flocculation": "very high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "3",
+        "producer": "White Labs",
+        "product_id": "WLP004",
+        "name": "Irish Ale",
+        "type": "ale",
+        "notes": "This yeast is from one of the oldest stout-producing breweries in the world. It’s great for many beer styles but really shines in malty British styles such as stouts, porters and brown ales. Medium attenuation helps with a dry finish that promotes roasty notes. Esters help round out the overall flavor making a soft drinkable stout.",
+        "best_for": "Blonde Ale, Brown Ale, Cider, Dry Mead, English Bitter, English IPA, Porter, Red Ale, Scotch Ale, Stout, Sweet Mead",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 69
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "4",
+        "producer": "White Labs",
+        "product_id": "WLP005",
+        "name": "British Ale",
+        "type": "ale",
+        "notes": "Known for its use in malty English beers, this strain is a great choice for any beers using traditional English malts like Marris Otter, Golden Promise or floor malted barley. This strain will push bready, grainy malt flavors while being a mild ester producer.",
+        "best_for": "Barleywine, Blonde Ale, Brown Ale, Cider, Dry Mead, English Bitter, English IPA, Imperial Stout, Old Ale, Pale Ale, Porter, Red Ale, Scotch Ale, Stout, Sweet Mead",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "5",
+        "producer": "White Labs",
+        "product_id": "WLP006",
+        "name": "Bedford British",
+        "type": "ale",
+        "best_for": "ESB, Pale Ale, Porter, Stout & Brown Ale",
+        "notes": "WLP006 ferments dry and flocculates very well; produces a distinct ester profile. This yeast yields a full mouthfeel, perfect for creating English-style ales, including bitters, pale ales, porters, stouts and browns.\nBedford British yeast from White Labs is a great all-around British strain of ale yeast! Bedford is known to ferment dry, producing beers with less residual sugars than other British and English ale strains. It is also known to be a very highly flocculant strain, leaving beers crystal clear in a short amount of time! Good for about any time of British-style ale, including bitters, browns, pale ales and porters, it can also be used on some American-style ales. This strain produces a unique set of esters that makes for a distinct flavor profile.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "6",
+        "producer": "White Labs",
+        "product_id": "WLP007",
+        "name": "Dry English Ale",
+        "type": "ale",
+        "notes": "This yeast is known for its high attenuation, achieving 80% even with 10% ABV beers. The high attenuation eliminates residual sweetness, making the yeast well-suited for high gravity ales and clean, well-attenuated beer styles. This strain has become a go-to house strain for American breweries due to its clean profile and high attenuation. It’s an ideal strain for American and English hoppy beers as well as malty ambers, porters and brown ales. This strain can be a substitute for WLP001 California Ale Yeast.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "7",
+        "producer": "White Labs",
+        "product_id": "WLP008",
+        "name": "East Coast Ale",
+        "type": "ale",
+        "notes": "This strain can be used to reproduce many American versions of classic beer styles but has been gaining popularity for its use in East Coast IPAs. It is cleaner and crisper than other haze producing strains. It possesses a similar neutral character of WLP001 California Ale Yeast® with slightly higher ester production. This strain’s attenuation leaves some mouthfeel and residual sweetness which balances hop bitterness. It’s a great all-around strain for balanced, accessible beer styles such as blondes, pale ales, and amber ales.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "8",
+        "producer": "White Labs",
+        "product_id": "WLP009",
+        "name": "Australian Ale",
+        "type": "ale",
+        "notes": "Produces a clean, malty beer. Pleasant ester character, can be described as \"bready.\" Can ferment successfully, and clean, at higher temperatures. This yeast combines good flocculation with good attenuation.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "9",
+        "producer": "White Labs",
+        "product_id": "WLP011",
+        "name": "European Ale",
+        "type": "ale",
+        "notes": "Malty, Northern European-origin ale yeast. Low ester production, giving a clean profile. Little to no sulfur production. Low attenuation helps to contribute to the malty character. Good for Alt, Kolsch, malty English ales, and fruit beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 70
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "10",
+        "producer": "White Labs",
+        "product_id": "WLP013",
+        "name": "London Ale",
+        "type": "ale",
+        "notes": "Dry, malty ale yeast. Provides a complex, oakey ester character to your beer. Hop bitterness comes through well. This yeast is well suited for classic British pale ales, bitters, and stouts. Does not flocculate as much as WLP002 and WLP005.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 71
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "11",
+        "producer": "White Labs",
+        "product_id": "WLP017",
+        "name": "Whitbread Ale",
+        "type": "ale",
+        "notes": "Whitbread Ale is a traditional mixed yeast culture with British character, slightly fruity with a hint of sulfur production. Whitbread Ale yeast can be used for many different styles of beer. The most traditional choices would be English-style ales, including milds, bitters, porters, and English-style stouts, although North American-style ales will also benefit from fermentation with the Whitbread Ale strain.\n\nIf you are looking for a yeast that will bring unique depth to your beers, Whitbread Ale yeast is a great option.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 73
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "12",
+        "producer": "White Labs",
+        "product_id": "WLP022",
+        "name": "Essex Ale",
+        "type": "ale",
+        "notes": "Flavorful British style yeast. Drier finish than many British ale yeast. Produces slightly fruity and bready character. Good top fermenting yeast strain, is well suited for top cropping (collecting). This yeast is well suited for classic British-style milds, pale ales, bitters and stouts. Does not flocculate as much as other English strains.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "13",
+        "producer": "White Labs",
+        "product_id": "WLP023",
+        "name": "Burton Ale",
+        "type": "ale",
+        "notes": "This strain is sourced from Burton upon Trent, England which is known for pushing IPAs into the spotlight. It produces a subtle fruity ester profile which can be described as notes of apple, clover honey and pear. A background sulfur note is common with this strain. Great for use in hoppy American and English styles such as pale ales, bitters and ambers. Can also be an alternative to WLP001 California Ale Yeast.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 69
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "14",
+        "producer": "White Labs",
+        "product_id": "WLP028",
+        "name": "Edinburgh Scottish Ale",
+        "type": "ale",
+        "notes": "Scotland is famous for its malty, strong ales. This yeast can reproduce complex, flavorful Scottish style ales. This yeast can be an everyday strain, similar to WLP001. Hop character is not muted with this strain, as it is with WLP002.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "15",
+        "producer": "White Labs",
+        "product_id": "WLP029",
+        "name": "German Ale\/ Kolsch",
+        "type": "ale",
+        "notes": "Sourced from a small brewpub in Cologne, Germany, this strain is fitting for German ales such as kölsch and altbier. Known for accentuating hop flavor and bitterness while creating crisp, clean lager like characters. It performs exceptionally well at temperatures ranging from 65 to 69°F (18-20°C) and does not ferment well below 62°F (17°C) after peak fermentation. Typically has low flocculation characteristics after the first generation.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 69
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "16",
+        "producer": "White Labs",
+        "product_id": "WLP036",
+        "name": "Dusseldorf Alt Ale",
+        "type": "ale",
+        "notes": "A traditional altbier-style yeast from Düsseldorf, Germany. It produces clean, malty German brown and amber ales. This strain keeps the contribution of hop bitterness in the background while promoting sweet malt notes. Does not accentuate hop flavor as WLP029 does.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 69
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "17",
+        "producer": "White Labs",
+        "product_id": "WLP037",
+        "name": "Yorkshire Square Ale",
+        "type": "ale",
+        "notes": "This yeast produces a beer that is malty, but well-balanced. Expect flavors that are toasty with malt-driven esters. Highly flocculent and good choice for English pale ales, English brown ales, and mild ales.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "18",
+        "producer": "White Labs",
+        "product_id": "WLP038",
+        "name": "Manchester Ale",
+        "type": "ale",
+        "notes": "Top-fermenting strain that is traditionally good for top-cropping. Moderately flocculent with a clean, dry finish. Low ester profile, producing a highly balanced English-style beer.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "19",
+        "producer": "White Labs",
+        "product_id": "WLP039",
+        "name": "East Midlands Ale",
+        "type": "ale",
+        "notes": "British style ale yeast with a very dry finish. Medium to low fruit and fusel alcohol production. Good top fermenting yeast strain, is well suited for top cropping (collecting). This yeast is well suited for pale ales, ambers, porters, and stouts.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "20",
+        "producer": "White Labs",
+        "product_id": "WLP041",
+        "name": "Pacific Ale",
+        "type": "ale",
+        "notes": "Hailing from the Pacific Northwest, this strain is a mild ester producer while promoting malt character. It can be used for a range of styles from an English mild to an American IPA or Irish stout. A great flocculator, it leaves a clear beer and saves on conditioning time.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 70
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "21",
+        "producer": "White Labs",
+        "product_id": "WLP045",
+        "name": "Scotch Whisky",
+        "type": "ale",
+        "notes": "A strain that has been widely used for Scotch whisky production since the early 1950s. This yeast produces a complex array of ester compounds and fusel alcohols, as well as some spicy clover character. Suitable for Scotch or American-style whiskeys.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "22",
+        "producer": "White Labs",
+        "product_id": "WLP050",
+        "name": "Tennessee Whiskey",
+        "type": "ale",
+        "notes": "Suitable for American-style whiskey and bourbon. This yeast is famous for creating rich, smooth flavors. Clean and dry fermenting yeast. Will tolerate high alcohol concentrations (15%), and ester production is low. Also popular in high-gravity beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 79
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "23",
+        "producer": "White Labs",
+        "product_id": "WLP051",
+        "name": "California Ale V",
+        "type": "ale",
+        "notes": "From Northern California. This strain is more fruity than WLP001, and slightly more flocculent. Attenuation is lower, resulting in a fuller bodied beer than with WLP001.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "24",
+        "producer": "White Labs",
+        "product_id": "WLP060",
+        "name": "American Ale Yeast Blend",
+        "type": "ale",
+        "notes": "This blend of three strains creates a clean and neutral fermentation character, making it ideal for use in many different American beer styles. The blend lends complexity to finished beer by exhibiting a crisp, clean lager-like character with accentuated hop flavors and bitterness. A slight amount of sulfur can be produced during peak fermentation.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "25",
+        "producer": "White Labs",
+        "product_id": "WLP065",
+        "name": "American Whiskey",
+        "type": "ale",
+        "notes": "Yeast strain that produces low ester profile and moderate fusel oils. Temperature and alcohol tolerant and suitable for American-style whiskey using barley or corn base. Also used in high-gravity beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 82
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "26",
+        "producer": "White Labs",
+        "product_id": "WLP070",
+        "name": "Kentucky Bourbon",
+        "type": "ale",
+        "notes": "From a traditional distillery in the heart of Bourbon Country, this strain produces a malty caramel character with a balanced ester profile. Suitable for bourbons or other American whiskeys with barley, rye, or corn base grains.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "27",
+        "producer": "White Labs",
+        "product_id": "WLP072",
+        "name": "French Ale",
+        "type": "ale",
+        "notes": "Clean strain that complements malt flavor. Low to moderate esters, when fermentation temperature is below 70°F.  Moderate plus ester character over 70°F.  Low diacetyl production. Good yeast strain for Biere de Garde, blond, amber, brown ales, and specialty beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "28",
+        "producer": "White Labs",
+        "product_id": "WLP076",
+        "name": "Old Sonoma Ale",
+        "type": "ale",
+        "notes": "From a historic brewery in Northern California. This strain was embraced by the early pioneers of craft beer in America and is ideal for those seeking to use a traditional British-style yeast. A neutral and versatile strain, it is great for pale ales, porters, and stouts.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "29",
+        "producer": "White Labs",
+        "product_id": "WLP078",
+        "name": "Neutral Grain",
+        "type": "ale",
+        "notes": "Marked by a clean, fast fermentation, this strain is ideal for any neutral grain spirit. Alcohol and temperature tolerant. Used in high-gravity beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "30",
+        "producer": "White Labs",
+        "product_id": "WLP080",
+        "name": "Cream Ale Yeast Blend",
+        "type": "mixed-culture",
+        "notes": "A blend of ale and lager yeast, this strain produces a classic cream ale. The blend produces a pleasing light fruity note from the ale yeast, while the lager strain produces clean pilsner-like flavors and a slightly subdued hop bitterness. This blend is known for producing subtle sulfur during primary fermentation.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "31",
+        "producer": "White Labs",
+        "product_id": "WLP085",
+        "name": "English Ale Blend",
+        "type": "ale",
+        "notes": "A blend of British ale yeast strains designed to add complexity and attenuation to your ale. Moderate fruitiness and mineral-like character, with little to no sulfur. Drier than WLP002 English Ale Yeast and WLP005 British Ale Yeast, but with similar flocculation properties. Suitable for English pale ales, bitters, porters, stouts and IPAs.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 69
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "32",
+        "producer": "White Labs",
+        "product_id": "WLP090",
+        "name": "San Diego Super Ale",
+        "type": "ale",
+        "notes": "A low ester producing strain, it’s known for quick fermentations and producing a neutral flavor and aroma profile similar to WLP001 California Ale Yeast®. Due to high attenuation, this strain produces very dry beers with increased perceived bitterness. It also has a high alcohol tolerance which is suitable for a variety of styles and beverages from double IPAs to barleywines, ciders and mead. This is a great all around house strain and ideal for breweries who produce hop-forward beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 83
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "33",
+        "producer": "White Labs",
+        "product_id": "WLP099",
+        "name": "Super High Gravity Ale",
+        "type": "ale",
+        "notes": "From England, this yeast can ferment up to 25% alcohol when used correctly. It produces ester characters that increase with increasing gravity. Malt character dominates at lower gravities. To achieve >25% ABV, sugar needs to be fed over the course of the fermentation.",
+        "best_for": "Strong Ale & Oatmeal Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 69
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 25
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "34",
+        "producer": "White Labs",
+        "product_id": "WLP300",
+        "name": "Hefeweizen Ale",
+        "type": "ale",
+        "notes": "This famous German yeast is a strain used in the production of traditional, authentic wheat beers. It produces the banana and clove nose traditionally associated with German wheat beers and leaves the desired cloudy look of traditional German wheat beers.",
+        "best_for": "Hefeweizen, Weissbier, Weizenbock & Roggenbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "35",
+        "producer": "White Labs",
+        "product_id": "WLP320",
+        "name": "American Hefeweizen Ale",
+        "type": "ale",
+        "notes": "This strain ferments much cleaner than it’s hefeweizen strain counterparts. It produces very slight banana and clove notes and has low flocculation, leaving resulting beers with characteristic cloudiness.",
+        "best_for": "American Hefeweizen",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 69
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "36",
+        "producer": "White Labs",
+        "product_id": "WLP351",
+        "name": "Bavarian Weizen Ale",
+        "type": "ale",
+        "notes": "Former Yeast Lab W51 yeast strain, acquired from Dan McConnell. The description originally used by Yeast Lab still fits: \"This strain produces a classic German-style wheat beer, with moderately high, spicy, phenolic overtones reminiscent of cloves.\" Pitching rate and temperature will dramatically affect the flavor and aroma of this strain. Traditional brewing techniques suggest underpitching to produce more classic characteristics of the style.",
+        "best_for": "Hefeweizen, Weissbier & Wheat",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "37",
+        "producer": "White Labs",
+        "product_id": "WLP380",
+        "name": "Hefeweizen IV Ale",
+        "type": "ale",
+        "notes": "Large clove and phenolic aroma and flavor, with minimal banana. Refreshing citrus and apricot notes. Crisp, drinkable hefeweizen. Less flocculent than WLP300, and sulfur production is higher.",
+        "best_for": "Hefeweizen, Weissbier, Weizenbock & Roggenbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "38",
+        "producer": "White Labs",
+        "product_id": "WLP400",
+        "name": "Belgian Wit Ale",
+        "type": "ale",
+        "notes": "This strain is the pinnacle yeast for Belgian witbiers or white ales. High phenol production contributes an herbal aroma and flavor notes which blends well with herb and fruit adjuncts. Expect nearly 80% attenuation and a slightly lower resulting pH than English or American ale strains creating a dry beer.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "40",
+        "producer": "White Labs",
+        "product_id": "WLP410",
+        "name": "Belgian Wit II Ale",
+        "type": "ale",
+        "notes": "Less phenolic than WLP400, and more spicy. Will leave a bit more sweetness, and flocculation is higher than WLP400. Use to produce Belgian Wit, spiced Ales, wheat Ales, and specialty Beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "41",
+        "producer": "White Labs",
+        "product_id": "WLP500",
+        "name": "Monastery (Trappist) Ale",
+        "type": "ale",
+        "notes": "From one of the few remaining Trappist breweries remaining in the world, this yeast produces the distinctive fruitiness and plum characteristics. Excellent yeast for high gravity beers, Belgian ales, dubbels and trippels.",
+        "best_for": "Belgian Ales, Tripel, Dubbel & Trappist",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "42",
+        "producer": "White Labs",
+        "product_id": "WLP510",
+        "name": "Bastogne Belgian Ale",
+        "type": "ale",
+        "notes": "A high gravity, Trappist style ale yeast. Produces dry beer with slight acidic finish. More 'clean' fermentation character than WLP500 or WLP530. Not as spicy as WLP530 or WLP550. Excellent yeast for high gravity beers, Belgian ales, dubbels and trippels.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "43",
+        "producer": "White Labs",
+        "product_id": "WLP515",
+        "name": "Antwerp Ale",
+        "type": "ale",
+        "notes": "Clean, almost lager like Belgian type ale yeast. Good for Belgian type pales ales and amber ales, or with blends to combine with other Belgian type yeast strains. Biscuity, ale like aroma present. Hop flavors and bitterness are accentuated. Slight sulfur ",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "44",
+        "producer": "White Labs",
+        "product_id": "WLP530",
+        "name": "Abbey Ale",
+        "type": "ale",
+        "notes": "Used to produce Trappist style beers. Similar to WLP500, but is less fruity and more alcohol tolerant (up to 15% ABV). Excellent yeast for high gravity beers, Belgian ales, dubbels and trippels. Produces cherry, plum and pear esters. Medium flocculation results in clear, drinkable beer.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "45",
+        "producer": "White Labs",
+        "product_id": "WLP540",
+        "name": "Abbey IV Ale",
+        "type": "ale",
+        "notes": "An authentic Trappist style yeast. Use for Belgian style ales, dubbels, tripples, and specialty beers. Fruit character is medium, in between WLP500 (high) and WLP530 (low).",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "46",
+        "producer": "White Labs",
+        "product_id": "WLP545",
+        "name": "Belgian Strong Ale",
+        "type": "ale",
+        "notes": "From the Ardennes region of Belgium, this classic yeast strain produces moderate levels of ester and phenolic characters, often described as dried sage and black cracked pepper. High attenuation results in a dry finish ideal for high gravity beers. This strain is recommended for dark strong ales, abbey ales and seasonal specialties like Belgian holiday ales.",
+        "best_for": "Christmas Beers & Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "47",
+        "producer": "White Labs",
+        "product_id": "WLP550",
+        "name": "Belgian Ale",
+        "type": "ale",
+        "notes": "Saisons, Belgian Ales, Belgian Reds, Belgian Browns, and White beers are just a few of the classic Belgian beer styles that can be created with this yeast strain. Phenolic and spicy flavors dominate the profile, with less fruitiness then WLP500.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 78
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "48",
+        "producer": "White Labs",
+        "product_id": "WLP565",
+        "name": "Belgian Saison I",
+        "type": "ale",
+        "notes": "Classic Saison yeast from Wallonia. It produces earthy, peppery, and spicy notes. Slightly sweet. With high gravity saisons, brewers may wish to dry the beer with an alternate yeast added after 75% fermentation.",
+        "best_for": "Saison, Dubbel & Trippel",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "49",
+        "producer": "White Labs",
+        "product_id": "WLP566",
+        "name": "Belgian Saison II",
+        "type": "ale",
+        "notes": "Saison strain with more fruity ester production than with WLP565. Moderately phenolic, with a clove-like characteristic in finished beer flavor and aroma. Ferments faster than WLP565.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 78
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "50",
+        "producer": "White Labs",
+        "product_id": "WLP568",
+        "name": "Belgian Style Saison Ale Yeast Blend",
+        "type": "ale",
+        "notes": "This blend melds Belgian style ale and saison strains. The strains work in harmony to create complex, fruity aromas and flavors. The blend of yeast strains encourages complete fermentation in a timely manner. Phenolic, spicy, earthy, and clove like flavor",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "51",
+        "producer": "White Labs",
+        "product_id": "WLP570",
+        "name": "Belgian Golden Ale",
+        "type": "ale",
+        "notes": "From East Flanders, versatile yeast that can produce light Belgian ales to high gravity Belgian beers (12% ABV). A combination of fruitiness and phenolic characteristics dominate the flavor profile. Some sulfur is produced during fermentation, which will ",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "52",
+        "producer": "White Labs",
+        "product_id": "WLP575",
+        "name": "Belgian Style Ale Yeast Blend",
+        "type": "ale",
+        "notes": "A blend of Trappist type yeast (2) and one Belgian ale type yeast. This creates a versatile blend that can be used for Trappist type beer, or a myriad of beers that can be described as 'Belgian type'.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "53",
+        "producer": "White Labs",
+        "product_id": "WLP585",
+        "name": "Belgian Saison III",
+        "type": "ale",
+        "notes": "Produces beer with a high fruit ester characteristic, as well as some slight tartness. Finishes slightly malty, which balances out the esters. Also produces low levels of clovey phenolics. Great yeast choice for a summer Saison that is light and easy-drin",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "54",
+        "producer": "White Labs",
+        "product_id": "WLP630",
+        "name": "Berliner Weisse Blend",
+        "type": "ale",
+        "notes": "A blend of a traditional German Weizen yeast and Lactobacillus to create a subtle, tart, drinkable beer. Can take several months to develop tart character. Perfect for traditional Berliner Weisse.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "55",
+        "producer": "White Labs",
+        "product_id": "WLP644",
+        "name": "Saccharomyces brux-like Trois",
+        "type": "other",
+        "notes": "This strain, used traditionally for wild yeast-like fermentations, produces a slightly tart beer with delicate characteristics of mango and pineapple. Can also be used to produce effervescence when bottle-conditioning. This strain is availalble in PurePitch, which offers increased cell count due to our ability to concentrate the strain in its new packaging.",
+        "best_for": "Sours & Farmhouse Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "56",
+        "producer": "White Labs",
+        "product_id": "WLP645",
+        "name": "Brettanomyces Claussenii",
+        "type": "brett",
+        "notes": "Low intensity Brett character. Originally isolated from strong English stock beer, in the early 20th century. The Brett flavors produced are more subtle than WLP650 and WLP653. More aroma than flavor contribution. Fruity, pineapple like aroma. B. claussen",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 85
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "57",
+        "producer": "White Labs",
+        "product_id": "WLP650",
+        "name": "Brettanomyces bruxellensis",
+        "type": "brett",
+        "notes": "Medium intensity Brett character. Classic strain used in secondary fermentation for Belgian style beers and lambics. One Trappist brewery uses this strain in secondary fermentation and bottling to produce their characteristic flavor.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 85
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "58",
+        "producer": "White Labs",
+        "product_id": "WLP653",
+        "name": "Brettanomyces lambicus",
+        "type": "brett",
+        "notes": "This yeast produces a high intensity of the traditional Brettanomyces characters in beer, such as horsey, smoky and spicy flavors. As the name suggests, this strain is found most often in lambic style beers but is also commonly found in Flanders and sour brown ales.",
+        "pof": true,
+        "best_for": "Lambic, Flanders Red Ale & Sours",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 85
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "59",
+        "producer": "White Labs",
+        "product_id": "WLP655",
+        "name": "Belgian Sour Mix 1",
+        "type": "mixed-culture",
+        "notes": "A unique blend perfect for Belgian style beers. Includes Brettanomyces, Saccharomyces, and the bacterial strains Lactobacillus and Pediococcus.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "60",
+        "producer": "White Labs",
+        "product_id": "WLP665",
+        "name": "Flemish Ale Blend",
+        "type": "mixed-culture",
+        "notes": "Blended culture used to produce the classic beer styles of the West Flanders region of Belgium. A proprietary blend of Saccharomyces and Brettanomyces yeasts with Lactobacillus and Pediococcus bacteria, this culture creates a more complex, dark stone fruit characteristic than WLP655 Belgian Sour Mix 1.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "61",
+        "producer": "White Labs",
+        "product_id": "WLP670",
+        "name": "American Farmhouse Blend",
+        "type": "mixed-culture",
+        "notes": "Inspired by American brewers crafting semi-traditional Belgian-style ales, this blend creates a complex flavor profile with a moderate level of sourness. It consists of a traditional farmhouse yeast strain and Brettanomyces.",
+        "best_for": "Farmhouse Ale & Sours",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "62",
+        "producer": "White Labs",
+        "product_id": "WLP675",
+        "name": "Malolactic Cultures",
+        "type": "malolactic",
+        "notes": "Malolactic Fermentation is the conversion of malic acid to lactic acid by bacteria from the lactic acid bacteria family. Lactic acid is less acidic than malic acid, which in turn decreases acidity and helps to soften and\/or round out some of the flavors i",
+        "form": "liquid"
+      },
+      {
+        "id": "65",
+        "producer": "White Labs",
+        "product_id": "WLP677",
+        "name": "Lactobacillus delbrueckii",
+        "type": "lacto",
+        "notes": "This lactic acid bacteria produces moderate levels of acidity and sour flavors found in lambics, Berliner Weiss, sour brown ale and gueze.\n\nSuggested to keep wort under 20-30 IBUs\n\n  Souring will need maturation times around 3+ months- Low sugar requirements will be necessary for these organisms to produce acidity- Organisms will have a difficult time growing in environments below a pH of 3.5. General brewing pitch rates apply for primary fermentation- Fermentation timeline will be slower – closer to 15-21 days depending on the strain.",
+        "best_for": "Lambic, Berliner Weisse, Sours & Gueze.",
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 110
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "66",
+        "producer": "White Labs",
+        "product_id": "WLP700",
+        "name": "Flor Sherry",
+        "type": "wine",
+        "notes": "This yeast develops a film (flor) on the surface of the wine. Creates green almond, granny smith and nougat characteristics found in sherry. Can also be used for Port, Madeira and other sweet styles. For use in secondary fermentation. Slow fermentor.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "67",
+        "producer": "White Labs",
+        "product_id": "WLP705",
+        "name": "Sake",
+        "type": "wine",
+        "notes": "For use in rice based fermentations. For sake, use this yeast in conjunction with Koji (to produce fermentable sugar). WLP705 produces full body sake character, and subtle fragrance.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "68",
+        "producer": "White Labs",
+        "product_id": "WLP707",
+        "name": "California Pinot Noir",
+        "type": "wine",
+        "notes": "Isolated from Pinot Noir grapes by White Labs in Davis, CA. This strain produces fruity and complex aromas, and is an ideal choice for hardy red wine varieties, as well as aromatic white wines such as Chardonnay. This strain is reliable for difficult fermentations.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "69",
+        "producer": "White Labs",
+        "product_id": "WLP709",
+        "name": "Sake #9",
+        "type": "wine",
+        "notes": "For use in rice-based fermentations. Traditional strain used in Ginjo-shu production because of the yeast's development of high fragrance components. Also a fairly strong fermenter, but producing a foamless fermentation.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "70",
+        "producer": "White Labs",
+        "product_id": "WLP715",
+        "name": "Champagne",
+        "type": "champagne",
+        "notes": "Classic yeast, used to produce champagne, cider, dry meads, dry wines, or to fully attenuate barley wines\/ strong ales. Neutral.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 17
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "71",
+        "producer": "White Labs",
+        "product_id": "WLP718",
+        "name": "Avize Wine",
+        "type": "champagne",
+        "notes": "Champagne isolate used for complexity in whites. Contributes elegance, especially in barrel fermented Chardonnays.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "72",
+        "producer": "White Labs",
+        "product_id": "WLP720",
+        "name": "Sweet Mead\/Wine",
+        "type": "wine",
+        "notes": "A wine yeast strain that is less attenuative than WLP715, leaving some residual sweetness. Slightly fruity and will tolerate alcohol concentrations up to 15%. A good choice for sweet mead and cider, as well as Blush wines, Gewürztraminer, Sauternes, Riesling.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 90
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 15
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "73",
+        "producer": "White Labs",
+        "product_id": "WLP727",
+        "name": "Steinberg-Geisenheim Wine",
+        "type": "wine",
+        "notes": "German in origin, this yeast has high fruit\/ester production. Perfect for Riesling and Gewürztraminer. Moderate fermentation characteristics and cold tolerant.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "74",
+        "producer": "White Labs",
+        "product_id": "WLP730",
+        "name": "Chardonnay White Wine",
+        "type": "wine",
+        "notes": "Dry wine yeast. Slight ester production, low sulfur dioxide production. Enhances varietal character. WLP730 is a good choice for all white and blush wines, including Chablis, Chenin Blanc, Semillon, and Sauvignon Blanc. Fermentation speed is moderate.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "75",
+        "producer": "White Labs",
+        "product_id": "WLP735",
+        "name": "French White Wine",
+        "type": "wine",
+        "notes": "Classic yeast for white wine fermentation. Slow to moderate fermenter and foam producer. Gives an enhanced creamy texture.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "76",
+        "producer": "White Labs",
+        "product_id": "WLP740",
+        "name": "Merlot Red Wine",
+        "type": "wine",
+        "notes": "Neutral, low fusel alcohol production. Will ferment to dryness, alcohol tolerance to 18%. Vigorous fermenter. WLP740 is well suited for Merlot, Shiraz, Pinot Noir, Chardonnay, Cabernet, Sauvignon Blanc, and Semillon.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 18
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "77",
+        "producer": "White Labs",
+        "product_id": "WLP749",
+        "name": "Assmanshausen Wine",
+        "type": "wine",
+        "notes": "German red wine yeast, which results in spicy, fruit aromas. Perfect for Pinot Noir and Zinfandel. Slow to moderate fermenter which is cold tolerant.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "78",
+        "producer": "White Labs",
+        "product_id": "WLP750",
+        "name": "French Red Wine",
+        "type": "wine",
+        "notes": "Classic Bordeaux yeast for red wine fermentations. Moderate fermentation characteristics. Tolerates lower fermentation temperatures. Rich, smooth flavor profile.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 17
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "79",
+        "producer": "White Labs",
+        "product_id": "WLP760",
+        "name": "Cabernet Red Wine",
+        "type": "wine",
+        "notes": "High temperature tolerance. Moderate fermentation speed. Excellent for full-bodied red wines, ester production complements flavor. WLP760 is also suitable for Merlot, Chardonnay, Chianti, Chenin Blanc, and Sauvignon Blanc.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "80",
+        "producer": "White Labs",
+        "product_id": "WLP770",
+        "name": "Suremain Burgundy Wine",
+        "type": "wine",
+        "notes": "Emphasizes fruit aromas in barrel fermentations. High nutrient requirement to avoid volatile acidity production.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 16
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "81",
+        "producer": "White Labs",
+        "product_id": "WLP775",
+        "name": "English Cider",
+        "type": "other",
+        "notes": "Classic cider yeast. Ferments dry, but retains flavor from apples. Sulfur is produced during fermentation, but will disappear in first two weeks of aging. Can also be used for wine and high gravity beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 100
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "82",
+        "producer": "White Labs",
+        "product_id": "WLP800",
+        "name": "Pilsner Lager",
+        "type": "lager",
+        "notes": "Classic pilsner strain from the premier pilsner producer in the Czech Republic. Somewhat dry with a malty finish, this yeast is best suited for European pilsner production.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "83",
+        "producer": "White Labs",
+        "product_id": "WLP802",
+        "name": "Czech Budejovice Lager",
+        "type": "lager",
+        "notes": "A pilsner lager yeast from southern Czech Republic, this strain produces dry and crisp lagers with low diacetyl production. With up to 80% attenuation, this strain will make a dry beer and showcase rounded hop bitterness. Low diacetyl production makes conditioning of this beer an ease.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "84",
+        "producer": "White Labs",
+        "product_id": "WLP810",
+        "name": "San Francisco Lager",
+        "type": "lager",
+        "notes": "This yeast is used to produce the \"California Common\" style beer. A unique lager strain which has the ability to ferment up to 65 degrees while retaining lager characteristics. Can also be fermented down to 50 degrees for production of marzens, pilsners a",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 70
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 58
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 65
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "85",
+        "producer": "White Labs",
+        "product_id": "WLP815",
+        "name": "Belgian Lager",
+        "type": "lager",
+        "notes": "Clean, crisp European lager yeast with low sulfur production. The strain originates from a very old brewery in West Belgium. Great for European style pilsners, dark lagers, Vienna lager, and American style lagers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "86",
+        "producer": "White Labs",
+        "product_id": "WLP820",
+        "name": "Oktoberfest\/Märzen Lager",
+        "type": "lager",
+        "notes": "This yeast produces a very malty, bock like style. It does not finish as dry as WLP830. This yeast is much slower in the first generation than WLP830, so we encourage a larger starter to be used the first generation or schedule a longer lagering time.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 73
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 52
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "87",
+        "producer": "White Labs",
+        "product_id": "WLP830",
+        "name": "German Lager",
+        "type": "lager",
+        "notes": "This yeast is one of the most widely used lager yeasts in the world. Very malty and clean, great for all German lagers, pilsner, oktoberfest, and marzen.",
+        "best_for": "Märzen & Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 79
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "88",
+        "producer": "White Labs",
+        "product_id": "WLP833",
+        "name": "German Bock Lager",
+        "type": "lager",
+        "notes": "From the Alps of southern Bavaria, this yeast produces a beer that is well balanced between malt and hop character. The excellent malt profile makes it well suited for bocks, doppelbocks, and Oktoberfest-style beers. A very versatile lager yeast, it has gained tremendous popularity for use in classic American-style lagers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "89",
+        "producer": "White Labs",
+        "product_id": "WLP838",
+        "name": "Southern German Lager",
+        "type": "lager",
+        "notes": "This yeast is characterized by a malty finish and balanced aroma. It is a strong fermentor, produces slight sulfur, and low diacetyl.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "90",
+        "producer": "White Labs",
+        "product_id": "WLP840",
+        "name": "American Lager",
+        "type": "lager",
+        "notes": "This strain makes dry and clean lagers with a light note of apple fruitiness. Sulfur and diacetyl production is minimal making this strain easy to work with and fitting for American-style lagers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "91",
+        "producer": "White Labs",
+        "product_id": "WLP860",
+        "name": "Munich Helles",
+        "type": "lager",
+        "notes": "This yeast helps to produce a malty, but balanced traditional Munich-style lager. Clean and strong fermenter, it's great for a variety of lager styles ranging from Helles to Rauchbier.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 52
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "92",
+        "producer": "White Labs",
+        "product_id": "WLP862",
+        "name": "Cry Havoc",
+        "type": "lager",
+        "notes": "Licensed from Charlie Papazian, this strain can ferment at ale and lager temperatures, allowing brewers to produce diverse beer styles. The recipes in both Papazian's books, The Complete Joy of Homebrewing and The Homebrewers Companion, were originally developed and brewed with this yeast.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 70
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 55
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "93",
+        "producer": "White Labs",
+        "product_id": "WLP885",
+        "name": "Zurich Lager",
+        "type": "lager",
+        "notes": "Swiss style lager yeast. With proper care, this yeast can be used to produce lager beer over 11% ABV. Sulfur and diacetyl production is minimal. Original culture provided to White Labs by Marc Sedam.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "94",
+        "producer": "White Labs",
+        "product_id": "WLP920",
+        "name": "Old Bavarian Lager",
+        "type": "lager",
+        "notes": "From Southern Germany, this yeast finishes malty with a slight ester profile. Use in beers such as Oktoberfest, Bock, and Dark Lagers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 73
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "95",
+        "producer": "White Labs",
+        "product_id": "WLP940",
+        "name": "Mexican Lager",
+        "type": "lager",
+        "notes": "From Mexico City, this yeast produces clean lager beer, with a crisp finish. Good for Mexican style light lagers, as well as dark lagers. This is one of the best lager strains in the White Labs yeast bank; try it with any lager.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "203",
+        "producer": "White Labs",
+        "product_id": "WLP003",
+        "name": "German Ale II",
+        "type": "ale",
+        "notes": "Strong sulfer component will reduce with aging.  Clean flavor, but with more ester production than regular German Ale Yeast.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "204",
+        "producer": "White Labs",
+        "product_id": "WLP025",
+        "name": "Southwold Ale",
+        "type": "ale",
+        "notes": "From Suffolk county.  Products complex fruity and citrus flavors.  Slight sulfer production, but this will fade with ageing.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 69
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "205",
+        "producer": "White Labs",
+        "product_id": "WLP026",
+        "name": "Premium Bitter Ale",
+        "type": "ale",
+        "notes": "From Staffordshire England.  Mild, but complex estery flavor.  High attenuation - ferments strong and dry.  Suitable for high gravity beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "206",
+        "producer": "White Labs",
+        "product_id": "WLP033",
+        "name": "Klassic Ale Yeast",
+        "type": "ale",
+        "notes": "Traditional English Ale style yeast.  Produces ester character, and allows hop flavor through.  Leaves a slightly sweet malt character in ales.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "246",
+        "producer": "White Labs",
+        "product_id": "WLP850",
+        "name": "Copenhagen Lager",
+        "type": "lager",
+        "notes": "Clean, crisp north European lager yeast. Not as malty as the southern European lager yeast strains. Great for European style pilsners, European style dark lagers, Vienna, and American style lagers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      }
+    ]
+  }
+}

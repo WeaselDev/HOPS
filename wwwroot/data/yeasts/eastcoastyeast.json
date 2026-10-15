@@ -1,0 +1,385 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "170",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY07",
+        "name": "Scottish Heavy",
+        "type": "ale",
+        "notes": "Leaves a fruity profile with woody, oak esters reminiscent of malt whiskey. Well suited for 90\/ shilling or heavier ales including old ales and barleywines due to the level of attenuation (77-80%). Suggested fermentation temperature: 60-68°F",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "171",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY08",
+        "name": "Saison Brasserie Blend",
+        "type": "ale",
+        "notes": "A combination of several saison yeast strains for both fruity and spicy characteristics accompanied with dryness (attenuation ~ 80%). Suggested fermentation temperature: 75-85° F.",
+        "best_for": "Saison",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "172",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY09",
+        "name": "Belgian Abbaye",
+        "type": "ale",
+        "notes": "This yeast produces classic Belgian-style ales - robust, estery with a large note of clove and fruit. Rated highly in sensory tests described in \"Brew Like a Monk\" for complexity and low production of higher alcohols. Attenuation 74-76%, fermentation temperature 66-72F.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "173",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY10",
+        "name": "Old Newark Ale",
+        "type": "ale",
+        "notes": "Sourced from a defunct east coast brewery, this pure strain was identified as their \"ale-pitching yeast\". Good for all styles of American and English ales. Top fermenting, high flocculation with a solid sedimentation. Suggested fermentation temp: 60-68°F. Apparent Attenuation: 76-78%",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "174",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY11",
+        "name": "Belgian White",
+        "type": "ale",
+        "notes": "Isolated from the Hainaut region in Belgium, this pure yeast will produce flavors reminiscent of witbiers. Suggested fermentation temperature: 70-76. Attenuation ~76%.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 76
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "175",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY12",
+        "name": "Old Newark Beer",
+        "type": "lager",
+        "notes": "Sourced from the same east coast brewery as ECY10, this was identified as their \"beer-pitching yeast\" (i.e. lager yeast). The strain was identified as S. cerevisae, hence it is not a true lager yeast, but can ferment at lager fermentation temperatures. Clean and crisp when fermented at 58-68F; attenuation ~78%.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 58
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "176",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY13",
+        "name": "Belgian Abbaye 2",
+        "type": "ale",
+        "notes": "Traditional Belgian yeast with a complex, dry, fruity malt profile. Rated highly in sensory tests described in \"Brew Like a Monk\" for complexity and low production of higher alcohols. Attenuation 74-76%; fermentation temperature: 66-72F.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "177",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY14",
+        "name": "Saison Single",
+        "type": "ale",
+        "notes": "This strain leaves a smooth, full farmhouse character with mild esters reminiscent of apple pie spice. Attenuation 76-78%; fermentation temperature: 75-82F.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 82
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "178",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY17",
+        "name": "Burton Union",
+        "type": "ale",
+        "notes": "Produces a bold, citrusy character which accentuates mineral and hop flavors. Well suited for classic English pale ales and ESB.  Attenuation 73-75%; fermentation temperature: 64-69F.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 69
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "179",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY18",
+        "name": "British Mild",
+        "type": "ale",
+        "notes": "This yeast has a complex woody ester and is typically under-attenuating (does not ferment malto-triose) leaving a pronounced malt profile with a slight sweetness that is perfect for milds and bitters. Apparent attenuation: 66-70%; fermentation temperature: 60-68F.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 66
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 70
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "180",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY21",
+        "name": "Kolschbier",
+        "type": "ale",
+        "notes": "Produces a clean lager-like profile at ale temperatures. Smooth mineral and malt characters come through with a clean, lightly yeasty flavor and aroma in the finish. Recommended fermentation temperature: 58-66ºF; Apparent attenuation: 75-78%.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 58
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 66
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "181",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY28",
+        "name": "Kellerbier",
+        "type": "lager",
+        "notes": "This yeast exhibits a clean, crisp lager in the traditional northern German character. Use in German Pilsners including Kellerbier.  Recommended fermentation temperature 46-54ºF; Apparent attenuation: 74-76%.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 46
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 54
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "182",
+        "producer": "East Coast Yeast",
+        "product_id": "ECY29",
+        "name": "Northeast Ale",
+        "type": "ale",
+        "notes": "A unique ale yeast with an abundance of citrusy esters accentuating American-style hops in any pale ale, IPA, double IPA. Low flocculation. Attenuation: 73-75%; suggested fermentation temperature: 65-70F.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "form": "liquid"
+      }
+    ]
+  }
+}

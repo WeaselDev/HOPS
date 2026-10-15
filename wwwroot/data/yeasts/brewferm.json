@@ -1,0 +1,77 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "183",
+        "producer": "Brewferm",
+        "product_id": "BFBY",
+        "name": "Blanche Yeast",
+        "type": "ale",
+        "notes": "Top fermenting strain for Belgian witbier and wheats.  Spicy and lightly phenolic.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "184",
+        "producer": "Brewferm",
+        "product_id": "BFLY",
+        "name": "Lager Yeast",
+        "type": "lager",
+        "notes": "A dry lager yeast with high attenuation.  Ferments clean and malty.",
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 59
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "185",
+        "producer": "Brewferm",
+        "product_id": "BFTY",
+        "name": "Top Yeast",
+        "type": "ale",
+        "notes": "Top fermenting yeast that most suitable for amber coloured and dark beers. Fast fermentation with low residual sugar. Formation of fruity esters.",
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}

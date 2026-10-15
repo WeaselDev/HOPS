@@ -1,0 +1,2758 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "96",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2000",
+        "name": "Budvar Lager",
+        "type": "lager",
+        "notes": "The Budvar strain has a nice malty nose with subtle fruit tones and a rich malt profile on the palate. It finishes malty but dry, well balanced and crisp. Hop character comes through in the finish.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "97",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2001-PC",
+        "name": "Pilsner Urquell H-Strain",
+        "type": "lager",
+        "notes": "With a mild fruit and floral aroma this strain has a very dry and clean palate with a full mouthfeel and nice subtle malt character. It has a very clean and neutral finish.",
+        "best_for": "Czech Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "98",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2007",
+        "name": "Pilsen Lager",
+        "type": "lager",
+        "notes": "The classic American lager strain. This mild, neutral strain produces beers with a nice malty character and a smooth palate. It ferments dry and crisp with minimal sulfur or diacetyl. Beers from this strain exhibit the characteristics of the most popular lager in America.",
+        "best_for": "American Lager, Lager, German Pils & Schwarzbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "99",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2035",
+        "name": "American Lager",
+        "type": "lager",
+        "notes": "A complex and aromatic strain that can be used for a variety of lager beers. This strain is an excellent choice for Pre-Prohibition Lagers, formerly known as Classic American Pilsners.",
+        "best_for": "American Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "100",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2042-PC",
+        "name": "Danish lager",
+        "type": "lager",
+        "notes": "This yeast is a good choice for Dortmund-style lagers. It will ferment crisp and dry with a soft, rounded profile that accentuates hop characteristics.",
+        "best_for": "Helles & Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 46
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "101",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2112",
+        "name": "California Lager",
+        "type": "lager",
+        "notes": "This strain is particularly well suited for producing California Common-style beers. It retains lager characteristics at temperatures up to 65°F (18°C) and produces malty, brilliantly clear beers. This strain is not recommended for cold temperature fermentation.",
+        "best_for": "California Common, Cream Ale, Porter, Seasonal Beers & Pale Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 71
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 58
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "102",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2124",
+        "name": "Bohemian Lager",
+        "type": "lager",
+        "notes": "This Carlsberg type yeast is the most widely used lager strain in the world, and is considered the ideal choice for brewing Cold IPAs. This strain produces a distinct malty profile with some ester character and a crisp finish. A versatile strain, that is great to use with lagers or Pilsners for fermentations in the 45-55°F (8-12°C) range. It may also be used for Common beer production with fermentations at 65-68 °F (18-20 °C). A thorough diacetyl rest is recommended after fermentation is complete.",
+        "best_for": "German Pils, Helles, Lager, Munich Dunkel, Marzen & Bock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 45
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "103",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2206",
+        "name": "Bavarian Lager",
+        "type": "lager",
+        "notes": "Used by many German breweries to produce rich, full-bodied, malty beers, this strain is a good choice for bocks and doppelbocks. A thorough diacetyl rest is recommended after fermentation is complete.",
+        "best_for": "German Pilsner, Munich Dunkel, Lager & Märzen",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 46
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "104",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2278",
+        "name": "Czech Pils",
+        "type": "lager",
+        "notes": "Originating from the home of great Pilsners in the Czech Republic, this classic strain will finish dry and malty. It is the perfect choice for Bohemian-style Pilsners. Sulfur produced during fermentation can be reduced with warmer fermentation temperatures 58 °F (14 °C) and will dissipate with conditioning.",
+        "best_for": "Lager, Bock & Munich Dunkel",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "105",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2308",
+        "name": "Munich Lager",
+        "type": "lager",
+        "notes": "This is a unique strain, capable of producing fine lagers. It is very smooth, well-rounded and full-bodied. A thorough diacetyl rest is recommended after fermentation is complete.",
+        "best_for": "Lager, Festbier, Marzen, Bock & Munich Dunkel",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "106",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2633",
+        "name": "Octoberfest Lager Blend",
+        "type": "lager",
+        "notes": "This blend of lager strains is designed to produce a rich, malty, complex and full bodied Octoberfest style beer. It attenuates well while leaving plenty of malt character and mouthfeel. This strain is low in sulfur production.",
+        "best_for": "Festbier, Märzen, Vienna Lager & Rauchbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "111",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1007",
+        "name": "German Ale",
+        "type": "ale",
+        "notes": "A true top cropping yeast with low ester formation and a broad temperature range. Fermentation at higher temperatures may produce mild fruitiness. This powdery strain results in yeast that remains in suspension post fermentation. Beers mature rapidly, even when cold fermentation is used. Low or no detectable diacetyl.",
+        "best_for": "Wheat, Berliner Weisse, Altbier, Kolsch, Lagers & Gose",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 55
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "112",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1010",
+        "name": "American Wheat",
+        "type": "ale",
+        "notes": "A strong fermenting, true top cropping yeast that produces a dry, slightly tart, crisp beer. Ideal for beers where a low ester profile is desirable.",
+        "best_for": "American Hefeweizen, Wheat, Cream Ale, Kolsch, Altbier & Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 58
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "113",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1028",
+        "name": "London Ale",
+        "type": "ale",
+        "notes": "A rich mineral profile that is bold and crisp with some fruitiness. Often used for higher gravity ales and when a high level of attenuation is desired.",
+        "best_for": "Dark Mild, Brown Ales, Porters, Stouts, IPA & Pale Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "114",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1056",
+        "name": "American Ale",
+        "type": "ale",
+        "notes": "Very clean, crisp flavor characteristics with low fruitiness and mild ester production. A very versatile yeast for styles that desire dominant malt and hop character. This strain makes a wonderful 'House' strain. Mild citrus notes develop with cooler 60-66°F (15-19°C) fermentations. Normally requires filtration for bright beers.",
+        "best_for": "Pale Ales, Amber Ales, IPAs, Brown Ales & Double IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "115",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1084",
+        "name": "Irish Ale",
+        "type": "ale",
+        "notes": "This versatile yeast ferments extremely well in dark worts. It is a good choice for most high gravity beers. Beers fermented in the lower temperature range produce a dry, crisp profile with subtle fruitiness. Fruit and complex esters will increase when fermentation temperatures are above 64°F (18°C).",
+        "best_for": "Stouts, Red Ales, Porters, Double IPA, Wee Heavy & Scottish Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "116",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1098",
+        "name": "British Ale",
+        "type": "ale",
+        "notes": "This yeast allows malt and hop character to dominate the profile. It ferments dry and crisp, producing well-balanced beers with a clean and neutral finish. Ferments well down to 64°F (18°C).",
+        "best_for": "Porters, Brown Ales, English IPAs, Blonde Ales, Scottish Heavy & Barleywines",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "117",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1099",
+        "name": "Whitbread Ale",
+        "type": "ale",
+        "notes": "A mildly malty and slightly fruity fermentation profile. It is less tart and dry than Wyeast 1098 British Ale. With good flocculation characteristics, this yeast clears well without filtration. Low fermentation temperatures will produce a clean finish with a very low ester profile.",
+        "best_for": "Brown Ale, Stout, English IPA, Blonde Ale & Bitters",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "118",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1187",
+        "name": "Ringwood Ale",
+        "type": "ale",
+        "notes": "A top cropping yeast strain with unique fermentation and flavor characteristics. Expect distinct fruit esters with a malty, complex profile. Flocculation is high, and the beer will clear well without filtration. A thorough diacetyl rest is recommended after fermentation is complete. This strain can be a slow starter and fermenter.",
+        "best_for": "Porter, Brown Ale, Stout & IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "119",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1272",
+        "name": "American Ale II",
+        "type": "ale",
+        "notes": "With many of the best qualities that brewers look for when brewing American styles of beer, this strain's performance is consistent and it makes great beer. This versatile strain is a very good choice for a 'House' strain. Expect a soft, clean profile with hints of nut, and a slightly tart finish. Ferment at warmer temperatures to accentuate hop character with an increased fruitiness. Or, ferment cool for a clean, light citrus character. It attenuates well and is reliably flocculent, producing bright beer without filtration.",
+        "best_for": "Blonde Ale, Pale Ale, IPA, Strong Ale, Brown Ale & Porter",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "120",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1275",
+        "name": "Thames Valley Ale",
+        "type": "ale",
+        "notes": "This strain produces classic British bitters with a rich, complex flavor profile. The yeast has a light malt character, low fruitiness, low esters and is clean and well balanced.",
+        "best_for": "Bitters, Altbier, Brown Ale, Porter & Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "121",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1318",
+        "name": "London Ale III",
+        "type": "ale",
+        "notes": "Originating from a traditional London brewery, this yeast has a wonderful malt and hop profile. It is a true top cropping strain with a fruity, very light and softly balanced palate. This strain will finish slightly sweet. London Ale III has become synonymous with the production of New England IPAs, also known as juicy or hazy IPAs, and balances well with the tropical fruit qualities from late and dry hop additions.",
+        "best_for": "Hazy IPA, IPA, Bitters, Stout & Barleywine",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "122",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1332",
+        "name": "Northwest Ale",
+        "type": "ale",
+        "notes": "One of the classic ale strains from a Northwest U.S. Brewery. It produces a malty and mildly fruity ale with good depth and complexity.",
+        "best_for": "Pale Ale, IPA, Strong Ale & Brown Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 71
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "123",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1335",
+        "name": "British Ale II",
+        "type": "ale",
+        "notes": "A classic British ale profile with good flocculation and malty flavor characteristics. It will finish crisp, clean and fairly dry.",
+        "best_for": "Bitters, Strong Ale, Brown Ale, Porter, Stout & English IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "124",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1450",
+        "name": "Denny's Favorite 50",
+        "type": "ale",
+        "notes": "This terrific all-round yeast can be used for almost any beer style, and is a mainstay of one of our local homebrewers, Mr. Denny Conn. It is unique in that it produces a big mouthfeel and accentuates the malt, caramel, or fruit character of a beer without being sweet or under-attenuated.",
+        "best_for": "Amber Ale, Barleywine, Pale Ale, Brown Ale, Red Ale, IPA, Stout, Porter & Cream Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "125",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1469",
+        "name": "West Yorkshire Ale",
+        "type": "ale",
+        "notes": "This strain produces ales with a full chewy malt flavor and character, but finishes dry, producing famously balanced beers. Expect moderate nutty and stone-fruit esters. Best used for the production of cask-conditioned bitters, ESB and mild ales. Reliably flocculent, producing bright beer without filtration.",
+        "best_for": "English IPA, Stout & Bitters",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 71
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "126",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1728",
+        "name": "Scottish Ale",
+        "type": "ale",
+        "notes": "Our Scottish ale strain is ideally suited for the strong, malty ales of Scotland. This strain is very versatile, and is often used as a 'House' strain as it ferments neutral and clean. Higher fermentation temperatures will result in an increased ester profile.",
+        "best_for": "Scottish Ales, Wee Heavy, Stout, Double IPA & Barleywine",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 69
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 73
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 55
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "127",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1968",
+        "name": "London ESB Ale",
+        "type": "ale",
+        "notes": "A very good cask conditioned ale strain, this extremely flocculent yeast produces distinctly malty beers. Attenuation levels are typically less than most other yeast strains which results in a slightly sweeter finish. Ales produced with this strain tend to be fruity, increasingly so with higher fermentation temperatures of 70-74 °F (21-23 °C). A thorough diacetyl rest is recommended after fermentation is complete. Bright beers are easily achieved within days without any filtration.",
+        "best_for": "Bitters, English IPA, Dark Mild, Brown Ale, Strong Ale & Barleywine",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 71
+          }
+        },
+        "flocculation": "very high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "128",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2565",
+        "name": "Kölsch",
+        "type": "ale",
+        "notes": "This strain is a classic, true top cropping yeast strain from a traditional brewery in Cologne, Germany. Beers will exhibit some of the fruity character of an ale, with a clean lager like profile. It produces low or no detectable levels of diacetyl. This yeast may also be used to produce quick-conditioning pseudo-lager beers and ferments well at cold 55-60 °F (13-16 °C) range. This powdery strain results in yeast that remain in suspension post fermentation. It requires filtration or additional settling time to produce bright beers.",
+        "best_for": "Kolsch, Wheat, Cream Ale, Berliner Weisse, Fruit Beer & Amber Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 56
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "142",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1214",
+        "name": "Belgian Abbey Style Ale",
+        "type": "ale",
+        "notes": "A widely used and alcohol tolerant Abbey yeast that is suitable for a variety of Belgian style ales. This strain produces a nice ester profile as well as slightly spicy alcohol notes. It can be slow to start; however, it attenuates well.",
+        "best_for": "Strong Ale, Belgian Tripel, Belgian Ale, Witbier, Oktoberfest & Winter Beers",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 78
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "143",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1388",
+        "name": "Belgian Strong Ale",
+        "type": "ale",
+        "notes": "The classic choice for brewing golden strong ales. This alcohol tolerant strain will produce a complex ester profile balanced nicely with subtle phenolics. Malt flavors and aromas will remain even with a well attenuated dry, tart finish. This strain is prone to stalling at approximately 1.035; racking or slight aeration will encourage it to finish fermentation. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "best_for": "Belgian Tripel & Belgian Style ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 13
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "144",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1762",
+        "name": "Belgian Abbey Style Ale II",
+        "type": "ale",
+        "notes": "An excellent yeast strain for use in Belgian dark strong ales. This strain has a relatively 'clean profile' which allows a rich malt and distinctive ethanol character to shine. Delicate dried fruit esters can be produced when used at higher fermentation temperatures or in a high gravity wort.",
+        "best_for": "Belgian Ales, Barleywine, Wee Heavy & Biere de Garde",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "145",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3056",
+        "name": "Bavarian Wheat Blend",
+        "type": "ale",
+        "notes": "This proprietary blend of a top-fermenting neutral ale strain and a Bavarian wheat strain is a great choice when a subtle German style wheat beer is desired. The complex esters and phenolics from the wheat strain are nicely softened and balanced by the neutral ale strain.",
+        "best_for": "Weissbier & Wheats",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "146",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3068",
+        "name": "Weihenstephan Weizen",
+        "type": "ale",
+        "notes": "The classic and most popular German wheat beer strain used worldwide. This yeast strain produces a beautiful and delicate balance of banana esters and clove phenolics. The balance can be manipulated towards ester production through increasing the fermentation temperature, increasing the wort density, and decreasing the pitch rate. Over pitching can result in a near complete loss of banana character. Decreasing the ester level will allow a higher clove character to be perceived. Sulfur is commonly produced, but will dissipate with conditioning. This strain is very powdery and will remain in suspension for an extended amount of time following attenuation. This is true top cropping yeast and requires fermentor headspace of 33%.",
+        "best_for": "Hefeweizen, Wheats, Weissbier & Fruit Beers",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "147",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3333-PC",
+        "name": "German Wheat",
+        "type": "ale",
+        "notes": "A highly flocculent German wheat beer strain that is the perfect choice for use in Kristallweizen. This yeast strain produces a beautiful and delicate balance of banana esters and clove phenolics similar to the popular Wyeast 3068. However, this strain will sediment rapidly, resulting in bright beer without filtration. The balance can be manipulated towards ester production through increasing fermentation temperature, increasing the wort density, and decreasing the pitch rate. Over pitching can result in a near complete loss of banana character. Sulfur is commonly produced, but will dissipate with conditioning.",
+        "best_for": "Hefeweizen, Weissbier, Wheats & Bock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "148",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3463-PC",
+        "name": "Forbidden Fruit",
+        "type": "ale",
+        "notes": "A widely-used strain in the production of Witbier and Grand Cru. This yeast will produce spicy phenolics which are balanced nicely by a complex ester profile. The subtle fruit character and dry tart finish will complement wheat malt, orange peel and spice additions typical of Wits.",
+        "best_for": "Witbier & White IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 76
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "149",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3522",
+        "name": "Belgian Ardennes",
+        "type": "ale",
+        "notes": "One of the great and versatile strains for the production of classic Belgian style ales. This strain produces a beautiful balance of delicate fruit esters and subtle spicy notes, with neither one dominating. Unlike many other Belgian style strains, this strain is highly flocculent and results in bright beers.",
+        "best_for": "Belgian Ales, Belgian Tripel & Belgian IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 76
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "150",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3638",
+        "name": "Bavarian Wheat",
+        "type": "ale",
+        "notes": "A complex alternative to the standard German wheat strain profile. This strain produces apple, pear, and plum esters in addition to the dominant banana character. The esters are complemented nicely by clove and subtle vanilla phenolics. The balance can be manipulated towards ester production through increasing fermentation temperature, increasing the wort density, and decreasing the pitch rate. Over pitching can result in a near complete loss of banana character. Decreasing the ester level will allow a higher clove character to be perceived. Sulfur is commonly produced, but will dissipate with conditioning. This strain is very powdery and will remain in suspension for an extended amount of time following attenuation. This is true top cropping yeast and requires fermentor headspace of 33%.",
+        "best_for": "Wheats & Weissbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "151",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3711",
+        "name": "French Saison",
+        "type": "ale",
+        "notes": "A very versatile strain that produces Saison or farmhouse style beers as well as other Belgian style beers that are highly aromatic (estery), peppery, spicy and citrusy. This strain enhances the use of spices and aroma hops, and is extremely attenuative but leaves an unexpected silky and rich mouthfeel. This strain can also be used to re-start stuck fermentations or in high gravity beers. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "best_for": "Saison, Witbier & Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 83
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "152",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3724",
+        "name": "Belgian Saison",
+        "type": "ale",
+        "notes": "This strain is the classic farmhouse ale yeast. A traditional yeast that is spicy with complex aromatics, including bubble gum. It is very tart and dry on the palate with a mild fruitiness. Expect a crisp, mildly acidic finish that will benefit from elevated fermentation temperatures. This strain is notorious for a rapid and vigorous start to fermentation, only to stick around 1.035 S.G. Fermentation will finish, given time and warm temperatures. Warm fermentation temperatures, at least 90 °F (32 °C), or the use of a secondary strain can accelerate attenuation. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 95
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "153",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3787",
+        "name": "Trappist High Gravity",
+        "type": "ale",
+        "notes": "A classic strain for brewing Belgian dubbel or Belgian tripel. This Abbey strain produces a nice balance of complex fruity esters and phenolics, making it desirable for use in other Belgian style ales as well. A flocculent, true top cropping yeast (additional headspace is recommended), that will work over a broad temperature range. This strain makes a great Belgian style “house” strain.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 78
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "154",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3942",
+        "name": "Belgian Wheat",
+        "type": "ale",
+        "notes": "Isolated from a small Belgian brewery, this strain produces beers with moderate esters and minimal phenolics. Apple, bubblegum and plum-like aromas blend nicely with malt and hops. This strain will finish dry with a hint of tartness.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "155",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3944",
+        "name": "Belgian Witbier",
+        "type": "ale",
+        "notes": "This versatile witbier yeast strain can be used in a variety of Belgian style ales. This strain produces a complex flavor profile dominated by spicy phenolics with low to moderate ester production. It is a great strain choice when you want a delicate clove profile not to be overshadowed by esters. It will ferment fairly dry with a slightly tart finish that complements the use of oats, malted and unmalted wheat. This strain is a true top cropping yeast requiring full fermentor headspace of 33%.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "207",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1026",
+        "name": "British Cask Ale",
+        "type": "ale",
+        "notes": "A great yeast choice for any cask-conditioned British Ale and one that is especially well suited for hoppy bitters, IPAs and Australian ales. Produces a nice malt profile, and finishes crisp and slightly tart. Low to moderate fruit ester producer that clears well without filtration.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "best_for": "Bitters, Brown Ales, IPAs & Blonde Ale",
+        "form": "liquid"
+      },
+      {
+        "id": "208",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1203-PC",
+        "name": "Burton IPA Blend",
+        "type": "ale",
+        "notes": "The revival of interest in historic and classic English IPA styles calls for a specialized yeast. This blend highlights hop bitterness and aroma while still allowing full expression of authentic water profiles and pale malts. Low to moderate ester level can be manipulated through fermentation temperature and pitching rate. Palate finish is typically neutral to mildly fruity with some maltiness. Good flocculation characteristics make this an excellent candidate for cask conditioning.",
+        "best_for": "English IPA, Bitters, Porters & Stouts",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "209",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1217-PC",
+        "name": "West Coast IPA",
+        "type": "ale",
+        "notes": "This strain is ideally suited to the production of west-coast style American craft beers, especially pale, IPA, red, and specialties. Thorough attenuation, temp tolerance, and good flocculation make this an easy strain to work with. Flavor is balanced neutral with mild ester formation at warmer temps, allowing hops, character malts, and flavorings to show through.",
+        "best_for": "Pale Ales, Brown Ales, IPA, Scottish Light & Double IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "210",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1338",
+        "name": "European Ale Yeast",
+        "type": "ale",
+        "notes": "A full-bodied strain, finishing very malty with a complex flavor profile. This strain's characteristics are very desirable in English style brown ales and porters. It produces a dense, rocky head during fermentation, and can be a slow to start and to attenuate. This yeast may continue to produce CO2 for an extended period after packaging or collection.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 71
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "211",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1581",
+        "name": "Belgian Stout",
+        "type": "ale",
+        "notes": "A very versatile ale strain from Belgium. Excellent for Belgian stout and Belgian Specialty ales. Ferments to dryness and produces moderate levels of esters without significant phenolic or spicy characteristics.",
+        "best_for": "Belgian Ales, Belgian Tripel & Saison",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "212",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1768-PC",
+        "name": "English Special Bitter Yeast",
+        "type": "ale",
+        "notes": "A great yeast for malt predominate ales. Produces light fruit and ethanol aromas along with soft, nutty flavors. Exhibits a mild malt profile with a neutral finish. Bright beers are easily achieved without any filtration. It is similar to our 1968 London ESB Ale but slightly less flocculent.",
+        "best_for": "Bitters, English IPA, Pale Ale, Brown Ale, Blonde Ale & Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "213",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1882",
+        "name": "Thames Valley Ale II",
+        "type": "ale",
+        "notes": "This strain was originally sourced from a now defunct brewery on the banks of the river Thames outside of Oxford, England. Thames Valley II produces crisp, dry beers with a rich malt profile and moderate stone fruit esters. This attenuative strain is also highly flocculent resulting in bright beers not requiring filtration. A thorough diacetyl rest is recommended after fermentation is complete.",
+        "best_for": "Bitters, Brown Ale, Altbier & Porter",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "214",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2005",
+        "name": "Cerveza Mexicana Lager",
+        "type": "lager",
+        "notes": "This strain is well-suited to delicate lager styles where balance is key. Neutral flavor with crisp finish allows refined, subtle malt flavors to come through. Production of diacetyl and sulfur during fermentation is typically low.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "215",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2247-PC",
+        "name": "European Lager",
+        "type": "lager",
+        "notes": "This strain exhibits a very clean and dry flavor profile often found in aggressively-hopped lagers. Produces mild aromatics and slight sulfur notes typical of classic pilsners. This yeast is a good attenuator resulting in beers with a distinctively crisp finish.",
+        "best_for": "German Pils & Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 46
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "216",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2252",
+        "name": "Rasenmäher Lager Yeast",
+        "type": "lager",
+        "notes": "This versatile lager strain is an excellent choice for brewing your favorite low alcohol lawnmower beer. Fermentations at low temperatures will produce clean lagers that accentuate the malt character of the beer. At high temperatures this strain maintains much of the lager character, but will also yield a mild ester profile that compliments hop aromas and flavors.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "217",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2272-PC",
+        "name": "North American Lager",
+        "type": "lager",
+        "notes": "Traditional culture of North American and Canadian lagers, light pilsners and adjunct beers. Mildly malty profile, medium ester profile, well balanced. Malty finish.",
+        "best_for": "Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 52
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "218",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2352-PC",
+        "name": "Munich Lager II",
+        "type": "lager",
+        "notes": "From a famous brewery in Munich, this strain is a low diacetyl and low sulfur aroma producer. An excellent choice for malt driven lagers.",
+        "best_for": "Helles, Munich Dunkel, Marzen & Bock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 52
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 62
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "219",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2487-PC",
+        "name": "Hella Bock Lager",
+        "type": "lager",
+        "notes": "Direct from the Austrian Alps, this strain will produce rich, full-bodied and malty beers with a complex flavor profile and a great mouth feel. Attenuates well while still leaving plenty of malt character and body. Beers fermented with this strain will benefit from a temperature rise for a diacetyl rest at the end of primary fermentation.",
+        "best_for": "Helles, Marzen, Munich Dunkel & Bock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 56
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "220",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2575-PC",
+        "name": "Kölsch II",
+        "type": "lager",
+        "notes": "This authentic Kolsch strain from one of Germany's leading brewing schools has a rich flavor profile which accentuates a soft malt finish. It has Low or no detectable diacetyl production and will also ferment well at colder temperatures for fast lager type beers.",
+        "best_for": "Kolsch, Altbier & Amber Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 55
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "221",
+        "producer": "Wyeast Labs",
+        "product_id": "WY2782-PC",
+        "name": "Staro Prague Lager",
+        "type": "lager",
+        "notes": "This yeast will help create medium to full body lagers with moderate fruit and bready malt flavors. The balance is slightly toward malt sweetness and will benefit from additional hop bittering. A fantastic strain for producing classic Bohemian lagers.",
+        "best_for": "Lager, Helles, Czech Lager, Marzen, Munich Dunkel & Bock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 74
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "222",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3191-PC",
+        "name": "Berliner-Weisse Blend",
+        "type": "ale",
+        "notes": "This blend includes a German ale strain with low ester formation and a dry, crisp finish. The Lactobacillus included produces moderate levels of acidity. The unique Brettanomyces strain imparts a critical earthy characteristic that is indicative of a true Berliner Weisse. When this blend is used, expect a slow start to fermentation as the yeast and bacteria in the blend is balanced to allow proper acid production. It generally requires 3-6 months of aging to fully develop flavor characteristics. Use this blend with worts containing extremely low hopping rates.",
+        "best_for": "Berliner Weiss, Lambic, Flanders Red Ale & Gose",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 6
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "223",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3203",
+        "name": "De Bom Sour Blend",
+        "type": "brett",
+        "notes": "Wyeast's QC Manager and World's Tallest Microbiologist Greg Doss developed De Bom to create authentic Old- and New-World sour ale profiles but in a fraction of the time required by previous, less manly cultures. For best results, we recommend the following: no O2\/aeration at beginning of fermentation; periodic dosing with O2 during fermentation to stimulate ethyl acetate production; frequent sampling to monitor development and complexity. Under optimum conditions, beers can be ready for consumption in 1-2 months.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "224",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3209-PC",
+        "name": "Oud Bruin Blend",
+        "type": "mixed-culture",
+        "notes": "This exclusive sour blend is built for dark, malt-accented sour styles. Like 3763 Roeselare, it will create sharp acidity, but unlike 3763 it will leave the malt character intact, creating a balanced and complex end product. Excellent base for blending fruit in secondary (especially cherries or raspberries), and makes for an interesting Saison.",
+        "best_for": "Sour Ale, Belgian, Foreign Extra Stout, Fruit Beer, Fruit and Spice Beer, Oud Bruin, Saison, Specialty Ales, Specialty Fruit Beer, Wild Specialty Beer",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "225",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3278",
+        "name": "Belgian Lambic Blend",
+        "type": "mixed-culture",
+        "notes": "This blend contains yeast and bacteria cultures important to the production of spontaneously fermented beers of the Lambic region. Specific proportions of a Belgian style ale strain, a sherry strain, two Brettanomyces strains, a Lactobacillus culture, and a Pediococcus culture produce the desirable flavor components of these beers as they are brewed in Brussels. Propagation of this culture is not recommended and will result in a change of the proportions of the individual components. This blend will produce a very dry beer due to the super-attenuative nature of the mixed cultures.",
+        "best_for": "Lambic & Flanders Red Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "226",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3538",
+        "name": "Leuven Pale Ale Yeast",
+        "type": "ale",
+        "notes": "This vigorous top fermenting Belgian style strain produces a distinct spicy character along with mild esters. Phenolics developed during fermentation may dissipate with conditioning. 3538 is an excellent choice for a variety of Belgian beer styles including pales, dubbels, and brown ales.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "227",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3655-PC",
+        "name": "Belgian Schelde Ale",
+        "type": "ale",
+        "notes": "From the East Flanders - Antwerpen region of Belgium, this unique top fermenting yeast produces complex, classic Belgian aromas and flavors that meld well with premium quality pale and crystal malts. Well rounded and smooth textures are exhibited with a full bodied malty profile and mouthfeel.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "228",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3725-PC",
+        "name": "Biere de Garde",
+        "type": "ale",
+        "notes": "Low to moderate ester production with subtle spiciness. Malty and full on the palate with initial sweetness. Finishes dry and slightly tart. Ferments well with no sluggishness. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "best_for": "Biere de Garde, Saison & Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 79
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 84
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "229",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3726",
+        "name": "Farmhouse Ale",
+        "type": "ale",
+        "notes": "This strain produces complex esters balanced with earthy/spicy notes. Slightly tart and dry with a peppery finish. A perfect strain for farmhouse ales and saisons. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "best_for": "Biere de Garde, Saison & Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 79
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 84
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "230",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3739-PC",
+        "name": "Flanders Golden Ale",
+        "type": "ale",
+        "notes": "This well-balanced strain from northern Belgium will produce moderate levels of both fruity esters and spicy phenols while finishing dry with a hint of malt. 3739-PC is a robust and versatile strain that performs nicely in a broad range of Belgian styles. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "231",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3763",
+        "name": "Roeselare Ale Blend",
+        "type": "mixed-culture",
+        "notes": "Our blend of lambic cultures produce beer with a complex, earthy profile and a distinctive pie cherry sourness. Aging up to 18 months is required for a full flavor profile and acidity to develop. Specific proportions of a Belgian style ale strain, a sherry strain, two Brettanomyces strains, a Lactobacillus culture, and a Pediococcus culture produce the desirable flavor components of these beers as they are brewed in West Flanders. Propagation of this culture is not recommended and will result in a change of the proportions of the individual components. This blend will produce a very dry beer due to the super-attenuative nature of the mixed cultures.",
+        "best_for": "Lambic & Flanders Red Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "232",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3789-PC",
+        "name": "Belgian Style Blend",
+        "type": "mixed-culture",
+        "notes": "A unique blend of Belgian Saccharomyces and Brettanomyces for emulating Abbey-style beer from the Florenville region in Belgium. Phenolics, mild fruitiness and complex spicy notes develop with increased fermentation temperatures. Subdued but classic “Brett” character.",
+        "best_for": "Belgian Ales & Bretts",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "233",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3822-PC",
+        "name": "Belgian Dark Ale",
+        "type": "ale",
+        "notes": "This unique Belgian ale yeast is a high acid producer with balanced ester and phenol production allowing a good expression of malt profile, especially the strong flavors of darker malts and sugars. High alcohol tolerance. Spicy, tart, and dry on the palate with a very complex finish. This Wyeast yeast strain has been classified as Saccharomyces cerevisiae var. diastaticus using rapid PCR analysis. This strain carries the STA1 gene, which is the “signature” gene of Saccharomyces cerevisiae var. diastaticus and will be found in all diastaticus strains.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 79
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "234",
+        "producer": "Wyeast Labs",
+        "product_id": "WY3864-PC",
+        "name": "Canadian\/Belgian Ale",
+        "type": "ale",
+        "notes": "This alcohol tolerant strain produces complex and well-balanced Belgian Abbey style ales. Banana and fruit esters are complemented nicely with mild levels of phenolics and hints of acidity. Ester levels may be elevated by increasing gravity and fermentation temperatures.",
+        "best_for": "Belgian Ales",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 79
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "235",
+        "producer": "Wyeast Labs",
+        "product_id": "WY4184",
+        "name": "Sweet Mead",
+        "type": "other",
+        "notes": "One of two strains for mead making. Leaves 2-3% residual sugar in most meads. Rich, fruity profile complements fruit mead fermentation. Use additional nutrients for mead making.",
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "236",
+        "producer": "Wyeast Labs",
+        "product_id": "WY4335",
+        "name": "Lactobacillus",
+        "type": "lacto",
+        "notes": "Lactic acid bacteria isolated from a Belgian brewery. This culture produces moderate levels of acidity and is commonly found in many types of beers including gueuze, lambics, sour brown ales and Berliner Weisse. It is always used in conjunction with S.cerevisiae and often with various wild yeast. Use in wort or beer below 10 IBU is recommended due to the culture's sensitivity to hop compounds.",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 95
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "237",
+        "producer": "Wyeast Labs",
+        "product_id": "WY5112",
+        "name": "Brettanomyces Bruxellensis",
+        "type": "brett",
+        "notes": "This strain of wild yeast was isolated from brewery cultures in the Brussels region of Belgium. It produces the classic 'sweaty horse blanket' character of indigenous beers such as gueuze, lambics and sour browns and may form a pellicle in bottles or casks. The strain is generally used in conjunction with S. cerevisiae, as well as other wild yeast and lactic bacteria. At least 3-6 months aging is generally required for flavor to fully develop.",
+        "best_for": "Flanders Red Ale, Gueuze & Lambic",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "238",
+        "producer": "Wyeast Labs",
+        "product_id": "WY5223",
+        "name": "Lactobacillus Brevis",
+        "type": "lacto",
+        "notes": "Unlike most lactic acid bacteria used in brewing, Lactobacillus brevis will tolerate higher levels of IBUs in wort. 5223 will produce alcohol along with lactic acid during fermentation. Excellent for remixing the profile in a Lambic-style or Flanders sour ale, or for kettle souring wort for a balanced Berliner Weisse.",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 95
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "239",
+        "producer": "Wyeast Labs",
+        "product_id": "WY5335",
+        "name": "Lactobacillus",
+        "type": "lacto",
+        "notes": "This culture produces moderate levels of acidity and is commonly found in many types of beers including gueuze, lambics, sour brown ales and Berliner Weisse. It is always used in conjunction with S. cerevisiae and often with various wild yeast. Use in wort or beer below 10 IBU is recommended due to the culture’s sensitivity to hop compounds.",
+        "best_for": "Lambic, Gueuze, Flanders Red Ale, Berliner Weisse & Oud Bruin",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 95
+          }
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "240",
+        "producer": "Wyeast Labs",
+        "product_id": "WY5526",
+        "name": "Brettanomyces Lambicus",
+        "type": "brett",
+        "notes": "This is a wild yeast strain isolated from Belgian lambic beers. It produces a pie cherry-like flavor and sourness along with distinct “Brett” character. A pellicle may form in bottles or casks. To produce the classic Belgian character, this strain works best in conjunction with other yeast and lactic bacteria. It generally requires 3-6 months of aging to fully develop flavor characteristics. This Wyeast strain is known by it's old nomenclature, Brettanomyces lambicus, while rapid PCR analysis confirms that genetically it is Brettanomyces bruxellensis. This strain remains known as B. lambicus because of the name's historical relevance and unique profile.",
+        "best_for": "Lambic, Berliner Weisse, Flanders Red Ale & Gueuze",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "very high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "241",
+        "producer": "Wyeast Labs",
+        "product_id": "WY5733",
+        "name": "Pediococcus",
+        "type": "lacto",
+        "notes": "Lactic acid bacteria used in the production of Belgian style beers where additional acidity is desirable. Often found in gueuze and other Belgian style beer. Acid production will increase with storage time. It may also cause 'ropiness' and produce low levels of diacetyl with extended storage time.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 90
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 95
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "242",
+        "producer": "Wyeast Labs",
+        "product_id": "WY9097",
+        "name": "Old Ale Blend",
+        "type": "ale",
+        "notes": "To bring you a bit of English brewing heritage we developed the 'Old Ale' blend, including an attenuative ale strain and a Brettanomyces strain, which will ferment well in dark worts and produce beers with nice fruitiness. Complex estery characters will emerge with age. Pie cherry and sourness will evolve from the Brettanomyces along with distinct horsey characteristics.",
+        "best_for": "Strong Ale, Barleywine & Old Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "247",
+        "producer": "Wyeast Labs",
+        "product_id": "WY1764-PC",
+        "name": "ROGUE Pacman",
+        "type": "ale",
+        "notes": "A versatile yeast strain from one of Oregon's leading craft breweries, Rogue Brewery of Newport. Pacman is alcohol tolerant, flocculent, attenuates well and will produce beers with little to no diacetyl. Very mild fruit complements a dry, mineral finish making this a fairly neutral strain. Pacman's flavor profile and performance makes it a great choice for use in many different beer styles.\n\nPacman is said to be one of the many mutations of the original Ballantine Ale yeast which also gave rise to Chico and many others.\n\nAccording to Rogue’s brewmaster, Pacman yeast loves a 60-degree ferment.",
+        "best_for": "American Pale Ale, American Amber Ale, American Brown Ale, Brown Porter, Cream Ale, Irish Red Ale, Strong Scotch Ale, Dry Stout, American Stout, Russian Imperial Stout, American IPA, Imperial IPA, American Barleywine, Fruit Beer, Spice/Herb/or Vegetable Beer, Christmas/Winter Specialty Spice Beer, Other Smoked Beer & Wood-Aged Beer",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      }
+    ]
+  }
+}

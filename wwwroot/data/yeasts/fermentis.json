@@ -1,0 +1,318 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "156",
+        "producer": "Fermentis",
+        "product_id": "S-04",
+        "name": "SafAle S-04",
+        "type": "ale",
+        "notes": "English ale brewer’s yeast selected for its fast fermentation profile. Produces balanced fruity and floral notes. Due to its flocculation power, tends to produce beers with higher clarity. Ideal for a large range of American and English Ales – including highly hopped beers – and is specially adapted to cask-conditioned and beers fermented in cylindro-conical tanks.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "157",
+        "producer": "Fermentis",
+        "product_id": "US-05",
+        "name": "SafAle US-05",
+        "type": "ale",
+        "notes": "American ale brewer's yeast producing neutral and well-balanced ales, clean and crispy. Forms a firm foam head and presents a very good ability to stay in suspension during fermentation. Ideal for American beer types and highly hopped beers.",
+        "best_for": "Ales, Pale Ale & IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "158",
+        "producer": "Fermentis",
+        "product_id": "K-97",
+        "name": "SafAle K-97",
+        "type": "ale",
+        "notes": "German ale yeast selected for its ability to form a large firm head when fermenting. Suitable to brew ales with low esters and can be used for Belgian type wheat beers. Its lower attenuation profile gives beers with a good length on the palate.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "159",
+        "producer": "Fermentis",
+        "product_id": "S-23",
+        "name": "SafLager S-23",
+        "type": "lager",
+        "notes": "Bottom fermenting yeast originating from the VLB - Berlin in Germany recommended for the production of fruity and estery lagers. Its lower attenuation profile gives beers with a good length on the palate.",
+        "best_for": "Lagers & Märzen",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "160",
+        "producer": "Fermentis",
+        "product_id": "W-34\/70",
+        "name": "SafLager W-34\/70",
+        "type": "lager",
+        "notes": "This famous yeast strain from Weihenstephan in Germany is used world-wide within the brewing industry. Saflager W-34\/70 allows to brew beers with a good balance of floral and fruity aromas and gives clean flavors and high drinkable beers.",
+        "best_for": "Lagers & Märzen",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "161",
+        "producer": "Fermentis",
+        "product_id": "S-189",
+        "name": "SafLager S-189",
+        "type": "lager",
+        "notes": "Originating from the Hürlimann brewery in Switzerland. This lager yeast strain’s profile allows to brew fairly neutral flavor beers with a high drinkability. Depending on the conditions, it tends to present noticeable herbal and floral notes to lager beers.",
+        "best_for": "Lagers",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "162",
+        "producer": "Fermentis",
+        "product_id": "T-58",
+        "name": "SafAle T-58",
+        "type": "ale",
+        "notes": "Specialty brewer’s yeast selected for its strong fermentation character, intense fruity and phenolic flavors – especially banana, clove and peppery notes. Suitable for a great variety of wheat-base beers and fruity-spicy oriented styles. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.",
+        "best_for": "Hefeweizen, Weissbier & Witbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "163",
+        "producer": "Fermentis",
+        "product_id": "S-33",
+        "name": "SafAle S-33",
+        "type": "ale",
+        "notes": "Fruity driven strain, gives a high mouthfeel and body to the beer. Ideal for Belgian Ales (Blond, Dubbel, Tripel, Quadrupel Styles) and strong English ales (ex. Imperial Stouts). It is also ideal for New England IPAs. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "id": "164",
+        "producer": "Fermentis",
+        "product_id": "WB-06",
+        "name": "SafAle WB-06",
+        "type": "ale",
+        "notes": "Brewer’s yeast providing fruity and phenolic character, varying with the fermentation conditions. Produces well-attenuated beers and it is ideal for wheat base beers, such as Belgian and German Styles (Ex. Wit Beers and Weizen Beers).\nProduces typical phenolic notes of wheat beers. Allows to brew beer with a high drinkability profile and presents a very good ability to suspend during fermentation.",
+        "best_for": "Hefeweizen, Weissbier & Witbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 86
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 90
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}
