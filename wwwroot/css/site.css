@@ -244,7 +244,7 @@ body {
 /* Recipe sections */
 
 .recipe-section-title {
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     color: #262626;
     margin: 0 0 .45rem;
     padding-bottom: 5px;
@@ -254,7 +254,7 @@ body {
 }
 
 .recipe-subtitle {
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     color: #444;
     margin: .9rem 0 .3rem;
     font-size: .9rem;

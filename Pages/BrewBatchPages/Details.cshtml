@@ -184,7 +184,7 @@
                 <table class="recipe-table recipe-table-simple">
                     <thead>
                         <tr>
-                            <th>@Resource.Hop</th>
+                            <th>@Resource.Name</th>
                             <th class="numeric">@Resource.AlphaAcid</th>
                             <th class="numeric">@Resource.Amount</th>
                         </tr>
@@ -201,44 +201,16 @@
                     </tbody>
                 </table>
 
-                <h4 class="recipe-subtitle">@Resource.Yeasts</h4>
-
-                <table class="recipe-table recipe-table-simple">
-                    <thead>
-                        <tr>
-                            <th>@Resource.Name</th>
-                            <th>@Resource.Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var yeast in Model.BrewBatch.YeastAdditions)
-                        {
-                            <tr>
-                                <td>
-                                    @yeast.Name
-
-                                    @if (!string.IsNullOrWhiteSpace(yeast.Description))
-                                    {
-                                        <span class="text-muted">(@yeast.Description)</span>
-                                    }
-                                </td>
-                                <td class="numeric">@yeast.Amount @yeast.Unit</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-
                 @* Selected preferred yeasts for this batch *@
                 @if (Model.BrewBatch.SelectedYeastIds != null && Model.BrewBatch.SelectedYeastIds.Any())
                 {
-                    <h4 class="recipe-subtitle">Selected Yeasts</h4>
-
+                    <h4 class="recipe-subtitle">@Resource.Yeasts</h4>
                     <table class="recipe-table recipe-table-simple">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Producer</th>
-                                <th>Name</th>
+                                <th>@Resource.Name</th>
+                                <th>@Resource.Description</th>
+                                <th>@Resource.Amount</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -246,9 +218,24 @@
                             {
                                 var y = Model.BrewBatch.BrewRecipeVersion.PreferredYeasts.FirstOrDefault(p => p.ProductId == id);
                                 <tr>
-                                    <td>@id</td>
-                                    <td>@(y?.Producer ?? "")</td>
-                                    <td>@(y?.Name ?? "")</td>
+                                    <td>
+                                        @(y?.Producer ?? "") @(y?.Name ?? "")
+                                    </td>
+                                    <td>
+                                        @if (!string.IsNullOrWhiteSpace(y?.Notes))
+                                        {
+                                            <div class="description-expand">
+                                                <span class="description-short">
+                                                    @y.Notes
+                                                </span>
+                                                <span class="description-full">
+                                                    @y.Notes
+                                                </span>
+                                            </div>
+                                        }
+
+                                    </td>
+                                    <td>1</td>
                                 </tr>
                             }
                         </tbody>
@@ -340,7 +327,7 @@
                 <table class="recipe-table recipe-table-simple">
                     <thead>
                         <tr>
-                            <th>@Resource.Step</th>
+                            <th>@Resource.Name</th>
                             <th class="numeric">@Resource.Temperature</th>
                             <th class="numeric">@Resource.Duration</th>
                         </tr>
@@ -379,7 +366,7 @@
                         <table class="recipe-table">
                             <thead>
                                 <tr>
-                                    <th>@Resource.Hop</th>
+                                    <th>@Resource.Name</th>
                                     <th class="numeric">@Resource.AlphaAcid</th>
                                     <th class="numeric">@Resource.Amount</th>
                                     <th class="numeric print-hide">@Resource.BoilDuration</th>
