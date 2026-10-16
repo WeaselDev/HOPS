@@ -1,0 +1,319 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "194",
+        "producer": "Mangrove Jack's",
+        "product_id": "M02",
+        "name": "Craft Series Cider",
+        "type": "other",
+        "notes": "Mangrove Jack's Cider Yeast is a high ester-producing strain, imparting wonderful flavor depth, revealing the full fruit potential of the juice. Ciders fermented using this strain are exceptionally crisp, flavorsome and refreshing in taste. This highly robust yeast has good fructose assimilation and is capable of fermenting under challenging conditions and over a wide temperature range. Mangrove Jack's Cider Yeast is a highly flocculent strain, suitable for all styles of cider. Trace nutrients have been blended with the yeast in Mangrove Jack's Cider Yeast sachets for optimum yeast health, fermentation performance and cider quality.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 82
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "195",
+        "producer": "Mangrove Jack's",
+        "product_id": "M03",
+        "name": "Newcastle Dark Ale",
+        "type": "ale",
+        "notes": "Newcastle Dark Ale Yeast successfully brings classic cask ale production into the homebrew or craft setting. This is a top-fermentation strain well suited for fermenting British ales, particularly dark and full bodied ales, mild brown ales and Scottish Heavy ales. Selected to not over attenuate, this strain will stop short of the low end gravities exhibited by other yeast strains. Dark fruity esters are pronounced when fermented at the appropriate temperature. Care should be taken to adjust hop bitterness to ensures it suits the ester character and complements the fuller bodied finish.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "196",
+        "producer": "Mangrove Jack's",
+        "product_id": "M07",
+        "name": "British Ale",
+        "type": "ale",
+        "notes": "A neutral top-fermenting strain especially suited for brewing silky smooth light ales with a neutral yeast aroma and flavor contribution. This strain also works well for stronger ales where a soft and balanced mouth feel is desired and where the nutty, spicy and earthy hop and malt characteristics should be enhanced. This yeast strain is highly flocculent and not prone to autolysis, making it an excellent choice for both cask and bottle conditioned beer.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "very high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 57
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "197",
+        "producer": "Mangrove Jack's",
+        "product_id": "M10",
+        "name": "Workhorse",
+        "type": "ale",
+        "notes": "The now discontinued Workhorse Beer yeast is a true all rounder, suitable for a myriad of beer styles at extremely high gravities and different brewing temperatures. From Baltic porter to ambient temperature fermented lagers, this top-fermenting strain has such a clean flavor and aroma profile that it is suitable for almost every application. It is a robust strain with rapid and reliable fermentation performance, good attenuation properties, and ideally suited to making cask or bottle conditioned beers. This highly versatile strain also has very good ethanol tolerance up to 9% ABV and excellent temperature tolerance up to 90°F (32°C).",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "198",
+        "producer": "Mangrove Jack's",
+        "product_id": "M20",
+        "name": "Bavarian Wheat",
+        "type": "ale",
+        "notes": "A classic top-fermenting yeast suited for brewing a range of German Weizens as well as Belgian Witbier. It has a very low flocculation rate and a clean, \"yeasty\" aroma which makes it ideal for beers that are traditionally served cloudy. This yeast creates beer with a low to completely dry level of sweetness, medium body with a silky mouth feel, and a delicious banana and spice aroma.",
+        "best_for": "Hefeweizen, Kristal Weizen & Dunkel Weizen and more",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 86
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "199",
+        "producer": "Mangrove Jack's",
+        "product_id": "M27",
+        "name": "Belgian Ale",
+        "type": "ale",
+        "notes": "With a myriad of flavours and aromas embraced by master brewers all over Belgium, this strain has been specially developed to bring the best of these flavors to the home or craft brewer. Belgian ale yeast is an exceptional top-fermenting yeast strain creating distinctive beers with spicy, fruity and peppery notes. Ideal for fermentation of Belgian Saison or farmhouse style beers, but also suitable for other Belgian styles. This yeast is highly attenuative and has a high ethanol tolerance that makes it ideal for creating most Belgian beer styles, including Quadrupel styles of up to 14% ABV. At higher alcohol levels fermentation may take longer but the strain is robust enough to deal with almost anything. This strain successfully brings the sophistication of classic Belgian ale production to the home and small brewery.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 79
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "dry"
+      },
+      {
+        "id": "200",
+        "producer": "Mangrove Jack's",
+        "product_id": "M44",
+        "name": "US West Coast",
+        "type": "ale",
+        "notes": "US West Coast Yeast is a high attenuating, top-fermenting strain that ferments with almost completely neutral attributes across a wide range of wort strengths and temperature ranges. It produces a moderately high acidity which allows the tangy citrus hop aromas to really punch through, while also enhancing toasted and dark malt characters. If you plan to use a lot of expensive flavourful hops as the prominent feature of your beer, use this yeast.",
+        "best_for": "Americal Pale Ale, Double IPA & American Imperial Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "201",
+        "producer": "Mangrove Jack's",
+        "product_id": "M79",
+        "name": "Burton Union",
+        "type": "ale",
+        "notes": "Famous the world over for its crisp, dry and uniquely malty and hoppy ales, this strain has been isolated and developed especially for the home and craft brewer from a commercial brewery in the heartland of British Brewing. Burton Union Yeast is a gentle but rapid fermenter that generates light and delicate ripe pear esters and does not strip away light malt character or body. Moderate acidity balances the silky smooth texture of beers fermented with this strain. When hops or malt aromas are stronger, the yeast contribution will be neutral. When used in lighter quality malt bases, the hops and esters are able to shine. Beers made with this yeast are quick to condition, giving you great beer in as little as 3 weeks.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 74
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "202",
+        "producer": "Mangrove Jack's",
+        "product_id": "M84",
+        "name": "Bohemian Lager",
+        "type": "lager",
+        "notes": "Bohemian Lager is a classic bottom-fermenting, continental lager strain that produces elegant, well balanced beers. Bohemian Lager Yeast is characterized by its dry and clean palate, typical of traditional Czech brewing. This strain confers smooth, subtle yeast characteristics with muted fruit notes, resulting in refreshingly crisp lagers with expressive hop character. While rich and chewy, the beers fermented with this strain will not be sweet, but may have an elusive sweet malt flavor in the aftertaste. Lagering periods as short as 4 weeks may produce acceptable beer, but allowing beer to lager 6-8 weeks will result in beer that is richer, smoother, with a more refined aroma and flavor.",
+        "best_for": "German Pilsners, Porters & American Lagers",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 72
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 59
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "320",
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM36",
+        "name": "Liberty Bell",
+        "type": "ale",
+        "notes": "Die M36 Liberty Bell ist eine vielseitige englische Ale-Hefe. Sie produziert leichte fruchtige Ester, die aber ausgeprägte Malz- oder Hopfenaromen nicht überdecken. Damit passt sie sowohl zu klassischen britischen Bieren aber auch sehr gut zu hopfigen Pale Ales und IPA. Darum auch die Standard-Hefe in einigen unserer hopfenbetonten Braumischungen wie dem NEIPA No.2 oder dem Origin-Ale.",
+        "best_for": "British und American Pale Ale, Golden Ale, Brown Ale, English IPA, Stout, Porter",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}

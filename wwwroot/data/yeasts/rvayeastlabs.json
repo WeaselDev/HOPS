@@ -1,0 +1,829 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "248",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-101",
+        "name": "Chico Ale",
+        "type": "ale",
+        "notes": "This versatile workhorse yeast will produce a clean crisp flavor profile with muted yeast character allowing hops and malt to take center stage.  The American IPA has gained international acclaim and this is the yeast that did it.",
+        "best_for": "Pale Ale & IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 81
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "249",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-102",
+        "name": "Boston Ale",
+        "type": "ale",
+        "notes": "Similar neutral character (low esters) to RVA 101 Chico Ale; however, it has a lower emphasis on hop bitterness, slightly tart, and less attenuative (more residual sweetness). Great for pale ales, blonde ale, American wheat, altbier, amber ale.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 73
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "250",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-103",
+        "name": "Pacman Ale (Rogue)",
+        "type": "ale",
+        "notes": "A very versatile yeast, produces a dry, clean beer with little diacetyl and very mild esters. However, it has a lower emphasis on hop bitterness, slightly tart, and less attenuative (more residual sweetness). Great for pale ales, blonde ale, American wheat, altbier, amber ale.",
+        "best_for": "Pale Ale, Blonde Ale, American Wheat, Altbier & Amber Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "251",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-104",
+        "name": "Hoptopper Ale",
+        "type": "ale",
+        "notes": "Isolated from a very well regarded example of a Double IPA, this strain will produce fruity esters which serve well to complement a heavy hop load.  Great for a variety of pale ales and bitters.",
+        "best_for": "IPA, Double IPA, Pale Ale & Bitters",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 76
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "252",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-131",
+        "name": "Chiswick Ale",
+        "type": "ale",
+        "notes": "This classic English strain will produce a very clear beer with some residual sweetness.  Perfect for classic bitters, milds, English style porters and stouts.",
+        "best_for": "Porter, Stout, Mild Ale & ESB",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "very high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "253",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-132",
+        "name": "Manchester Ale",
+        "type": "ale",
+        "notes": "Dryer then the Chiswick, this English classic will create a touch of esters and leave a hint of residual sweetness and malt backbone.  Great for English bitters and browns.",
+        "best_for": "IPA, Brown Ale & ESB",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "254",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-141",
+        "name": "Scotch Ale",
+        "type": "ale",
+        "notes": "Produces the famous malty beers of Scotland, including the winter warmer, Wee Heavy.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "255",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-151",
+        "name": "Dublin Ale",
+        "type": "ale",
+        "notes": "This strain is the quintessential Irish stout yeast.  It will produce crisp dry ale with hints of diacetyl and a unique pattern of esters, characteristic of this strain. Higher temps will accentuate yeast expressiveness.  Fantastic in stouts, porters and scotch ale.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "256",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-161",
+        "name": "German Ale I",
+        "type": "ale",
+        "notes": "This strain will produce dimethyl sulfide early in fermentation but don't be concerned, it will dissipate in short order leaving a clean beer with very low esters.  Great for Kölsch, Altbeir and American Wheat beers.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 76
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "257",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-201",
+        "name": "Trappist Ale I",
+        "type": "ale",
+        "notes": "Classic Belgian yeast provides signature fruity esters reminiscent of plums.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "258",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-202",
+        "name": "Trappist Ale II",
+        "type": "ale",
+        "notes": "Produces a classic, high gravity, Trappist-style beer. Less ester character than RVA 201   with less phenolic spice than RVA 203. Great yeast for Belgian ales, particularly Belgian Dubbel and Trippel.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "259",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-203",
+        "name": "Trappist Ale III",
+        "type": "ale",
+        "notes": "Cleanest of the Trappist-style yeast. Great for accentuating malt-flavor in dubbels. High alcohol tolerance, can be used for French and Belgian Christmas Ales, Dark Strong Ales, Trippels, and high gravity Belgian Ales.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "260",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-204",
+        "name": "Trappist Ale IV",
+        "type": "ale",
+        "notes": "A true trappist legend. Great for Belgian Single, Dubbel, and Trippel. Fruit character is more subdued than RVA 201, but more expressive than RVA 203.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "261",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-221",
+        "name": "Belgian 1833 Ale",
+        "type": "ale",
+        "notes": "This is the most subtle Belgian ale strain producing a lager-like quality with diminished fruitiness. Useful for amber and pale ales.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 70
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "262",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-222",
+        "name": "Belgian Gnome Ale",
+        "type": "ale",
+        "notes": "This versatile produces a balanced flavor of spice and fruit notes characteristic of all Belgian yeasts.  Appropriate for a variety of Belgian styles.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "263",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-241",
+        "name": "Verboten Ale",
+        "type": "ale",
+        "notes": "This is the quintessential Wit bier yeast responsible for bringing the style back from the dead. Spicy, fruity with a tart finish.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "264",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-251",
+        "name": "Golden Strong Ale",
+        "type": "ale",
+        "notes": "A well-balanced blend of fruitiness and phenolic spice. A must for those seeking to make the elusive Golden Strong Ale.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 13
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "265",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-261",
+        "name": "Saison I",
+        "type": "ale",
+        "notes": "All that is wonderful about Wallonia. This strain produces the fruity, bubblegum esters with all the spice and pepper that makes Saison so appealing. Our advice: against all brewing orthodoxy, ferment this strain hot! Mid to upper 80°F coupled with good oxygenation, and yeast nutrient will help prevent this yeast from stalling out. Patience will be rewarded with this strain, it may take a few weeks after a vigorous fermentation to finish out, but it is worth the wait. To ensure a dry saison at cooler temperatures, finish with RVA 101 or some Brettanomyces.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 85
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "266",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-262",
+        "name": "Saison II",
+        "type": "ale",
+        "notes": "Of French origin, this strain produces a bit less of the fruity, bubblegum esters with less spice and pepper then RVA 261.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 67
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "267",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-263",
+        "name": "Ghost Ale",
+        "type": "ale",
+        "notes": "An RVA Yeast Labs exclusive,   isolated from a very sought after saison style beer, this strain does not disappoint. Ripened fruit esters and a crisp earthy finish can be achieved even at lower temperatures with this Belgian farmhouse strain.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 80
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "268",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-301",
+        "name": "American Lager",
+        "type": "lager",
+        "notes": "This yeast produces a dry and clean profile characteristic of the American lager. Minimal sulfur and diacetyl production.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "269",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-302",
+        "name": "München Lager",
+        "type": "lager",
+        "notes": "At 55° F this will produce a clean malty beer in the German tradition.  Raise the fermentation temp to (65°F) and this yeast produces the beers famous to San Francisco, known as \u201cCalifornia Common\u201d. It is unique in tolerating higher temperatures (65°F) while maintaining a delicious flavor profile.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 58
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 65
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "270",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-303",
+        "name": "Oktoberfest Lager",
+        "type": "lager",
+        "notes": "Bock-style lager yeast that accentuates maltiness.",
+        "best_for": "Märzen, Oktoberfest, Bock & Lagers",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 73
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 52
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 58
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "liquid"
+      },
+      {
+        "id": "271",
+        "producer": "RVA Yeast Labs",
+        "product_id": "RVA-304",
+        "name": "Czech Lager",
+        "type": "lager",
+        "notes": "Produces dry, crisp lagers made famous in the Czech Republic. Low diacetyl production.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 55
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "liquid"
+      }
+    ]
+  }
+}

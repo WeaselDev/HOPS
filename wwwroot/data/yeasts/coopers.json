@@ -1,0 +1,27 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "186",
+        "producer": "Coopers",
+        "product_id": "COCA",
+        "name": "Cooper Ale",
+        "type": "ale",
+        "notes": "General purpose dry ale yeast with a very good reputation.  Produces significant fruity flavors.  No phenolics.  Clean, fruity finish.",
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}

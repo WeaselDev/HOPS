@@ -1,0 +1,319 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "187",
+        "producer": "Lallemand",
+        "product_id": "BRY-97",
+        "name": "LalBrew BRY-97 American West Coast Ale",
+        "type": "ale",
+        "notes": "LalBrew BRY-97 is an American West Coast-style ale yeast that was selected from the Siebel Institute Culture Collection for its ability to produce clean fermentations for high quality ales. LalBrew BRY-97 is a neutral and highly attenuating strain with a high flocculation ability that can be used to make a wide variety of American-style beers. Through expression of a β-glucosidase enzyme, LalBrew BRY-97 can promote hop biotransformation and accentuate hop flavor and aroma. Traditional ales made with LalBrew BRY-97 include but are certainly not limited to American Pale Ale, American Amber, American Brown, American IPA, Imperial IPA, American Stout, Cream Ale, American Wheat, Scotch Ale, Russian Imperial Stout, Roggen/Rye, Old Ale and American Barleywine.",
+        "best_for": "Cream Ale, American Wheat, Scotch Ale, American Pale Ale, American Amber, American Brown, American IPA, American Stout, Russian Imperial Stout, Imperial IPA, Roggen/Rye, Old Ale & American Barleywine",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 13
+        },
+        "form": "dry"
+      },
+      {
+        "id": "188",
+        "producer": "Lallemand",
+        "product_id": "LMBS",
+        "name": "Belle Saison Belgian Saison-Style",
+        "type": "ale",
+        "notes": "Belle Saison produces esters and phenols, which results in beers with fruity, peppery and spicy flavors and aromas.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 95
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "dry"
+      },
+      {
+        "id": "189",
+        "producer": "Lallemand",
+        "product_id": "CBC-1",
+        "name": "LalBrew CBC-1 Yeast for Cask & Bottle Conditioning",
+        "type": "ale",
+        "notes": "LalBrew CBC-1 has been specifically selected from the Lallemand Yeast Culture Collection for Cask and Bottle Conditioning applications due to its high resistance to alcohol and pressure. LalBrew CBC-1 has a neutral flavor profile and does not metabolize maltotriose, therefore the original character of the beer is preserved after refermentation. The yeast will settle and form a tight mat at the bottom of the bottle or cask. LalBrew CBC-1 is also an ideal strain for primary fermentation of dry ciders, mead and hard-seltzer. For simple sugar fermentations with appropriate yeast nutrition, LalBrew CBC-1 achieves high attenuation with a clean and neutral flavor profile.",
+        "best_for": "fruit beers, dry cider & mead",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 86
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "dry"
+      },
+      {
+        "id": "190",
+        "producer": "Lallemand",
+        "product_id": "LMDL",
+        "name": "Diamond Lager",
+        "type": "lager",
+        "notes": "Typical German lager yeast. Crisp and clean finish.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 59
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 7
+        },
+        "form": "dry"
+      },
+      {
+        "id": "191",
+        "producer": "Lallemand",
+        "product_id": "LMMW",
+        "name": "Munich Wheat",
+        "type": "ale",
+        "notes": "German wheat beer yeast from Bavaria producing typical banana and clovy flavors.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 63
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 76
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 7
+        },
+        "form": "dry"
+      },
+      {
+        "id": "192",
+        "producer": "Lallemand",
+        "product_id": "LMLN",
+        "name": "Nottingham",
+        "type": "ale",
+        "notes": "LalBrew Nottingham is an English-style ale yeast selected for its high performance and versatility. Neutral flavor and consistent performance across diverse fermentation conditions make LalBrew Nottingham and ideal house strain for producing a wide variety of beer styles. Through moderate expression of β-glucosidase and β-lyase enzymes, LalBrew Nottingham can promote hop biotransformation and accentuate hop flavor and aroma. LalBrew Nottingham is one of the original Heritage Strains selected from the Lallemand Yeast Culture Collection when Lallemand Brewing was founded in 1992. Traditional styles brewed with this yeast include but are not limited to Pale Ales, Ambers, Porters, Stouts and Barleywines. In addition to these traditional styles, LalBrew Nottingham can be used to produce Golden Ale, Kölsch, Lager-style beers, IPA, and Imperial Stout, among many others. LalBrew Nottingham is a stress tolerant making it a good choice for high gravity, sours, re-starting stuck fermentations and other challenging fermentation conditions.",
+        "best_for": "Golden Ale, Kolsch, Lagers, IPA, Imperial Stout, Pale Ales, Ambers, Porters, Stouts & Barleywines",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "dry"
+      },
+      {
+        "id": "193",
+        "producer": "Lallemand",
+        "product_id": "LMLW",
+        "name": "LalBrew Windsor",
+        "type": "ale",
+        "notes": "LalBrew Windsor is a true English ale strain that produces a balanced fruity aroma with lower attenuation due to an inability to metabolize maltotriose. LalBrew Windsor is one of the original Heritage Strains selected from the Lallemand Yeast Culture Collection when Lallemand Brewing was founded in 1992. Beers created with LalBrew Windsor are usually described as full-bodied, fruity English ales. LalBrew Windsor is a consistent and robust strain that produces moderate levels of alcohol and the balanced flavor and aroma characteristics of the best traditional English ales. Traditional styles brewed with this yeast include but are not limited to Milds, Bitters, Irish Reds, English Brown ales, Porters and Sweet Stouts.",
+        "best_for": "Pale Ale, Milds, Bitters, Irish Reds, English Brown Ales, Porters & Sweet Stouts",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 65
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 72
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
+      },
+      {
+        "id": "318",
+        "producer": "Lallemand",
+        "product_id": "LMNOLA",
+        "name": "Novalager",
+        "type": "lager",
+        "notes": "Die Novalager ist eine neu entwickelte untergärige Hefe die einige besondere Eigenschaften hat. Sie hat ein weites Temperaturspektrum (bis zu 20 °C), soll schnell vergären (minimum 6 Tage) und neutral bis wenig esterig schmecken. Interessant ist, sie soll die sog. Biotransformation fördern und somit das Hopfenaroma steigern können. Damit ist sie eine gute Wahl für Lagerbiere mit fruchtigem Hopfenaroma wie moderne Helle, Pils oder auch India Pale Lager (IPL).",
+        "best_for": "Lagerbiere alle Art, Helles, Pilsener, India Pale Lager, u.v.m.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 13
+        },
+        "form": "dry"
+      },
+      {
+        "id": "319",
+        "producer": "Lallemand",
+        "product_id": "LMVDA",
+        "name": "Verdant IPA",
+        "type": "ipa",
+        "notes": "Englische Hefe, die in Zusammenarbeit mit der Verdant Brewing Co. aus Cornwall/GB ausgewählt wurde. Wird hauptsächlich als Hefe für den Einsatz in NEIPAs/Hazy IPAs vermarktet, weil sie neben den von ihr selbst produzierten fruchtigen Estern auch die dabei gewünschte Biotransformation von Hopfenölen stark befördert, wodurch tropisch-fruchtige Aromen aus der Kalthopfung verstärkt werden können. Auch unterstützt sie eine stabile Trübung, die in den entsprechenden Bierstilen gewünscht ist.",
+        "best_for": "Lagerbiere alle Art, Helles, Pilsener, India Pale Lager, u.v.m.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}

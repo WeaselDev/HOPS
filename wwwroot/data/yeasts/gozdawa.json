@@ -1,0 +1,42 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "317",
+        "producer": "Gozdawa",
+        "product_id": "OGA9",
+        "name": "Old German Altbier 9",
+        "type": "ale",
+        "notes": "Obergärige deutsche Hefe für saubere, neutrale Biere – eben z.B. Altbiere. Dafür ist sie bereits zum Klassiker geworden. Die “OGA” auch gerne bei niedrigen Temperaturen bis 12 °C eingesetzt werden. Dann sollte man aber etwas mehr Hefe nehmen (10-15 g / 10 l).",
+        "best_for": "Altbier, neutrale Ales, Dark Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 6.9
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}

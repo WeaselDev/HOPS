@@ -1,0 +1,68 @@
+{
+  "beerjson": {
+    "version": 2.01,
+    "cultures": [
+      {
+        "id": "243",
+        "producer": "mauribrew",
+        "product_id": "Y1433",
+        "name": "Weiss",
+        "type": "ale",
+        "notes": "Mauribrew Weiss produces large quantities of fermentation aromas (esters, higher alcohols) that contribute to the complexity of Germanstyle wheat beers. Mauribrew Weiss is also suitable for special beers made with macerated fruits, honey or any kind of sugar based additional ingredients.",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 59
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 86
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "244",
+        "producer": "mauribrew",
+        "product_id": "Y497",
+        "name": "Lager 497",
+        "type": "lager",
+        "notes": "Lager 497 is a bottom fermenting lager yeast that produces highly desirable flavour characteristics consistent with quality lager beer. While producing almost no yeast head during fermentation, it is a rapid fermenter with a low oxygen requirement, generally completing within 5 days. This strain has good settling properties, resulting in a green beer of good clarity.",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 59
+          }
+        },
+        "form": "dry"
+      },
+      {
+        "id": "245",
+        "producer": "mauribrew",
+        "product_id": "Y514",
+        "name": "Ale 514",
+        "type": "ale",
+        "notes": "This strain was selected based on its ability to produce English-style ales. It is a strong fermenting strain with rapid attenuation of fermentable sugars. Most noteworthy is this strains alcohol tolerance, producing commercial ales with up to 9.5% alcohol.",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "dry"
+      }
+    ]
+  }
+}
