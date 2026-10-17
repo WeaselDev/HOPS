@@ -5,7 +5,7 @@
       {
         "id": "317",
         "producer": "Gozdawa",
-        "product_id": "OGA9",
+        "product_id": "GOGA9",
         "name": "Old German Altbier 9",
         "type": "ale",
         "notes": "Obergärige deutsche Hefe für saubere, neutrale Biere – eben z.B. Altbiere. Dafür ist sie bereits zum Klassiker geworden. Die “OGA” auch gerne bei niedrigen Temperaturen bis 12 °C eingesetzt werden. Dann sollte man aber etwas mehr Hefe nehmen (10-15 g / 10 l).",
@@ -34,6 +34,176 @@
         "alcohol_tolerance": {
           "unit": "%",
           "value": 6.9
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Gozdawa",
+        "product_id": "GBW11",
+        "name": "Bavarian Wheat 11 (BW11)",
+        "type": "ale",
+        "notes": "German wheat beer yeast. Produces typical banana and ester aromas at fermentation temperatures above 24 °C.",
+        "best_for": "Hefeweizen, wheat beer, Weizenbock, Dunkelweizen",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 79
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 7.7
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Gozdawa",
+        "product_id": "GCBW",
+        "name": "Classic Belgian Witbier (CBW)",
+        "type": "ale",
+        "notes": "Belgian witbier yeast with restrained ester production, allowing typical witbier aromas to remain prominent.",
+        "best_for": "Belgian Witbier, spiced beers, wheat beers, Belgian Grand Cru",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 78
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 61
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 6.8
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Gozdawa",
+        "product_id": "GCP18",
+        "name": "Czech Pilsner 18 (CP18)",
+        "type": "lager",
+        "notes": "Czech-style bottom-fermenting yeast with a clean, neutral flavor profile and excellent sedimentation.",
+        "best_for": "Bohemian Pilsner, Czech Dark Lager, other lager beers",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 6.9
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Gozdawa",
+        "product_id": "GGLW35",
+        "name": "German Lager W35 (GLW35)",
+        "type": "lager",
+        "notes": "German bottom-fermenting yeast strain developed for homebrewing. Produces clean lager profiles with high attenuation and high flocculation.",
+        "best_for": "German Lager, Helles, Pilsner, Märzen, Bock, Zwickelbier",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 7.5
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Gozdawa",
+        "product_id": "GW3470",
+        "name": "W34/70",
+        "type": "lager",
+        "notes": "German bottom-fermenting yeast strain from Weihenstephan, known for clean fermentation, good sedimentation and efficient diacetyl reduction.",
+        "best_for": "Pilsner, Helles, Märzen, Bock, Rauchbier, German Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 85
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 48
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
         },
         "form": "dry"
       }

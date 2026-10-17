@@ -312,6 +312,198 @@
           "value": 11
         },
         "form": "dry"
+      },
+      {
+        "producer": "Fermentis",
+        "product_id": "FBE134",
+        "name": "SafAle BE-134",
+        "type": "ale",
+        "notes": "Eine belgische Saisonhefe mit besonders hohem Vergärungsgrad. Erzeugt fruchtige, florale und würzige Aromen mit phenolischen Noten, insbesondere Nelke. Als diastatische Hefe kann sie zusätzliche Zuckerarten abbauen und sorgt dadurch für ein sehr trockenes, erfrischendes Bier.",
+        "best_for": "Belgian Saison, French Saison, Farmhouse Ale, Fruchtbiere, Gewürzbiere",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 89
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 93
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 79
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Fermentis",
+        "product_id": "FBE256",
+        "name": "SafAle BE-256",
+        "type": "ale",
+        "notes": "Eine belgische Ale-Hefe für kräftige, aromatische Biere im Abtei-Stil. Vergärt sehr schnell und erzeugt ein ausgeprägt fruchtiges Aromaprofil mit ausgewogenen Gärungsaromen. Besonders bei höheren Stammwürzen und Gärtemperaturen treten die fruchtigen Noten stärker hervor. Geeignet für belgische Biere mit höherem Alkoholgehalt.",
+        "best_for": "Belgian Blonde Ale, Belgian Pale Ale, Belgian Dubbel, Belgian Tripel, Belgian Strong Ale, Trappist Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 82
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 86
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 79
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 11
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Fermentis",
+        "product_id": "FSAFBW20",
+        "name": "SafAle BW-20",
+        "type": "ale",
+        "notes": "Eine Spezialhefe für belgische Witbiere und Weizenbiere. Erzeugt dezente fruchtige Ester sowie einen phenolischen Charakter mit Noten von Nelke und Pfeffer. Vergärt Maltotriose nicht vollständig, wodurch das Bier einen volleren Körper und ein angenehmes Mundgefühl behält. Die mittlere Sedimentation sorgt für eine charakteristische, pudrige Trübung.",
+        "best_for": "Belgian Witbier, Belgian White, Belgian Wheat Beer",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 83
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 79
+          }
+        },
+        "alcohol_tolerance": null,
+        "form": "dry"
+      },
+      {
+        "producer": "Fermentis",
+        "product_id": "FSAFW68",
+        "name": "SafAle W-68",
+        "type": "ale",
+        "notes": "Eine obergärige Weizenbierhefe auf Basis des bekannten Weihenstephaner Hefestamms 68. Bei höheren Gärtemperaturen über 22 °C entwickelt sie ausgeprägte Bananenaromen. Bei niedrigeren Temperaturen treten eher würzige, phenolische Noten wie Nelke und Pfeffer hervor. Die Hefe bleibt lange in Schwebe und unterstützt dadurch die typische Trübung von Weizenbieren.",
+        "best_for": "Hefeweizen, Weissbier, Belgian Wheat Beer, Hopfenweisse, Weizenbock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 79
+          }
+        },
+        "alcohol_tolerance": null,
+        "form": "dry"
+      },
+      {
+        "producer": "Fermentis",
+        "product_id": "FSE30",
+        "name": "SafLager E-30",
+        "type": "lager",
+        "notes": "Eine untergärige Lagerhefe, die speziell für aromatische, fruchtbetonte Lagerbiere entwickelt wurde. Sie produziert hohe Mengen fruchtiger Ester, insbesondere mit Bananenaromen. Vielseitig einsetzbar für klassische und moderne Lagerbiere sowie fruchtbetonte Bierstile. Bei höheren Gärtemperaturen treten die fruchtigen Aromen besonders hervor.",
+        "best_for": "Lager, Rice Lager, Asian Lager, Fruited Lager, India Pale Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 80
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 54
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 64
+          }
+        },
+        "alcohol_tolerance": null,
+        "form": "dry"
+      },
+      {
+        "producer": "Fermentis",
+        "product_id": "FSH45",
+        "name": "SafLager SH-45",
+        "type": "lager",
+        "notes": "Eine untergärige Hefe für Lagerbiere mit einem ausgeprägten, fruchtigen Aromaprofil. Produziert fruchtige Ester und unterstützt einen ausgewogenen Malzcharakter. Besonders geeignet für moderne Lagerbiere, bei denen ein fruchtiger Gärungscharakter erwünscht ist.",
+        "best_for": "Lager, Helles, Pilsner, International Pale Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 59
+          }
+        },
+        "alcohol_tolerance": null,
+        "form": "dry"
       }
     ]
   }

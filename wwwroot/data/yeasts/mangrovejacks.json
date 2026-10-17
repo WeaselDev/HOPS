@@ -313,6 +313,414 @@
           "value": 9
         },
         "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM12",
+        "name": "M12 Kveik",
+        "type": "ale",
+        "notes": "Norwegische Kveik-Hefe mit sehr schneller Gärung bei hohen Temperaturen. Vergärt relativ neutral mit leichten Zitrusnoten. Besonders geeignet für die warme Gärung und als Alternative für Biere, bei denen die Gärtemperatur schwer kontrollierbar ist.",
+        "best_for": "Norwegian Farmhouse Ale, Pale Ale, IPA, NEIPA, Hazy IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 68
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 104
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM15",
+        "name": "M15 Empire Ale",
+        "type": "ale",
+        "notes": "Eine obergärige Ale-Hefe für vollmundige Biere mit ausgeprägter Aromatiefe. Erzeugt volle, intensive Aromen dunkler Früchte und unterstützt einen kräftigen Malzkörper. Aufgrund des moderaten Vergärungsgrades kann das fertige Bier eine leichte Restsüße aufweisen.",
+        "best_for": "Scottish Heavy Ale, American Amber Ale, Sweet Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM21",
+        "name": "M21 Belgian Wit",
+        "type": "ale",
+        "notes": "Eine belgische Weizenbierhefe, die fruchtige und würzige Aromen erzeugt. Typisch sind Noten von Orange, Zitrusfrüchten und Gewürzen, die den charakteristischen Geschmack belgischer Witbiere unterstützen.",
+        "best_for": "Belgian Witbier, Belgian White, Belgian Wheat Beer",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 70
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 75
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 75
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM24",
+        "name": "M24 Versa Lager",
+        "type": "lager",
+        "notes": "Eine vielseitige, schnell vergärende Lagerhefe mit neutralem Aromaprofil. Sie lässt Malz- und Hopfenaromen in den Vordergrund treten und eignet sich dank ihres breiten Temperaturbereichs auch für wärmer vergorene Lagerbiere. Basiert laut Händler auf LalBrew NovaLager.",
+        "best_for": "Pils, Helles, Münchner Dunkel, Rauchbier, Bock, Export, India Pale Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 50
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 13
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM29",
+        "name": "M29 French Saison",
+        "type": "ale",
+        "notes": "Eine hoch vergärende Saisonhefe für belgische und französische Saisonbiere sowie Farmhouse Ales. Erzeugt ausgeprägte würzige, pfeffrige und fruchtige Aromen. Der hohe Vergärungsgrad sorgt für ein trockenes Bier mit schlankem Abgang. Geeignet für Biere mit einem Alkoholgehalt von bis zu 14 %.",
+        "best_for": "French Saison, Belgian Saison, Farmhouse Ale, Bière de Garde",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 85
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 90
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 79
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 90
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM31",
+        "name": "M31 Belgian Tripel",
+        "type": "ale",
+        "notes": "Eine obergärige Hefe für belgische Tripel und Trappistenbiere. Erzeugt ein komplexes Aromaprofil aus intensiven fruchtigen Estern, würzigen Noten und Phenolen. Der hohe Vergärungsgrad sorgt für ein trockenes Bier mit ausgeprägtem Charakter.",
+        "best_for": "Belgian Tripel, Trappist Ale, Belgian Golden Strong Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 82
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 88
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 82
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM41",
+        "name": "M41 Belgian Ale",
+        "type": "ale",
+        "notes": "Eine belgische Ale-Hefe mit ausgeprägtem würzigem und phenolischem Charakter. Erzeugt Aromen von reifen Früchten, insbesondere Pflaumen, sowie Nelken- und Bananennoten. Der hohe Vergärungsgrad und die gute Alkoholtoleranz machen sie besonders geeignet für kräftige belgische Biere.",
+        "best_for": "Belgian Strong Golden Ale, Belgian Strong Dark Ale, Quadrupel, Tripel, Trappist Ale",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 82
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 88
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 82
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM42",
+        "name": "M42 New World Strong Ale",
+        "type": "ale",
+        "notes": "Eine vielseitige, obergärige Ale-Hefe für Biere unterschiedlicher Stärke. Vergärt bei moderaten Temperaturen weitgehend neutral, sodass Malz- und Hopfenaromen im Vordergrund stehen. Das Aromaprofil kann erdige, nussige und leicht würzige Noten aufweisen. Bei höheren Alkoholgehalten entstehen zusätzliche fruchtige Ester mit Aromen von reifen Äpfeln und Birnen.",
+        "best_for": "IPA, Double IPA, Imperial IPA, Porter, Imperial Stout, Russian Imperial Stout",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 61
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM47",
+        "name": "M47 Belgian Abbey",
+        "type": "ale",
+        "notes": "Eine belgische Ale-Hefe für Abteibiere mit ausgeprägten fruchtigen Estern und komplexen Aromen. Erzeugt Noten von Banane und tropischen Früchten sowie dezente würzige Phenole. Im Vergleich zur M41 Belgian Ale ist sie weniger würzig und phenolisch. Das fertige Bier besitzt einen volleren Körper, eine gewisse Restsüße und einen weniger trockenen Abgang.",
+        "best_for": "Belgian Pale Ale, Belgian Blonde Ale, Abbey Ale, Belgian Dubbel, Belgian Tripel",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 73
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 77
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM54",
+        "name": "M54 Californian Lager",
+        "type": "lager",
+        "notes": "Eine spezielle Lagerhefe, die bei für Ale typischen Temperaturen vergärt, ohne die damit verbundenen Fehlaromen zu erzeugen. Längere Lagerzeiten sind nicht erforderlich. Erzeugt ein sauberes, frisches und ausgewogenes Bier, bei dem Malz- und Hopfenaromen gut zur Geltung kommen. Besonders geeignet für California Common und andere Lagerbiere, die bei Raumtemperatur vergoren werden.",
+        "best_for": "California Common, American Lager, Pilsner, Helles, International Pale Lager",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 68
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM66",
+        "name": "M66 Hophead Ale",
+        "type": "ale",
+        "notes": "Eine Mischung aus Hefe und Enzymen, die speziell für hopfenbetonte Biere entwickelt wurde. Die Enzyme verstärken die Aromen später Hopfengaben und von während der Gärung zugesetzten Früchten. Das moderate, ausgewogene Esterprofil ergänzt besonders gut die Aromen moderner Hopfensorten und bringt zugleich den Malzcharakter zur Geltung. Die Hefe vergärt relativ neutral und sorgt für einen mäßig trockenen Abgang bei gutem Mundgefühl.",
+        "best_for": "New England IPA, Juicy IPA, Hazy IPA, American IPA, American Pale Ale, Double IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 74
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "high",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Mangrove Jack's",
+        "product_id": "MJM76",
+        "name": "M76 Bavarian Lager",
+        "type": "lager",
+        "notes": "Eine untergärige Hefe für klassische europäische Lagerbiere. Sie produziert weniger Schwefelaromen als viele andere Lagerhefen und unterstützt einen volleren, runderen Malzcharakter sowie ausgeprägte Hopfenaromen. Das Ergebnis ist ein ausgewogenes, gut trinkbares Lagerbier mit dezenter Schwefelnote.",
+        "best_for": "Lager, Pilsner, Helles, Munich Dunkel, Rauchbier, Bock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 80
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 46
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 57
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 8
+        },
+        "form": "dry"
       }
     ]
   }

@@ -313,6 +313,210 @@
           "value": 12
         },
         "form": "dry"
+      },
+      {
+        "producer": "Lallemand",
+        "product_id": "LMFHO",
+        "name": "Farmhouse",
+        "type": "ale",
+        "notes": "Hybrid Saison-Style Yeast. (Besonderheit: Keine Diastaticus Hefe)",
+        "best_for": "Saison, Farmhouse Ale, Belgische Ales, Belgian IPA, u.v.m.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 71
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 86
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 13
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Lallemand",
+        "product_id": "LMHOA",
+        "name": "House Ale",
+        "type": "ale",
+        "notes": "High Performance Ale Yeast",
+        "best_for": "IPA, Blonde Ale, Stout, …und viele mehr",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 78
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 86
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 60
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 72
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 14
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Lallemand",
+        "product_id": "LMMUCL",
+        "name": "Munic Classic",
+        "type": "ale",
+        "notes": "Die Munich Classic ist eine Weizenbierhefe bayerischen Ursprungs. Viele sagen es sei die Trockenhefe Version der Weihenstephan 68 (Wyeast3068 Weihenstephan Weizen). Produziert die für deutsche Weizenbiere typischen und gewünschten Aromen von Banane und Gewürznelke; welches davon in den Vordergrund tritt, lässt sich z.B. über die Gärung und das Maischprogramm beeinflussen. Eine Gärtemperatur von über 22 °C ist unser Tipp für starke Bananenaromen!",
+        "best_for": "Hefeweizen, Weissbier, Dunkelweizen, Weizenbock",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 83
+          }
+        },
+        "flocculation": "low",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 62
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Lallemand",
+        "product_id": "LMNENG",
+        "name": "New England",
+        "type": "ale",
+        "notes": "",
+        "best_for": "NEIPA / New England IPA / Hazy IPA",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 77
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 9
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Lallemand",
+        "product_id": "LMPOM",
+        "name": "Pomona",
+        "type": "ale",
+        "notes": "Die neue Pomona von LalBrew klingt verführerisch wenn man maximal fruchtige IPAs oder NEIPAs brauche möchte. Sie wurde von den Hefespezialisten bei Escarpment Labs entwickelt und 2024 für Hobbybrauer gelauncht. Sie ist speziell für stark gehopfte Bier wie IPA und NEIPA gedacht und bringt dank ihrer Fähigkeit die Biotransformation zu fördern, extreme fruchtig saftige Aromen ins Bier. Ausserdem soll sie für eine stabile Trübung sorgen, die beim Hazy IPA / NEIPA ja unerlässlich ist.",
+        "best_for": "IPAs aller Art, NEIPA, Session IPA, u.v.m.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 75
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 84
+          }
+        },
+        "flocculation": "medium",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 64
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 83
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 10
+        },
+        "form": "dry"
+      },
+      {
+        "producer": "Lallemand",
+        "product_id": "LMVOKV",
+        "name": "Voss – Kveik",
+        "type": "ale",
+        "notes": "Eine der seit einigen Jahren zunehmend populären „Kveik“-Hefen, mit denen in Norwegen auf traditionelle Art Farmhouse-Biere gebraut werden. Der Stamm kommt von einem Brauer aus dem Ort Voss. Typisch für Kveik-Hefen ist die hohe Gärtemperatur, die sie vertragen. Das Optimum liegt hier bei 35-40°C, die Voss erreicht dann sehr schnell Endvergärung (eine normale Würze ist dann schon mal in zwei Tagen fertig vergoren). Hohe Gärtemperaturen sind allerdings kein Muss, auch normale Ale-Temperaturen von um die 20 °C funktionieren. Hohe Alkoholtoleranz (12%) und theoretisch sehr gutes Absetzverhalten für klare Biere (hopfige Biere bleiben aber eher trüb). Aromatisch erstaunlich neutral, bei hohen Temperaturen mit deutlichen Esternoten in Richtung Orange.",
+        "best_for": "warm vergorene Lagerbier Varianten, NEIPA, Hazy IPA, Pale Ale, u.v.m.",
+        "attenuation_range": {
+          "minimum": {
+            "unit": "%",
+            "value": 76
+          },
+          "maximum": {
+            "unit": "%",
+            "value": 82
+          }
+        },
+        "flocculation": "fast",
+        "temperature_range": {
+          "minimum": {
+            "unit": "F",
+            "value": 77
+          },
+          "maximum": {
+            "unit": "F",
+            "value": 104
+          }
+        },
+        "alcohol_tolerance": {
+          "unit": "%",
+          "value": 12
+        },
+        "form": "dry"
       }
     ]
   }
