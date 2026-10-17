@@ -460,40 +460,46 @@
             <section class="recipe-sheet-section">
                 <h3 class="recipe-section-title">@Resource.FermentationAndAging</h3>
                 <div class="recipe-section-body">
-                    <div class="recipe-fields">
-                        <div class="recipe-field recipe-field-narrow">
-                            <label asp-for="BrewRecipe.Versions[0].FermentationTemperature"></label>
-                            <div class="recipe-input-with-unit">
-                                <input asp-for="BrewRecipe.Versions[0].FermentationTemperature" class="form-control" />
-                                <span class="recipe-inline-unit">°C</span>
-                            </div>
-                        </div>
+                    <div class="recipe-table-wrap">
+                        <table class="recipe-table">
+                            <tbody>
 
-                        <div class="recipe-field recipe-field-narrow">
-                            <label asp-for="BrewRecipe.Versions[0].ApparantAttenuation"></label>
-                            <div class="recipe-input-with-unit">
-                                <input asp-for="BrewRecipe.Versions[0].ApparantAttenuation" class="form-control" />
-                                <span class="recipe-inline-unit">%</span>
-                            </div>
-                        </div>
+                                <tr class="recipe-field">
+                                    <td><label asp-for="BrewRecipe.Versions[0].FermentationTemperature"></label></td>
+                                    <td class="value">
+                                        <input asp-for="BrewRecipe.Versions[0].FermentationTemperature" class="form-control" />
+                                    </td>
+                                    <td class="unit">°C</td>
+                                </tr>
 
-                        <div class="recipe-field recipe-field-narrow">
-                            <label asp-for="BrewRecipe.Versions[0].Carbonation"></label>
-                            <div class="recipe-input-with-unit">
-                                <input asp-for="BrewRecipe.Versions[0].Carbonation" class="form-control" />
-                                <span class="recipe-inline-unit">g CO2/L</span>
-                            </div>
-                        </div>
+                                <tr class="recipe-field">
+                                    <td><label asp-for="BrewRecipe.Versions[0].ApparantAttenuation"></label></td>
+                                    <td class="value">
+                                        <input asp-for="BrewRecipe.Versions[0].ApparantAttenuation" class="form-control" />
+                                    </td>
+                                    <td class="unit">%</td>
+                                </tr>
 
-                        <div class="recipe-field recipe-field-narrow">
-                            @Resource.MaturationTime
-                            <div class="recipe-input-with-unit">
-                                <input asp-for="BrewRecipe.Versions[0].MaturationWeeksMin" class="form-control" /> 
-                                <span class="recipe-inline-unit">-</span>
-                                <input asp-for="BrewRecipe.Versions[0].MaturationWeeksMax" class="form-control" />
-                                <span class="recipe-inline-unit">@Resource.Weeks</span>
-                            </div>
-                        </div>
+                                <tr class="recipe-field">
+                                    <td><label asp-for="BrewRecipe.Versions[0].Carbonation"></label></td>
+                                    <td class="value">
+                                        <input asp-for="BrewRecipe.Versions[0].Carbonation" class="form-control" />
+                                    </td>
+                                    <td class="unit">g CO2/L</div>
+                                </tr>
+
+                                <tr class="recipe-field recipe-field-narrow">
+                                    <td>@Resource.MaturationTime</td>
+                                    <td class="value">
+                                        <input asp-for="BrewRecipe.Versions[0].MaturationWeeksMin" class="form-control" style="display:inline;"/> 
+                                        <span >-</span>
+                                        <input asp-for="BrewRecipe.Versions[0].MaturationWeeksMax" class="form-control" style="display:inline;"/>
+                                    </td>
+                                    <td class="unit">@Resource.Weeks</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
@@ -517,6 +523,15 @@
 
     <script src="~/lib/select2/js/select2.min.js"></script>
     <script>
+        document.addEventListener("focusin", (e) => {
+            const el = e.target;
+
+            if (el.matches("input[type=text], input[type=search], input[type=tel], input[type=url], input[type=password], textarea")) {
+                requestAnimationFrame(() => el.select());
+            }
+        });
+
+
         $(function () {
             var sel = $('#BrewRecipe_BeerStyleId');
             if (sel.length && $.fn.select2) {

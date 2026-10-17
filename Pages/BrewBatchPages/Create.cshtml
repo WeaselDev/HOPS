@@ -341,6 +341,14 @@
                 || /^-?\d+(,\d+)?$/.test(value);
         };
 
+        document.addEventListener("focusin", (e) => {
+            const el = e.target;
+
+            if (el.matches("input[type=text], input[type=search], input[type=tel], input[type=url], input[type=password], textarea")) {
+                requestAnimationFrame(() => el.select());
+            }
+        });
+
         const batchSizeInput = document.getElementById("BrewBatch_BatchSize");
         const brewhouseEfficiencyInput = document.getElementById("BrewBatch_BrewhouseEfficiency");
 

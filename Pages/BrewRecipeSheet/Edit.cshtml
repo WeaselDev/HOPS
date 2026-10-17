@@ -609,6 +609,14 @@
 
     <script src="~/lib/select2/js/select2.min.js"></script>
     <script>
+        document.addEventListener("focusin", (e) => {
+            const el = e.target;
+
+            if (el.matches("input[type=text], input[type=search], input[type=tel], input[type=url], input[type=password], textarea")) {
+                requestAnimationFrame(() => el.select());
+            }
+        });
+
         $(function () {
             var sel = $('#BrewRecipe_BeerStyleId');
             if (sel.length && $.fn.select2) {

@@ -317,6 +317,10 @@ body {
         text-align: right;
     }
 
+    .recipe-table .value .form-control{
+        text-align: right;
+    }
+
     .recipe-table .unit {
         width: 1%;
         padding-left: .3rem;
