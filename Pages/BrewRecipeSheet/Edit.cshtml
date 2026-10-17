@@ -229,61 +229,44 @@
                 <h3 class="recipe-section-title">@Resource.Yeast</h3>
                 <div class="recipe-section-body">
                     <div class="recipe-table-wrap">
-                        <table class="recipe-table">
+                        <label>@Resource.PreferredYeasts</label>
+                        <div class="d-flex gap-2 align-items-start">
+                            <select id="preferredYeastSelect" class="form-select select2" style="min-width:300px">
+                                <option></option>
+                                @foreach (var item in Model.PreferredYeastList)
+                                {
+                                    <option value="@item.Value" data-producer="@(Model.PreferredYeastData?.FirstOrDefault(y => y.ProductId == item.Value)?.Producer)" data-name="@(Model.PreferredYeastData?.FirstOrDefault(y => y.ProductId == item.Value)?.Name)">@item.Text</option>
+                                }
+                            </select>
+                            <button id="addPreferredYeast" type="button" class="btn btn-sm btn-outline-secondary">+ Add</button>
+                        </div>
+                        <table class="table mt-2" id="preferredYeastList" aria-label="Preferred yeasts list">
                             <thead>
-                                <tr>
-                                    <th class="recipe-drag-column"></th>
-                                    <th>@Resource.Yeast</th>
-                                    <th class="numeric">@Resource.Amount</th>
-                                    <th>@Resource.Unit</th>
-                                    <th></th>
-                                </tr>
+                                <tr><th>Id</th><th>Producer</th><th>Name</th><th></th></tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td colspan="5">
-                                        <label>@Resource.PreferredYeasts</label>
-                                        <div class="d-flex gap-2 align-items-start">
-                                            <select id="preferredYeastSelect" class="form-select select2" style="min-width:300px">
-                                                <option></option>
-                                                @foreach (var item in Model.PreferredYeastList)
-                                                {
-                                                    <option value="@item.Value" data-producer="@(Model.PreferredYeastData?.FirstOrDefault(y => y.ProductId == item.Value)?.Producer)" data-name="@(Model.PreferredYeastData?.FirstOrDefault(y => y.ProductId == item.Value)?.Name)">@item.Text</option>
-                                                }
-                                            </select>
-                                            <button id="addPreferredYeast" type="button" class="btn btn-sm btn-outline-secondary">+ Add</button>
-                                        </div>
-                                        <table class="table mt-2" id="preferredYeastList" aria-label="Preferred yeasts list">
-                                            <thead>
-                                                <tr><th>Id</th><th>Producer</th><th>Name</th><th></th></tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach (var y in Model.BrewRecipeVersion.PreferredYeasts)
-                                                {
-                                                    <tr data-id="@y.ProductId">
-                                                        <td>@y.ProductId</td>
-                                                        <td>@y.Producer</td>
-                                                        <td>@y.Name</td>
-                                                        <td><button type="button" class="btn btn-sm btn-outline-danger remove-yeast">×</button></td>
-                                                    </tr>
-                                                }
-                                            </tbody>
-                                        </table>
-                                        @{ 
-                                            var initialIds = (Model.BrewRecipeVersion.PreferredYeastIds != null && Model.BrewRecipeVersion.PreferredYeastIds.Any())
-                                                ? Model.BrewRecipeVersion.PreferredYeastIds
-                                                : (Model.BrewRecipeVersion.PreferredYeasts != null ? Model.BrewRecipeVersion.PreferredYeasts.Select(y => y.ProductId).ToList() : new List<string>());
-                                        }
-                                        @foreach (var id in initialIds)
-                                        {
-                                            <input type="hidden" name="BrewRecipeVersion.PreferredYeastIds" value="@id" />
-                                        }
-                                        <input type="hidden" id="PreferredYeastIdsHidden" />
-
-                                    </td>
-                                </tr>
+                                @foreach (var y in Model.BrewRecipeVersion.PreferredYeasts)
+                                {
+                                    <tr data-id="@y.ProductId">
+                                        <td>@y.ProductId</td>
+                                        <td>@y.Producer</td>
+                                        <td>@y.Name</td>
+                                        <td><button type="button" class="btn btn-sm btn-outline-danger remove-yeast">×</button></td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
+                        @{ 
+                            var initialIds = (Model.BrewRecipeVersion.PreferredYeastIds != null && Model.BrewRecipeVersion.PreferredYeastIds.Any())
+                                ? Model.BrewRecipeVersion.PreferredYeastIds
+                                : (Model.BrewRecipeVersion.PreferredYeasts != null ? Model.BrewRecipeVersion.PreferredYeasts.Select(y => y.ProductId).ToList() : new List<string>());
+                        }
+                        @foreach (var id in initialIds)
+                        {
+                            <input type="hidden" name="BrewRecipeVersion.PreferredYeastIds" value="@id" />
+                        }
+                        <input type="hidden" id="PreferredYeastIdsHidden" />
+
                     </div>
                 </div>
             </section>

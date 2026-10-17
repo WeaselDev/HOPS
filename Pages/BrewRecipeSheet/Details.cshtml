@@ -179,7 +179,7 @@
                         {
                             <tr>
                                 <td>
-                                    @(Model.BrewRecipeVersion.PreferredYeasts[i].Name ?? Model.BrewRecipeVersion.PreferredYeasts[i].ProductId)
+                                    @(Model.BrewRecipeVersion.PreferredYeasts[i].Producer) @(Model.BrewRecipeVersion.PreferredYeasts[i].Name ?? Model.BrewRecipeVersion.PreferredYeasts[i].ProductId)
                                 </td>
                                 <td>
                                     @if (!string.IsNullOrWhiteSpace(Model.BrewRecipeVersion.PreferredYeasts[i].Notes))

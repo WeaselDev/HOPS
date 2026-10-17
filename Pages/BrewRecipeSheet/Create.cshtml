@@ -235,45 +235,32 @@
                 <h3 class="recipe-section-title">@Resource.Yeast</h3>
                 <div class="recipe-section-body">
                     <div class="recipe-table-wrap">
-                        <table class="recipe-table">
-                            <thead>
-                                <tr>
-                                    <th class="recipe-drag-column"></th>
-                                    <th>@Resource.Yeast</th>
-                                    <th class="numeric">@Resource.Amount</th>
-                                    <th>@Resource.Unit</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5">
-                                        <label>@Resource.PreferredYeasts</label>
-                                        <div class="d-flex gap-2 align-items-start">
-                                            <select id="preferredYeastSelect" class="form-select select2" style="min-width:300px">
-                                                <option></option>
-                                                @foreach (var item in Model.PreferredYeastList)
-                                                {
-                                                    <option value="@item.Value" data-producer="@Model.PreferredYeastData.FirstOrDefault(y => y.ProductId == item.Value)?.Producer" data-name="@Model.PreferredYeastData.FirstOrDefault(y => y.ProductId == item.Value)?.Name">@item.Text</option>
-                                                }
-                                            </select>
-                                            <button id="addPreferredYeast" type="button" class="btn btn-sm btn-outline-secondary">+ Add</button>
-                                        </div>
-                                        <table class="table mt-2" id="preferredYeastList" aria-label="Preferred yeasts list">
-                                            <thead>
-                                                <tr><th>Id</th><th>Producer</th><th>Name</th><th></th></tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
-                                        <!-- hidden inputs are dynamically generated for model binding -->
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <label>@Resource.PreferredYeasts</label>
+                    <div class="d-flex gap-2 align-items-start">
+                        <select id="preferredYeastSelect" class="form-select select2" style="min-width:300px">
+                            <option></option>
+                            @foreach (var item in Model.PreferredYeastList)
+                            {
+                                <option value="@item.Value" data-producer="@Model.PreferredYeastData.FirstOrDefault(y => y.ProductId == item.Value)?.Producer" data-name="@Model.PreferredYeastData.FirstOrDefault(y => y.ProductId == item.Value)?.Name">@item.Text</option>
+                            }
+                        </select>
+                        <button id="addPreferredYeast" type="button" class="btn btn-sm btn-outline-secondary">+ Add</button>
                     </div>
+                    <table class="recipe-table" id="preferredYeastList" aria-label="Preferred yeasts list">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Producer</th>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <!-- hidden inputs are dynamically generated for model binding -->
 
-                    <button type="button" class="btn btn-sm btn-outline-secondary recipe-add-button add-row" data-collection="YeastAdditions">+ Hefe</button>
+                    </div>
                 </div>
             </section>
         </div>
