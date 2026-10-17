@@ -49,7 +49,7 @@
                     <tbody>
                         <tr>
                             <td><label asp-for="BrewRecipe.BeerStyleId"></label></td>
-                            <td colspan="2">@((Model.BrewRecipe.BeerStyle?.Name ?? Model.BrewRecipe.BeerStyle?.Category) ?? Model.BrewRecipe.BeerStyleId)</td>
+                            <td colspan="2" class="numeric">@((Model.BrewRecipe.BeerStyle?.Name ?? Model.BrewRecipe.BeerStyle?.Category) ?? Model.BrewRecipe.BeerStyleId)</td>
                         </tr>
                         <tr>
                             <td><label asp-for="BrewRecipeVersion.BatchSize"></label></td>
