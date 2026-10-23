@@ -117,7 +117,7 @@ public class EditModel : PageModel
             list.Add(new SelectListItem
             {
                 Value = s.StyleId,
-                Text = (s.Name ?? s.Category ?? s.StyleId),
+                Text = s.GetName("de"),
                 Group = grp
             });
         }

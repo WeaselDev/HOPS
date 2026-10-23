@@ -75,7 +75,7 @@ public class PrintLabelModel : PageModel
         Label = new LabelModel
         {
             BeerName = brewRecipe.Name,
-            Style = (brewRecipe.BeerStyle?.Name ?? brewRecipe.BeerStyle?.Category) ?? brewRecipe.BeerStyleId,
+            Style = (brewRecipe.BeerStyle?.GetName("de")) ?? brewRecipe.BeerStyleId,
             OriginalPlato = brewBatch.FermentationStartPlato,
             ABV = brewBatch.ActualABV,
             IBU = recipeVersion.Bitterness,

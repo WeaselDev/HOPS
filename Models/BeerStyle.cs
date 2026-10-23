@@ -12,7 +12,13 @@ public class BeerStyle
     public string? Name { get; set; }
 
     [MaxLength(200)]
+    public string? Name_de { get; set; }
+
+    [MaxLength(200)]
     public string? Category { get; set; }
+
+    [MaxLength(200)]
+    public string? Category_de { get; set; }
 
     [MaxLength(20)]
     public string? CategoryId { get; set; }
@@ -43,4 +49,22 @@ public class BeerStyle
     public decimal? AbvMax { get; set; }
     public decimal? ColorMin { get; set; }
     public decimal? ColorMax { get; set; }
+
+    public string GetName(string language = "en")
+    {
+        return language.ToLower() switch
+        {
+            "de" => Name_de ?? Name ?? StyleId,
+            _ => Name ?? StyleId,
+        };
+    }
+
+    public string GetCategory(string language = "en")
+    {
+        return language.ToLower() switch
+        {
+            "de" => Category_de ?? Category ?? "Unknown",
+            _ => Category ?? "Unknown",
+        };
+    }
 }

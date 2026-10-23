@@ -45,6 +45,10 @@ namespace HOPS.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Category_de")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal?>("ColorMax")
                         .HasColumnType("TEXT");
 
@@ -82,6 +86,10 @@ namespace HOPS.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name_de")
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");
 

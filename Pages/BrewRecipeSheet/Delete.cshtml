@@ -17,7 +17,7 @@
         <div class="panel-body">
             <dl>
                 <dt>Style</dt>
-                <dd>@((Model.BrewRecipe.BeerStyle?.Name ?? Model.BrewRecipe.BeerStyle?.Category) ?? Model.BrewRecipe.BeerStyleId)</dd>
+                <dd>@(Model.BrewRecipe.BeerStyle?.GetName("de"))</dd>
 
                 <dt>Version</dt>
                 <dd>@Model.BrewRecipe.Versions.Last().Version</dd>
